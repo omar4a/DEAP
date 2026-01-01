@@ -1,0 +1,42 @@
+{
+  "subject_dependent": {
+    "valence": {
+      "accuracy_mean": 0.75,
+      "accuracy_std": 0.0,
+      "f1_mean": 0.6666666666666666,
+      "f1_std": 0.0
+    },
+    "arousal": {
+      "accuracy_mean": 0.0,
+      "accuracy_std": 0.0,
+      "f1_mean": 0.0,
+      "f1_std": 0.0
+    },
+    "dominance": {
+      "accuracy_mean": 0.5,
+      "accuracy_std": 0.0,
+      "f1_mean": 0.3333333333333333,
+      "f1_std": 0.0
+    }
+  },
+  "cross_subject": {
+    "valence": {
+      "accuracy_mean": 0.5,
+      "accuracy_std": 0.2041241452319315,
+      "f1_mean": 0.3206349206349206,
+      "f1_std": 0.09374490831894221
+    },
+    "arousal": {
+      "accuracy_mean": 0.08333333333333333,
+      "accuracy_std": 0.11785113019775792,
+      "f1_mean": 0.06666666666666667,
+      "f1_std": 0.09428090415820635
+    },
+    "dominance": {
+      "accuracy_mean": 0.5,
+      "accuracy_std": 0.5,
+      "f1_mean": 0.5,
+      "f1_std": 0.5
+    }
+  }
+}
