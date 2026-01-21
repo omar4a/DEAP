@@ -11,13 +11,26 @@ from .eval import metrics_to_dict, run_cross_subject, run_subject_dependent
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="DEAP emotion recognition (approach 3).")
     parser.add_argument("--data-dir", type=Path, default=Path("archive"))
-    parser.add_argument("--label-mode", choices=["binary", "quartile"], default="binary")
+    parser.add_argument(
+        "--label-mode",
+        choices=[
+            "binary",
+            "three_class",
+            "quartile",
+            "subject_median",
+            "subject_tertile",
+            "subject_mean",
+        ],
+        default="binary",
+    )
     parser.add_argument("--label-threshold", type=float, default=5.0)
+    parser.add_argument("--label-bins", nargs="+", type=float, default=None)
     parser.add_argument("--window-seconds", type=float, default=None)
     parser.add_argument("--step-seconds", type=float, default=None)
     parser.add_argument("--classifier", choices=["logreg", "linear_svm"], default="logreg")
     parser.add_argument("--subject-folds", type=int, default=5)
     parser.add_argument("--no-cache", action="store_true")
+    parser.add_argument("--per-subject-norm", action="store_true")
     parser.add_argument("--output", type=Path, default=Path("reports/metrics.json"))
     parser.add_argument("--mode", choices=["subject", "cross", "both"], default="both")
     return parser
@@ -31,10 +44,12 @@ def main() -> None:
         data_dir=args.data_dir,
         label_mode=args.label_mode,
         label_threshold=args.label_threshold,
+        label_bins=tuple(args.label_bins) if args.label_bins else Config().label_bins,
         window_seconds=args.window_seconds,
         step_seconds=args.step_seconds,
         classifier=args.classifier,
         subject_folds=args.subject_folds,
+        per_subject_normalize=args.per_subject_norm,
         use_cache=not args.no_cache,
     )
 

@@ -1,0 +1,26 @@
+{
+  "logreg": {
+    "clf__C": [0.1, 1.0, 10.0]
+  },
+  "rbf_svm": {
+    "clf__C": [0.1, 1.0, 10.0, 100.0, 300.0],
+    "clf__gamma": [0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1],
+    "clf__class_weight": [null, "balanced"]
+  },
+  "linear_svm": {
+    "clf__C": [0.1, 1.0, 10.0]
+  },
+  "rf": {
+    "clf__n_estimators": [200, 400],
+    "clf__max_depth": [null, 10, 20]
+  },
+  "mlp": {
+    "clf__hidden_layer_sizes": [[128, 64], [256, 128]],
+    "clf__alpha": [0.0001, 0.001]
+  },
+  "hgb": {
+    "clf__max_depth": [null, 3, 5],
+    "clf__learning_rate": [0.05, 0.1],
+    "clf__max_iter": [200, 400]
+  }
+}

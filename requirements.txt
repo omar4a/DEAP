@@ -3,3 +3,5 @@ scipy
 scikit-learn
 joblib
 pytest
+h5py
+xgboost

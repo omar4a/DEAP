@@ -13,7 +13,7 @@ from .config import Config
 from .data import SubjectData, load_dataset
 from .features import extract_features
 from .labels import build_labels
-from .model import build_classifier
+from .model_registry import build_model
 from .preprocess import baseline_correct
 from .splits import cross_subject_split, subject_dependent_split
 
@@ -29,11 +29,18 @@ class MetricSummary:
 def _cache_key(config: Config, subject_id: int) -> str:
     payload = {
         "subject_id": subject_id,
+        "data_dir": str(config.data_dir),
         "eeg_channels": config.eeg_channels,
         "sfreq": config.sfreq,
         "baseline": config.baseline_seconds,
         "bands": config.bands,
         "feature_mode": config.feature_mode,
+        "feature_set": config.feature_set,
+        "psd_min_hz": config.psd_min_hz,
+        "psd_max_hz": config.psd_max_hz,
+        "psd_bin_width": config.psd_bin_width,
+        "asymmetry_pairs": config.asymmetry_pairs,
+        "per_subject_normalize": config.per_subject_normalize,
         "window": config.window_seconds,
         "step": config.step_seconds,
     }
@@ -60,7 +67,15 @@ def _load_or_compute_features(
         config.feature_mode,
         window_samples=config.window_samples(),
         step_samples=config.step_samples(),
+        feature_set=config.feature_set,
+        psd_bands=config.psd_band_edges(),
+        asymmetry_pairs=config.asymmetry_indices(),
     )
+    if config.per_subject_normalize:
+        mean = features.mean(axis=0)
+        std = features.std(axis=0)
+        std[std < 1e-8] = 1.0
+        features = (features - mean) / std
 
     if config.use_cache:
         np.savez_compressed(cache_path, features=features, groups=groups)
@@ -82,7 +97,7 @@ def _evaluate(
     for train_idx, test_idx in split_iter:
         if len(np.unique(labels[train_idx])) < 2:
             continue
-        model = build_classifier(classifier, random_state)
+        model = build_model(classifier)
         model.fit(features[train_idx], labels[train_idx])
         preds = model.predict(features[test_idx])
         accuracies.append(accuracy_score(labels[test_idx], preds))
