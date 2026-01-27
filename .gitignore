@@ -1,6 +1,5 @@
 archive/
 cache/
-reports/
 .paper_cache/
 .pytest_cache/
 __pycache__/

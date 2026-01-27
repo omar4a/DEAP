@@ -1,0 +1,47 @@
+Live Checkpoint Summary
+feature_tag: repr_de_plv_mi_k200
+model: rbf_svm
+dimension: arousal
+completed_splits: 160 / 160
+last_update: subject 32, split 5/5
+last_trial_accuracy: 0.6250
+last_trial_balanced_accuracy: 0.5667
+last_trial_f1_macro: 0.5636
+last_trial_roc_auc: 0.6667
+last_window_accuracy: 0.6932
+overall_mean_trial_accuracy: 0.5734
+overall_std_trial_accuracy: 0.1057
+
+Per-subject mean trial accuracy (so far):
+  subject 1: trial=0.6000 window=0.6205 splits=5
+  subject 2: trial=0.6250 window=0.5614 splits=5
+  subject 3: trial=0.6750 window=0.5864 splits=5
+  subject 4: trial=0.4250 window=0.4932 splits=5
+  subject 5: trial=0.4500 window=0.5205 splits=5
+  subject 6: trial=0.5750 window=0.5341 splits=5
+  subject 7: trial=0.5250 window=0.5205 splits=5
+  subject 8: trial=0.4250 window=0.4205 splits=5
+  subject 9: trial=0.5750 window=0.5841 splits=5
+  subject 10: trial=0.5000 window=0.5591 splits=5
+  subject 11: trial=0.5000 window=0.4795 splits=5
+  subject 12: trial=0.7500 window=0.6568 splits=5
+  subject 13: trial=0.5500 window=0.5273 splits=5
+  subject 14: trial=0.4750 window=0.5455 splits=5
+  subject 15: trial=0.4500 window=0.5318 splits=5
+  subject 16: trial=0.6750 window=0.6636 splits=5
+  subject 17: trial=0.7250 window=0.6591 splits=5
+  subject 18: trial=0.5000 window=0.5250 splits=5
+  subject 19: trial=0.5750 window=0.4795 splits=5
+  subject 20: trial=0.6000 window=0.5659 splits=5
+  subject 21: trial=0.5750 window=0.6091 splits=5
+  subject 22: trial=0.6250 window=0.5682 splits=5
+  subject 23: trial=0.4500 window=0.4455 splits=5
+  subject 24: trial=0.5750 window=0.5773 splits=5
+  subject 25: trial=0.6750 window=0.6227 splits=5
+  subject 26: trial=0.5250 window=0.5591 splits=5
+  subject 27: trial=0.8500 window=0.7182 splits=5
+  subject 28: trial=0.4250 window=0.4886 splits=5
+  subject 29: trial=0.6750 window=0.6523 splits=5
+  subject 30: trial=0.5250 window=0.4955 splits=5
+  subject 31: trial=0.7500 window=0.6659 splits=5
+  subject 32: trial=0.5250 window=0.5591 splits=5

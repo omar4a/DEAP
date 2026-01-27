@@ -1,0 +1,47 @@
+Live Checkpoint Summary
+feature_tag: repr_de_pcc_plv
+model: rbf_svm
+dimension: arousal
+completed_splits: 160 / 160
+last_update: subject 32, split 5/5
+last_trial_accuracy: 0.5000
+last_trial_balanced_accuracy: 0.4667
+last_trial_f1_macro: 0.4667
+last_trial_roc_auc: 0.6667
+last_window_accuracy: 0.6932
+overall_mean_trial_accuracy: 0.5844
+overall_std_trial_accuracy: 0.1164
+
+Per-subject mean trial accuracy (so far):
+  subject 1: trial=0.6000 window=0.6091 splits=5
+  subject 2: trial=0.6000 window=0.5250 splits=5
+  subject 3: trial=0.6750 window=0.5795 splits=5
+  subject 4: trial=0.5000 window=0.4795 splits=5
+  subject 5: trial=0.4750 window=0.5227 splits=5
+  subject 6: trial=0.5250 window=0.5386 splits=5
+  subject 7: trial=0.5000 window=0.5045 splits=5
+  subject 8: trial=0.4000 window=0.4250 splits=5
+  subject 9: trial=0.6250 window=0.6205 splits=5
+  subject 10: trial=0.5250 window=0.5545 splits=5
+  subject 11: trial=0.4500 window=0.4705 splits=5
+  subject 12: trial=0.7750 window=0.6727 splits=5
+  subject 13: trial=0.5500 window=0.5364 splits=5
+  subject 14: trial=0.4250 window=0.4841 splits=5
+  subject 15: trial=0.4750 window=0.5386 splits=5
+  subject 16: trial=0.6750 window=0.6477 splits=5
+  subject 17: trial=0.7500 window=0.6705 splits=5
+  subject 18: trial=0.5000 window=0.5227 splits=5
+  subject 19: trial=0.6000 window=0.5000 splits=5
+  subject 20: trial=0.5750 window=0.5795 splits=5
+  subject 21: trial=0.6000 window=0.6523 splits=5
+  subject 22: trial=0.6250 window=0.5386 splits=5
+  subject 23: trial=0.4750 window=0.4545 splits=5
+  subject 24: trial=0.6000 window=0.6068 splits=5
+  subject 25: trial=0.7000 window=0.6341 splits=5
+  subject 26: trial=0.6250 window=0.5500 splits=5
+  subject 27: trial=0.8750 window=0.7182 splits=5
+  subject 28: trial=0.4500 window=0.4977 splits=5
+  subject 29: trial=0.8000 window=0.6682 splits=5
+  subject 30: trial=0.5000 window=0.4659 splits=5
+  subject 31: trial=0.7500 window=0.6659 splits=5
+  subject 32: trial=0.5000 window=0.5523 splits=5

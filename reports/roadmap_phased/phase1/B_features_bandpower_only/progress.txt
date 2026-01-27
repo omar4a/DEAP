@@ -1,0 +1,1 @@
+[05:10:50] B_features_bandpower_only model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750

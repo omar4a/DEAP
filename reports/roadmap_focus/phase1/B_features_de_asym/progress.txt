@@ -1,0 +1,1 @@
+[13:09:11] B_features_de_asym model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.875

@@ -1,0 +1,47 @@
+Live Checkpoint Summary
+feature_tag: full_w10_s5
+model: rbf_svm
+dimension: arousal
+completed_splits: 96 / 96
+last_update: subject 32, split 3/3
+last_trial_accuracy: 0.5000
+last_trial_balanced_accuracy: 0.5333
+last_trial_f1_macro: 0.5000
+last_trial_roc_auc: 0.7333
+last_window_accuracy: 0.5682
+overall_mean_trial_accuracy: 0.5872
+overall_std_trial_accuracy: 0.1414
+
+Per-subject mean trial accuracy (so far):
+  subject 1: trial=0.6250 window=0.6364 splits=3
+  subject 2: trial=0.6667 window=0.6023 splits=3
+  subject 3: trial=0.7083 window=0.6023 splits=3
+  subject 4: trial=0.5000 window=0.4886 splits=3
+  subject 5: trial=0.4583 window=0.5227 splits=3
+  subject 6: trial=0.5000 window=0.6250 splits=3
+  subject 7: trial=0.4583 window=0.4318 splits=3
+  subject 8: trial=0.3750 window=0.3295 splits=3
+  subject 9: trial=0.6250 window=0.5871 splits=3
+  subject 10: trial=0.5417 window=0.4962 splits=3
+  subject 11: trial=0.3750 window=0.4167 splits=3
+  subject 12: trial=0.7500 window=0.6856 splits=3
+  subject 13: trial=0.5000 window=0.4583 splits=3
+  subject 14: trial=0.5000 window=0.5568 splits=3
+  subject 15: trial=0.4583 window=0.5114 splits=3
+  subject 16: trial=0.7500 window=0.6970 splits=3
+  subject 17: trial=0.7500 window=0.7045 splits=3
+  subject 18: trial=0.5417 window=0.4470 splits=3
+  subject 19: trial=0.5833 window=0.5189 splits=3
+  subject 20: trial=0.7500 window=0.5985 splits=3
+  subject 21: trial=0.7500 window=0.7121 splits=3
+  subject 22: trial=0.4583 window=0.5038 splits=3
+  subject 23: trial=0.4167 window=0.4848 splits=3
+  subject 24: trial=0.7500 window=0.5947 splits=3
+  subject 25: trial=0.7083 window=0.7235 splits=3
+  subject 26: trial=0.4583 window=0.5227 splits=3
+  subject 27: trial=0.8333 window=0.7197 splits=3
+  subject 28: trial=0.4583 window=0.4659 splits=3
+  subject 29: trial=0.7917 window=0.6742 splits=3
+  subject 30: trial=0.5833 window=0.6136 splits=3
+  subject 31: trial=0.7917 window=0.6932 splits=3
+  subject 32: trial=0.3750 window=0.4583 splits=3

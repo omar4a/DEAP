@@ -1,0 +1,1 @@
+[07:51:52] repr_de_asym model=rbf_svm dim=arousal subject=32 split 5/5 trial_acc=0.625

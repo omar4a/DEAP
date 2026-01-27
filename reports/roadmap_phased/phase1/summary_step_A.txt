@@ -1,0 +1,10 @@
+Roadmap Suite Summary
+
+Experiment A: Windowing
+  A_window_w2_s2: score=0.5656
+  A_window_w2_s1: score=0.5781
+  A_window_w4_s4: score=0.5594
+  A_window_w4_s2: score=0.5437
+  A_window_w8_s8: score=0.5562
+  A_window_w8_s4: score=0.5594
+Best window: A_window_w2_s1 (w=2.0, s=1.0) score=0.5781

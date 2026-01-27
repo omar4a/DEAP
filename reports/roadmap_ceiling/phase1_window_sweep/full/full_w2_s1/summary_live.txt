@@ -1,0 +1,47 @@
+Live Checkpoint Summary
+feature_tag: full_w2_s1
+model: rbf_svm
+dimension: arousal
+completed_splits: 96 / 96
+last_update: subject 32, split 3/3
+last_trial_accuracy: 0.6250
+last_trial_balanced_accuracy: 0.7000
+last_trial_f1_macro: 0.6190
+last_trial_roc_auc: 0.6000
+last_window_accuracy: 0.5867
+overall_mean_trial_accuracy: 0.5951
+overall_std_trial_accuracy: 0.1298
+
+Per-subject mean trial accuracy (so far):
+  subject 1: trial=0.5833 window=0.5605 splits=3
+  subject 2: trial=0.7083 window=0.6284 splits=3
+  subject 3: trial=0.7083 window=0.5968 splits=3
+  subject 4: trial=0.4167 window=0.4926 splits=3
+  subject 5: trial=0.5000 window=0.5101 splits=3
+  subject 6: trial=0.5000 window=0.5000 splits=3
+  subject 7: trial=0.4167 window=0.5027 splits=3
+  subject 8: trial=0.3750 window=0.4187 splits=3
+  subject 9: trial=0.6250 window=0.5733 splits=3
+  subject 10: trial=0.5833 window=0.5370 splits=3
+  subject 11: trial=0.3333 window=0.4200 splits=3
+  subject 12: trial=0.7083 window=0.6095 splits=3
+  subject 13: trial=0.5833 window=0.4839 splits=3
+  subject 14: trial=0.6250 window=0.5390 splits=3
+  subject 15: trial=0.5000 window=0.4845 splits=3
+  subject 16: trial=0.7917 window=0.7204 splits=3
+  subject 17: trial=0.7500 window=0.6821 splits=3
+  subject 18: trial=0.5833 window=0.5672 splits=3
+  subject 19: trial=0.5833 window=0.5255 splits=3
+  subject 20: trial=0.5833 window=0.5343 splits=3
+  subject 21: trial=0.7917 window=0.5585 splits=3
+  subject 22: trial=0.4583 window=0.5000 splits=3
+  subject 23: trial=0.5833 window=0.4825 splits=3
+  subject 24: trial=0.7500 window=0.5524 splits=3
+  subject 25: trial=0.7083 window=0.6761 splits=3
+  subject 26: trial=0.5000 window=0.5430 splits=3
+  subject 27: trial=0.8333 window=0.6559 splits=3
+  subject 28: trial=0.4583 window=0.4469 splits=3
+  subject 29: trial=0.6667 window=0.5853 splits=3
+  subject 30: trial=0.6250 window=0.5108 splits=3
+  subject 31: trial=0.7500 window=0.6774 splits=3
+  subject 32: trial=0.4583 window=0.4637 splits=3

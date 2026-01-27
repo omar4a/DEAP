@@ -1,0 +1,1 @@
+[17:14:45] repr_de_plv_mi_k300 model=rbf_svm dim=valence subject=28 split 4/5

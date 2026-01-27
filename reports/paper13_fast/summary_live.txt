@@ -1,0 +1,6 @@
+Paper 13 FAST - Live Progress (Grouped CV)
+========================================
+Completed: 32/32 subjects
+
+valence: 61.4% +/- 7.0% (n=32)
+arousal: 62.9% +/- 11.5% (n=32)

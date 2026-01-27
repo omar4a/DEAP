@@ -1,0 +1,8 @@
+Paper 13 FAST - FINAL RESULTS (Video-Level, Soft Vote)
+========================================
+XGBoost with DEFAULT parameters
+5-fold GROUPED CV by video (within-subject, no leakage)
+Aggregation: mean probability (soft vote)
+
+valence: 65.5% +/- 8.5%
+arousal: 66.2% +/- 12.9%

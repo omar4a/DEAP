@@ -1,0 +1,1 @@
+[12:47:31] A_window_w4_s2 model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750

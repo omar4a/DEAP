@@ -1,0 +1,291 @@
+DEAP Experiment Summary
+
+Config
+  data_dir: archive_gedai
+  eeg_channels: 32
+  bands: [['theta', 4.0, 8.0], ['alpha', 8.0, 13.0], ['beta', 13.0, 30.0], ['gamma', 30.0, 45.0]]
+  window_seconds: 6.0
+  step_seconds: 3.0
+  feature_mode: bandpower_log
+  feature_set: ['de']
+  feature_selection: none
+  mi_k: None
+  l1_c: 0.5
+  l1_alpha: 0.001
+  scaler: robust
+  pca_variance: None
+  label_mode: subject_mean
+  label_threshold: 5.0
+  label_bins: [3.0, 6.0]
+
+Splits
+  outer_repeats: 5
+  train_ratio: 0.8
+  inner_folds: 4
+  scoring: f1_macro
+  search_strategy: grid
+  search_trials: None
+
+Model: rbf_svm
+  Dimension: valence
+    overall_mean_trial_accuracy: 0.5898
+    overall_std_trial_accuracy: 0.1306
+    folds: 160
+    top_best_params:
+      {"clf__C": 30.0, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003} (n=40)
+      {"clf__C": 3.3333333333333335, "clf__class_weight": "balanced", "clf__gamma": 0.0001} (n=33)
+      {"clf__C": 3.3333333333333335, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003} (n=18)
+      {"clf__C": 10.0, "clf__class_weight": "balanced", "clf__gamma": 0.0001} (n=17)
+      {"clf__C": 30.0, "clf__class_weight": null, "clf__gamma": 0.00030000000000000003} (n=13)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.5000 (splits=5)
+      subject 2: 0.6500 (splits=5)
+      subject 3: 0.6750 (splits=5)
+      subject 4: 0.6250 (splits=5)
+      subject 5: 0.5000 (splits=5)
+      subject 6: 0.5000 (splits=5)
+      subject 7: 0.6250 (splits=5)
+      subject 8: 0.4750 (splits=5)
+      subject 9: 0.6500 (splits=5)
+      subject 10: 0.9000 (splits=5)
+      subject 11: 0.6000 (splits=5)
+      subject 12: 0.5000 (splits=5)
+      subject 13: 0.6750 (splits=5)
+      subject 14: 0.8000 (splits=5)
+      subject 15: 0.8250 (splits=5)
+      subject 16: 0.4500 (splits=5)
+      subject 17: 0.5250 (splits=5)
+      subject 18: 0.8500 (splits=5)
+      subject 19: 0.5500 (splits=5)
+      subject 20: 0.6000 (splits=5)
+      subject 21: 0.4000 (splits=5)
+      subject 22: 0.5250 (splits=5)
+      subject 23: 0.5500 (splits=5)
+      subject 24: 0.8000 (splits=5)
+      subject 25: 0.5750 (splits=5)
+      subject 26: 0.5500 (splits=5)
+      subject 27: 0.6500 (splits=5)
+      subject 28: 0.4000 (splits=5)
+      subject 29: 0.5250 (splits=5)
+      subject 30: 0.5000 (splits=5)
+      subject 31: 0.5500 (splits=5)
+      subject 32: 0.3750 (splits=5)
+  Dimension: arousal
+    overall_mean_trial_accuracy: 0.5867
+    overall_std_trial_accuracy: 0.1079
+    folds: 160
+    top_best_params:
+      {"clf__C": 30.0, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003} (n=45)
+      {"clf__C": 3.3333333333333335, "clf__class_weight": "balanced", "clf__gamma": 0.0001} (n=33)
+      {"clf__C": 10.0, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003} (n=17)
+      {"clf__C": 30.0, "clf__class_weight": "balanced", "clf__gamma": 0.0001} (n=16)
+      {"clf__C": 3.3333333333333335, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003} (n=16)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.6500 (splits=5)
+      subject 2: 0.6000 (splits=5)
+      subject 3: 0.5250 (splits=5)
+      subject 4: 0.5500 (splits=5)
+      subject 5: 0.5250 (splits=5)
+      subject 6: 0.5500 (splits=5)
+      subject 7: 0.6750 (splits=5)
+      subject 8: 0.4250 (splits=5)
+      subject 9: 0.6000 (splits=5)
+      subject 10: 0.6000 (splits=5)
+      subject 11: 0.5000 (splits=5)
+      subject 12: 0.6500 (splits=5)
+      subject 13: 0.6250 (splits=5)
+      subject 14: 0.5500 (splits=5)
+      subject 15: 0.6000 (splits=5)
+      subject 16: 0.7500 (splits=5)
+      subject 17: 0.7000 (splits=5)
+      subject 18: 0.5750 (splits=5)
+      subject 19: 0.5500 (splits=5)
+      subject 20: 0.6000 (splits=5)
+      subject 21: 0.5750 (splits=5)
+      subject 22: 0.5750 (splits=5)
+      subject 23: 0.4000 (splits=5)
+      subject 24: 0.5750 (splits=5)
+      subject 25: 0.7250 (splits=5)
+      subject 26: 0.5750 (splits=5)
+      subject 27: 0.8750 (splits=5)
+      subject 28: 0.3750 (splits=5)
+      subject 29: 0.6250 (splits=5)
+      subject 30: 0.3750 (splits=5)
+      subject 31: 0.7750 (splits=5)
+      subject 32: 0.5250 (splits=5)
+
+Model: hgb
+  Dimension: valence
+    overall_mean_trial_accuracy: 0.5984
+    overall_std_trial_accuracy: 0.1164
+    folds: 160
+    top_best_params:
+      {"clf__learning_rate": 0.05, "clf__max_depth": 3, "clf__max_iter": 200} (n=24)
+      {"clf__learning_rate": 0.05, "clf__max_depth": null, "clf__max_iter": 200} (n=21)
+      {"clf__learning_rate": 0.1, "clf__max_depth": 5, "clf__max_iter": 400} (n=17)
+      {"clf__learning_rate": 0.1, "clf__max_depth": 3, "clf__max_iter": 400} (n=15)
+      {"clf__learning_rate": 0.1, "clf__max_depth": null, "clf__max_iter": 200} (n=15)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.5250 (splits=5)
+      subject 2: 0.6500 (splits=5)
+      subject 3: 0.6500 (splits=5)
+      subject 4: 0.5750 (splits=5)
+      subject 5: 0.6000 (splits=5)
+      subject 6: 0.5750 (splits=5)
+      subject 7: 0.7250 (splits=5)
+      subject 8: 0.6000 (splits=5)
+      subject 9: 0.5500 (splits=5)
+      subject 10: 0.8750 (splits=5)
+      subject 11: 0.5500 (splits=5)
+      subject 12: 0.6250 (splits=5)
+      subject 13: 0.6000 (splits=5)
+      subject 14: 0.8250 (splits=5)
+      subject 15: 0.7750 (splits=5)
+      subject 16: 0.4250 (splits=5)
+      subject 17: 0.4000 (splits=5)
+      subject 18: 0.8500 (splits=5)
+      subject 19: 0.5750 (splits=5)
+      subject 20: 0.6000 (splits=5)
+      subject 21: 0.3750 (splits=5)
+      subject 22: 0.5750 (splits=5)
+      subject 23: 0.5250 (splits=5)
+      subject 24: 0.6750 (splits=5)
+      subject 25: 0.5000 (splits=5)
+      subject 26: 0.6000 (splits=5)
+      subject 27: 0.6500 (splits=5)
+      subject 28: 0.5750 (splits=5)
+      subject 29: 0.5250 (splits=5)
+      subject 30: 0.5250 (splits=5)
+      subject 31: 0.6250 (splits=5)
+      subject 32: 0.4500 (splits=5)
+  Dimension: arousal
+    overall_mean_trial_accuracy: 0.5648
+    overall_std_trial_accuracy: 0.0994
+    folds: 160
+    top_best_params:
+      {"clf__learning_rate": 0.05, "clf__max_depth": 3, "clf__max_iter": 200} (n=17)
+      {"clf__learning_rate": 0.05, "clf__max_depth": null, "clf__max_iter": 200} (n=17)
+      {"clf__learning_rate": 0.1, "clf__max_depth": 3, "clf__max_iter": 400} (n=17)
+      {"clf__learning_rate": 0.05, "clf__max_depth": 5, "clf__max_iter": 200} (n=16)
+      {"clf__learning_rate": 0.05, "clf__max_depth": null, "clf__max_iter": 400} (n=15)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.6250 (splits=5)
+      subject 2: 0.5750 (splits=5)
+      subject 3: 0.6250 (splits=5)
+      subject 4: 0.4750 (splits=5)
+      subject 5: 0.4250 (splits=5)
+      subject 6: 0.5000 (splits=5)
+      subject 7: 0.5000 (splits=5)
+      subject 8: 0.4000 (splits=5)
+      subject 9: 0.6250 (splits=5)
+      subject 10: 0.5500 (splits=5)
+      subject 11: 0.5250 (splits=5)
+      subject 12: 0.6250 (splits=5)
+      subject 13: 0.6000 (splits=5)
+      subject 14: 0.4500 (splits=5)
+      subject 15: 0.4000 (splits=5)
+      subject 16: 0.7000 (splits=5)
+      subject 17: 0.7250 (splits=5)
+      subject 18: 0.6500 (splits=5)
+      subject 19: 0.5500 (splits=5)
+      subject 20: 0.5500 (splits=5)
+      subject 21: 0.6000 (splits=5)
+      subject 22: 0.5250 (splits=5)
+      subject 23: 0.5250 (splits=5)
+      subject 24: 0.6000 (splits=5)
+      subject 25: 0.6500 (splits=5)
+      subject 26: 0.5000 (splits=5)
+      subject 27: 0.8250 (splits=5)
+      subject 28: 0.4000 (splits=5)
+      subject 29: 0.7000 (splits=5)
+      subject 30: 0.5000 (splits=5)
+      subject 31: 0.6500 (splits=5)
+      subject 32: 0.5250 (splits=5)
+
+Model: soft_vote
+  Dimension: valence
+    overall_mean_trial_accuracy: 0.5938
+    overall_std_trial_accuracy: 0.1223
+    folds: 160
+    top_best_params:
+      {"hgb": {"clf__learning_rate": 0.1, "clf__max_depth": null, "clf__max_iter": 400}, "logreg": {"clf__C": 0.1}, "rbf_svm": {"clf__C": 3.3333333333333335, "clf__class_weight": "balanced", "clf__gamma": 0.0001}} (n=5)
+      {"hgb": {"clf__learning_rate": 0.05, "clf__max_depth": null, "clf__max_iter": 200}, "logreg": {"clf__C": 0.1}, "rbf_svm": {"clf__C": 10.0, "clf__class_weight": "balanced", "clf__gamma": 0.0001}} (n=5)
+      {"hgb": {"clf__learning_rate": 0.05, "clf__max_depth": 3, "clf__max_iter": 200}, "logreg": {"clf__C": 0.1}, "rbf_svm": {"clf__C": 3.3333333333333335, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003}} (n=4)
+      {"hgb": {"clf__learning_rate": 0.1, "clf__max_depth": 3, "clf__max_iter": 400}, "logreg": {"clf__C": 10.0}, "rbf_svm": {"clf__C": 30.0, "clf__class_weight": null, "clf__gamma": 0.00030000000000000003}} (n=4)
+      {"hgb": {"clf__learning_rate": 0.05, "clf__max_depth": 3, "clf__max_iter": 200}, "logreg": {"clf__C": 0.1}, "rbf_svm": {"clf__C": 30.0, "clf__class_weight": "balanced", "clf__gamma": 0.0001}} (n=3)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.4500 (splits=5)
+      subject 2: 0.6250 (splits=5)
+      subject 3: 0.6500 (splits=5)
+      subject 4: 0.5000 (splits=5)
+      subject 5: 0.5000 (splits=5)
+      subject 6: 0.5000 (splits=5)
+      subject 7: 0.7000 (splits=5)
+      subject 8: 0.6250 (splits=5)
+      subject 9: 0.6250 (splits=5)
+      subject 10: 0.8750 (splits=5)
+      subject 11: 0.5500 (splits=5)
+      subject 12: 0.6250 (splits=5)
+      subject 13: 0.6250 (splits=5)
+      subject 14: 0.8250 (splits=5)
+      subject 15: 0.7750 (splits=5)
+      subject 16: 0.4500 (splits=5)
+      subject 17: 0.4500 (splits=5)
+      subject 18: 0.8750 (splits=5)
+      subject 19: 0.6000 (splits=5)
+      subject 20: 0.6250 (splits=5)
+      subject 21: 0.3500 (splits=5)
+      subject 22: 0.5750 (splits=5)
+      subject 23: 0.5250 (splits=5)
+      subject 24: 0.7000 (splits=5)
+      subject 25: 0.5250 (splits=5)
+      subject 26: 0.5000 (splits=5)
+      subject 27: 0.6500 (splits=5)
+      subject 28: 0.5750 (splits=5)
+      subject 29: 0.5750 (splits=5)
+      subject 30: 0.5500 (splits=5)
+      subject 31: 0.6000 (splits=5)
+      subject 32: 0.4250 (splits=5)
+  Dimension: arousal
+    overall_mean_trial_accuracy: 0.5742
+    overall_std_trial_accuracy: 0.1089
+    folds: 160
+    top_best_params:
+      {"hgb": {"clf__learning_rate": 0.05, "clf__max_depth": 3, "clf__max_iter": 200}, "logreg": {"clf__C": 0.1}, "rbf_svm": {"clf__C": 3.3333333333333335, "clf__class_weight": "balanced", "clf__gamma": 0.0001}} (n=5)
+      {"hgb": {"clf__learning_rate": 0.05, "clf__max_depth": 5, "clf__max_iter": 200}, "logreg": {"clf__C": 1.0}, "rbf_svm": {"clf__C": 30.0, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003}} (n=4)
+      {"hgb": {"clf__learning_rate": 0.05, "clf__max_depth": null, "clf__max_iter": 200}, "logreg": {"clf__C": 0.1}, "rbf_svm": {"clf__C": 30.0, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003}} (n=4)
+      {"hgb": {"clf__learning_rate": 0.1, "clf__max_depth": 3, "clf__max_iter": 200}, "logreg": {"clf__C": 10.0}, "rbf_svm": {"clf__C": 30.0, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003}} (n=4)
+      {"hgb": {"clf__learning_rate": 0.05, "clf__max_depth": 5, "clf__max_iter": 200}, "logreg": {"clf__C": 10.0}, "rbf_svm": {"clf__C": 30.0, "clf__class_weight": "balanced", "clf__gamma": 0.00030000000000000003}} (n=3)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.6500 (splits=5)
+      subject 2: 0.5750 (splits=5)
+      subject 3: 0.6500 (splits=5)
+      subject 4: 0.4750 (splits=5)
+      subject 5: 0.4250 (splits=5)
+      subject 6: 0.4750 (splits=5)
+      subject 7: 0.5500 (splits=5)
+      subject 8: 0.4000 (splits=5)
+      subject 9: 0.6500 (splits=5)
+      subject 10: 0.5500 (splits=5)
+      subject 11: 0.5250 (splits=5)
+      subject 12: 0.6000 (splits=5)
+      subject 13: 0.5500 (splits=5)
+      subject 14: 0.4750 (splits=5)
+      subject 15: 0.4250 (splits=5)
+      subject 16: 0.7250 (splits=5)
+      subject 17: 0.8250 (splits=5)
+      subject 18: 0.5500 (splits=5)
+      subject 19: 0.6000 (splits=5)
+      subject 20: 0.6000 (splits=5)
+      subject 21: 0.6250 (splits=5)
+      subject 22: 0.5000 (splits=5)
+      subject 23: 0.4250 (splits=5)
+      subject 24: 0.6750 (splits=5)
+      subject 25: 0.6250 (splits=5)
+      subject 26: 0.5250 (splits=5)
+      subject 27: 0.8500 (splits=5)
+      subject 28: 0.4750 (splits=5)
+      subject 29: 0.7000 (splits=5)
+      subject 30: 0.5000 (splits=5)
+      subject 31: 0.6750 (splits=5)
+      subject 32: 0.5250 (splits=5)

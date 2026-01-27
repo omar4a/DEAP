@@ -1,0 +1,1 @@
+[11:22:26] repr_de_plv_mi_k100 model=rbf_svm dim=arousal subject=32 split 5/5 trial_acc=0.625

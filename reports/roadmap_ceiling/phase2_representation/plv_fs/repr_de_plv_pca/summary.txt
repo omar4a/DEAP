@@ -1,0 +1,129 @@
+DEAP Experiment Summary
+
+Config
+  data_dir: archive_gedai
+  eeg_channels: 32
+  bands: [['theta', 4.0, 8.0], ['alpha', 8.0, 13.0], ['beta', 13.0, 30.0], ['gamma', 30.0, 45.0]]
+  window_seconds: 10.0
+  step_seconds: 5.0
+  feature_mode: bandpower_log
+  feature_set: ['de', 'connectivity_plv']
+  feature_selection: none
+  mi_k: 200
+  l1_c: 0.5
+  l1_alpha: 0.001
+  scaler: robust
+  trial_aggregation: mean_prob
+  riemann_epsilon: 1e-06
+  pca_variance: 0.95
+  label_mode: subject_mean
+  label_threshold: 5.0
+  label_bins: [3.0, 6.0]
+
+Splits
+  outer_repeats: 5
+  train_ratio: 0.8
+  inner_folds: 4
+  scoring: f1_macro
+  search_strategy: random
+  search_trials: 40
+
+Model: rbf_svm
+  Dimension: valence
+    overall_mean_trial_accuracy: 0.5805
+    overall_std_trial_accuracy: 0.1287
+    overall_mean_trial_balanced_accuracy: 0.5788
+    overall_std_trial_balanced_accuracy: 0.1311
+    overall_mean_trial_f1_macro: 0.5257
+    overall_std_trial_f1_macro: 0.1435
+    overall_mean_trial_roc_auc: 0.6107
+    overall_std_trial_roc_auc: 0.1425
+    folds: 160
+    top_best_params:
+      {"clf__C": 13.411788774467905, "clf__class_weight": "balanced", "clf__gamma": 0.00026210878782654407} (n=20)
+      {"clf__C": 0.40069130793659025, "clf__class_weight": "balanced", "clf__gamma": 0.0014899847475658245} (n=19)
+      {"clf__C": 1.351144633701368, "clf__class_weight": "balanced", "clf__gamma": 0.015446089075047083} (n=12)
+      {"clf__C": 243.14537412227003, "clf__class_weight": "balanced", "clf__gamma": 0.0004992453416923984} (n=12)
+      {"clf__C": 183.42628625395747, "clf__class_weight": "balanced", "clf__gamma": 0.0001005394019469303} (n=9)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.5750 (splits=5)
+      subject 2: 0.6000 (splits=5)
+      subject 3: 0.6250 (splits=5)
+      subject 4: 0.4750 (splits=5)
+      subject 5: 0.4750 (splits=5)
+      subject 6: 0.4250 (splits=5)
+      subject 7: 0.6250 (splits=5)
+      subject 8: 0.6000 (splits=5)
+      subject 9: 0.6500 (splits=5)
+      subject 10: 0.9000 (splits=5)
+      subject 11: 0.5500 (splits=5)
+      subject 12: 0.5250 (splits=5)
+      subject 13: 0.7250 (splits=5)
+      subject 14: 0.7750 (splits=5)
+      subject 15: 0.8000 (splits=5)
+      subject 16: 0.4500 (splits=5)
+      subject 17: 0.5500 (splits=5)
+      subject 18: 0.8000 (splits=5)
+      subject 19: 0.5500 (splits=5)
+      subject 20: 0.5250 (splits=5)
+      subject 21: 0.3000 (splits=5)
+      subject 22: 0.4750 (splits=5)
+      subject 23: 0.5000 (splits=5)
+      subject 24: 0.8000 (splits=5)
+      subject 25: 0.5750 (splits=5)
+      subject 26: 0.5500 (splits=5)
+      subject 27: 0.6000 (splits=5)
+      subject 28: 0.5250 (splits=5)
+      subject 29: 0.5750 (splits=5)
+      subject 30: 0.4500 (splits=5)
+      subject 31: 0.6000 (splits=5)
+      subject 32: 0.4250 (splits=5)
+  Dimension: arousal
+    overall_mean_trial_accuracy: 0.5758
+    overall_std_trial_accuracy: 0.1073
+    overall_mean_trial_balanced_accuracy: 0.5614
+    overall_std_trial_balanced_accuracy: 0.1191
+    overall_mean_trial_f1_macro: 0.5057
+    overall_std_trial_f1_macro: 0.1189
+    overall_mean_trial_roc_auc: nan
+    overall_std_trial_roc_auc: nan
+    folds: 160
+    top_best_params:
+      {"clf__C": 13.411788774467905, "clf__class_weight": "balanced", "clf__gamma": 0.00026210878782654407} (n=21)
+      {"clf__C": 0.40069130793659025, "clf__class_weight": "balanced", "clf__gamma": 0.0014899847475658245} (n=19)
+      {"clf__C": 183.42628625395747, "clf__class_weight": "balanced", "clf__gamma": 0.0001005394019469303} (n=17)
+      {"clf__C": 243.14537412227003, "clf__class_weight": "balanced", "clf__gamma": 0.0004992453416923984} (n=14)
+      {"clf__C": 0.4342298948286134, "clf__class_weight": "balanced", "clf__gamma": 0.0008179499475211679} (n=10)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.6000 (splits=5)
+      subject 2: 0.6250 (splits=5)
+      subject 3: 0.6750 (splits=5)
+      subject 4: 0.4500 (splits=5)
+      subject 5: 0.4750 (splits=5)
+      subject 6: 0.5750 (splits=5)
+      subject 7: 0.5250 (splits=5)
+      subject 8: 0.4250 (splits=5)
+      subject 9: 0.5750 (splits=5)
+      subject 10: 0.5000 (splits=5)
+      subject 11: 0.5000 (splits=5)
+      subject 12: 0.7500 (splits=5)
+      subject 13: 0.5500 (splits=5)
+      subject 14: 0.4750 (splits=5)
+      subject 15: 0.4250 (splits=5)
+      subject 16: 0.6750 (splits=5)
+      subject 17: 0.7250 (splits=5)
+      subject 18: 0.5250 (splits=5)
+      subject 19: 0.5750 (splits=5)
+      subject 20: 0.6250 (splits=5)
+      subject 21: 0.6000 (splits=5)
+      subject 22: 0.6250 (splits=5)
+      subject 23: 0.4750 (splits=5)
+      subject 24: 0.5750 (splits=5)
+      subject 25: 0.6500 (splits=5)
+      subject 26: 0.5500 (splits=5)
+      subject 27: 0.8500 (splits=5)
+      subject 28: 0.4250 (splits=5)
+      subject 29: 0.7250 (splits=5)
+      subject 30: 0.4500 (splits=5)
+      subject 31: 0.7500 (splits=5)
+      subject 32: 0.5000 (splits=5)

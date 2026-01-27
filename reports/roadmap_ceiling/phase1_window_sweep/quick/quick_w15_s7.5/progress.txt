@@ -1,0 +1,1 @@
+[17:56:06] quick_w15_s7.5 model=rbf_svm dim=arousal subject=12 split 2/2 trial_acc=0.500

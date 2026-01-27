@@ -1,0 +1,1 @@
+[05:26:07] B_features_de_bandpower model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.500

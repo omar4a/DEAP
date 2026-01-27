@@ -1,0 +1,21 @@
+LEAKY MAX-ACCURACY EXPERIMENT (XGBoost)
+WARNING: WINDOWS ARE POOLED ACROSS SUBJECTS/VIDEOS (LEAKAGE)
+============================================================
+Samples: 49920 | Features: 312
+Window: 3.0s | Step: 1.5s
+Label threshold: 5.0
+Bands: (('theta', 4.0, 8.0), ('alpha', 8.0, 13.0), ('beta', 13.0, 30.0), ('gamma', 30.0, 45.0))
+Features: DE + log bandpower + asymmetry (DE & logpower)
+
+valence:
+  best CV acc (search): 80.85%
+  re-eval mean: 80.85% ± 0.50%
+  fold accs: ['81.41%', '80.61%', '80.43%', '80.32%', '81.48%']
+  best params: {'clf__colsample_bytree': np.float64(0.7471132530877013), 'clf__learning_rate': np.float64(0.04288504109627157), 'clf__max_depth': 8, 'clf__n_estimators': 1481, 'clf__reg_lambda': np.float64(3.433797531418576), 'clf__subsample': np.float64(0.7270869310163225)}
+
+arousal:
+  best CV acc (search): 81.94%
+  re-eval mean: 81.94% ± 0.51%
+  fold accs: ['82.31%', '82.50%', '81.84%', '81.03%', '82.02%']
+  best params: {'clf__colsample_bytree': np.float64(0.7471132530877013), 'clf__learning_rate': np.float64(0.04288504109627157), 'clf__max_depth': 8, 'clf__n_estimators': 1481, 'clf__reg_lambda': np.float64(3.433797531418576), 'clf__subsample': np.float64(0.7270869310163225)}
+

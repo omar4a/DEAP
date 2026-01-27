@@ -1,0 +1,39 @@
+{
+  "window_seconds": 6.0,
+  "step_seconds": 3.0,
+  "feature_set": [
+    "de"
+  ],
+  "bands": [
+    [
+      "theta",
+      4.0,
+      8.0
+    ],
+    [
+      "alpha",
+      8.0,
+      13.0
+    ],
+    [
+      "beta",
+      13.0,
+      30.0
+    ],
+    [
+      "gamma",
+      30.0,
+      45.0
+    ]
+  ],
+  "feature_selection": "none",
+  "mi_k": null,
+  "pca_variance": null,
+  "l1_c": 0.5,
+  "l1_alpha": 0.001,
+  "best_rbf_params": {
+    "clf__C": 10.0,
+    "clf__class_weight": "balanced",
+    "clf__gamma": 0.0001
+  }
+}

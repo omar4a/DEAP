@@ -1,0 +1,24 @@
+Roadmap Suite Summary
+
+Experiment A: Windowing
+  A_window_w4_s2: score=0.5625
+  A_window_w6_s3: score=0.5750
+Best window: A_window_w6_s3 (w=6.0, s=3.0) score=0.5750
+
+Experiment B: Feature Ablation
+  B_features_de_only: score=0.5969
+  B_features_de_asym: score=0.5938
+  B_features_de_bandpower: score=0.5531
+Best features: B_features_de_only set=('de',) score=0.5969
+
+Experiment C: Band Set
+  C_bands_no_delta: score=0.5969
+Best bands: C_bands_no_delta score=0.5969
+
+Experiment D: Feature Selection
+  D_select_none: mode=none mi_k=None pca=None l1_c=None score=0.5969
+  D_select_mi_k200: mode=mi mi_k=200 pca=None l1_c=None score=0.5969
+  D_select_l1_c0p1: mode=l1 mi_k=None pca=None l1_c=0.1 score=0.5656
+  D_select_l1_c0p5: mode=l1 mi_k=None pca=None l1_c=0.5 score=0.5656
+  D_select_l1_c1: mode=l1 mi_k=None pca=None l1_c=1.0 score=0.5844
+Best selection: D_select_none mode=none mi_k=None pca=None l1_c=0.5 score=0.5969

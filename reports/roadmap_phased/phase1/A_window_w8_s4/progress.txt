@@ -1,0 +1,1 @@
+[02:07:31] A_window_w8_s4 model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.875

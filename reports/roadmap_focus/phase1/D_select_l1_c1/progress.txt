@@ -1,0 +1,1 @@
+[14:03:30] D_select_l1_c1 model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.625

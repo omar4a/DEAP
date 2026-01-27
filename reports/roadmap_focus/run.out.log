@@ -1,0 +1,911 @@
+[12:27:22] Starting A_window_w4_s2
+[12:27:26] A_window_w4_s2 model=rbf_svm dim=valence subject=1 split 1/2
+[12:28:00] A_window_w4_s2 model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.250
+[12:28:00] A_window_w4_s2 model=rbf_svm dim=valence subject=1 split 2/2
+[12:28:32] A_window_w4_s2 model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.500
+[12:28:32] A_window_w4_s2 model=rbf_svm dim=valence subject=2 split 1/2
+[12:29:04] A_window_w4_s2 model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.250
+[12:29:04] A_window_w4_s2 model=rbf_svm dim=valence subject=2 split 2/2
+[12:29:34] A_window_w4_s2 model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.625
+[12:29:34] A_window_w4_s2 model=rbf_svm dim=valence subject=3 split 1/2
+[12:30:03] A_window_w4_s2 model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[12:30:03] A_window_w4_s2 model=rbf_svm dim=valence subject=3 split 2/2
+[12:30:32] A_window_w4_s2 model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.875
+[12:30:32] A_window_w4_s2 model=rbf_svm dim=valence subject=4 split 1/2
+[12:31:06] A_window_w4_s2 model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.250
+[12:31:06] A_window_w4_s2 model=rbf_svm dim=valence subject=4 split 2/2
+[12:31:39] A_window_w4_s2 model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.500
+[12:31:39] A_window_w4_s2 model=rbf_svm dim=valence subject=5 split 1/2
+[12:32:11] A_window_w4_s2 model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.375
+[12:32:11] A_window_w4_s2 model=rbf_svm dim=valence subject=5 split 2/2
+[12:32:43] A_window_w4_s2 model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.375
+[12:32:43] A_window_w4_s2 model=rbf_svm dim=valence subject=6 split 1/2
+[12:33:11] A_window_w4_s2 model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[12:33:11] A_window_w4_s2 model=rbf_svm dim=valence subject=6 split 2/2
+[12:33:41] A_window_w4_s2 model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.500
+[12:33:41] A_window_w4_s2 model=rbf_svm dim=valence subject=7 split 1/2
+[12:34:09] A_window_w4_s2 model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[12:34:09] A_window_w4_s2 model=rbf_svm dim=valence subject=7 split 2/2
+[12:34:38] A_window_w4_s2 model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.625
+[12:34:38] A_window_w4_s2 model=rbf_svm dim=valence subject=8 split 1/2
+[12:35:07] A_window_w4_s2 model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.375
+[12:35:07] A_window_w4_s2 model=rbf_svm dim=valence subject=8 split 2/2
+[12:35:35] A_window_w4_s2 model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.500
+[12:35:35] A_window_w4_s2 model=rbf_svm dim=valence subject=9 split 1/2
+[12:36:02] A_window_w4_s2 model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.500
+[12:36:02] A_window_w4_s2 model=rbf_svm dim=valence subject=9 split 2/2
+[12:36:28] A_window_w4_s2 model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.750
+[12:36:28] A_window_w4_s2 model=rbf_svm dim=valence subject=10 split 1/2
+[12:36:59] A_window_w4_s2 model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[12:36:59] A_window_w4_s2 model=rbf_svm dim=valence subject=10 split 2/2
+[12:37:29] A_window_w4_s2 model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=0.875
+[12:37:29] A_window_w4_s2 model=rbf_svm dim=arousal subject=1 split 1/2
+[12:38:03] A_window_w4_s2 model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.750
+[12:38:03] A_window_w4_s2 model=rbf_svm dim=arousal subject=1 split 2/2
+[12:38:32] A_window_w4_s2 model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.750
+[12:38:32] A_window_w4_s2 model=rbf_svm dim=arousal subject=2 split 1/2
+[12:39:01] A_window_w4_s2 model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.875
+[12:39:01] A_window_w4_s2 model=rbf_svm dim=arousal subject=2 split 2/2
+[12:39:30] A_window_w4_s2 model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.875
+[12:39:30] A_window_w4_s2 model=rbf_svm dim=arousal subject=3 split 1/2
+[12:39:59] A_window_w4_s2 model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.625
+[12:39:59] A_window_w4_s2 model=rbf_svm dim=arousal subject=3 split 2/2
+[12:40:29] A_window_w4_s2 model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.625
+[12:40:29] A_window_w4_s2 model=rbf_svm dim=arousal subject=4 split 1/2
+[12:41:01] A_window_w4_s2 model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.625
+[12:41:01] A_window_w4_s2 model=rbf_svm dim=arousal subject=4 split 2/2
+[12:41:31] A_window_w4_s2 model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[12:41:31] A_window_w4_s2 model=rbf_svm dim=arousal subject=5 split 1/2
+[12:42:00] A_window_w4_s2 model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.375
+[12:42:00] A_window_w4_s2 model=rbf_svm dim=arousal subject=5 split 2/2
+[12:42:29] A_window_w4_s2 model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.625
+[12:42:29] A_window_w4_s2 model=rbf_svm dim=arousal subject=6 split 1/2
+[12:43:08] A_window_w4_s2 model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.500
+[12:43:08] A_window_w4_s2 model=rbf_svm dim=arousal subject=6 split 2/2
+[12:43:38] A_window_w4_s2 model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[12:43:38] A_window_w4_s2 model=rbf_svm dim=arousal subject=7 split 1/2
+[12:44:08] A_window_w4_s2 model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.625
+[12:44:08] A_window_w4_s2 model=rbf_svm dim=arousal subject=7 split 2/2
+[12:44:38] A_window_w4_s2 model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[12:44:38] A_window_w4_s2 model=rbf_svm dim=arousal subject=8 split 1/2
+[12:45:06] A_window_w4_s2 model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.125
+[12:45:06] A_window_w4_s2 model=rbf_svm dim=arousal subject=8 split 2/2
+[12:45:35] A_window_w4_s2 model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.500
+[12:45:35] A_window_w4_s2 model=rbf_svm dim=arousal subject=9 split 1/2
+[12:46:04] A_window_w4_s2 model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.375
+[12:46:04] A_window_w4_s2 model=rbf_svm dim=arousal subject=9 split 2/2
+[12:46:34] A_window_w4_s2 model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.500
+[12:46:34] A_window_w4_s2 model=rbf_svm dim=arousal subject=10 split 1/2
+[12:47:02] A_window_w4_s2 model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.625
+[12:47:02] A_window_w4_s2 model=rbf_svm dim=arousal subject=10 split 2/2
+[12:47:31] A_window_w4_s2 model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750
+[12:47:31] Finished A_window_w4_s2 in 20.2 min
+[12:47:31] Starting A_window_w6_s3
+[12:47:35] A_window_w6_s3 model=rbf_svm dim=valence subject=1 split 1/2
+[12:47:50] A_window_w6_s3 model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.375
+[12:47:50] A_window_w6_s3 model=rbf_svm dim=valence subject=1 split 2/2
+[12:48:06] A_window_w6_s3 model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.625
+[12:48:06] A_window_w6_s3 model=rbf_svm dim=valence subject=2 split 1/2
+[12:48:21] A_window_w6_s3 model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.250
+[12:48:21] A_window_w6_s3 model=rbf_svm dim=valence subject=2 split 2/2
+[12:48:36] A_window_w6_s3 model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.625
+[12:48:37] A_window_w6_s3 model=rbf_svm dim=valence subject=3 split 1/2
+[12:48:51] A_window_w6_s3 model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[12:48:51] A_window_w6_s3 model=rbf_svm dim=valence subject=3 split 2/2
+[12:49:07] A_window_w6_s3 model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.875
+[12:49:07] A_window_w6_s3 model=rbf_svm dim=valence subject=4 split 1/2
+[12:49:23] A_window_w6_s3 model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.250
+[12:49:23] A_window_w6_s3 model=rbf_svm dim=valence subject=4 split 2/2
+[12:49:39] A_window_w6_s3 model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.625
+[12:49:39] A_window_w6_s3 model=rbf_svm dim=valence subject=5 split 1/2
+[12:49:55] A_window_w6_s3 model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.375
+[12:49:55] A_window_w6_s3 model=rbf_svm dim=valence subject=5 split 2/2
+[12:50:10] A_window_w6_s3 model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.500
+[12:50:11] A_window_w6_s3 model=rbf_svm dim=valence subject=6 split 1/2
+[12:50:26] A_window_w6_s3 model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[12:50:26] A_window_w6_s3 model=rbf_svm dim=valence subject=6 split 2/2
+[12:50:42] A_window_w6_s3 model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.750
+[12:50:42] A_window_w6_s3 model=rbf_svm dim=valence subject=7 split 1/2
+[12:50:57] A_window_w6_s3 model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[12:50:57] A_window_w6_s3 model=rbf_svm dim=valence subject=7 split 2/2
+[12:51:15] A_window_w6_s3 model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.500
+[12:51:16] A_window_w6_s3 model=rbf_svm dim=valence subject=8 split 1/2
+[12:51:31] A_window_w6_s3 model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[12:51:31] A_window_w6_s3 model=rbf_svm dim=valence subject=8 split 2/2
+[12:51:46] A_window_w6_s3 model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.625
+[12:51:46] A_window_w6_s3 model=rbf_svm dim=valence subject=9 split 1/2
+[12:52:01] A_window_w6_s3 model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.500
+[12:52:01] A_window_w6_s3 model=rbf_svm dim=valence subject=9 split 2/2
+[12:52:15] A_window_w6_s3 model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.750
+[12:52:16] A_window_w6_s3 model=rbf_svm dim=valence subject=10 split 1/2
+[12:52:31] A_window_w6_s3 model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[12:52:31] A_window_w6_s3 model=rbf_svm dim=valence subject=10 split 2/2
+[12:52:46] A_window_w6_s3 model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=0.875
+[12:52:46] A_window_w6_s3 model=rbf_svm dim=arousal subject=1 split 1/2
+[12:53:01] A_window_w6_s3 model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.750
+[12:53:01] A_window_w6_s3 model=rbf_svm dim=arousal subject=1 split 2/2
+[12:53:16] A_window_w6_s3 model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.750
+[12:53:16] A_window_w6_s3 model=rbf_svm dim=arousal subject=2 split 1/2
+[12:53:32] A_window_w6_s3 model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.625
+[12:53:32] A_window_w6_s3 model=rbf_svm dim=arousal subject=2 split 2/2
+[12:53:47] A_window_w6_s3 model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.750
+[12:53:47] A_window_w6_s3 model=rbf_svm dim=arousal subject=3 split 1/2
+[12:54:02] A_window_w6_s3 model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.625
+[12:54:02] A_window_w6_s3 model=rbf_svm dim=arousal subject=3 split 2/2
+[12:54:17] A_window_w6_s3 model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.375
+[12:54:17] A_window_w6_s3 model=rbf_svm dim=arousal subject=4 split 1/2
+[12:54:33] A_window_w6_s3 model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.750
+[12:54:33] A_window_w6_s3 model=rbf_svm dim=arousal subject=4 split 2/2
+[12:54:49] A_window_w6_s3 model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[12:54:49] A_window_w6_s3 model=rbf_svm dim=arousal subject=5 split 1/2
+[12:55:04] A_window_w6_s3 model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.250
+[12:55:04] A_window_w6_s3 model=rbf_svm dim=arousal subject=5 split 2/2
+[12:55:19] A_window_w6_s3 model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.625
+[12:55:19] A_window_w6_s3 model=rbf_svm dim=arousal subject=6 split 1/2
+[12:55:34] A_window_w6_s3 model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.500
+[12:55:34] A_window_w6_s3 model=rbf_svm dim=arousal subject=6 split 2/2
+[12:55:49] A_window_w6_s3 model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[12:55:49] A_window_w6_s3 model=rbf_svm dim=arousal subject=7 split 1/2
+[12:56:04] A_window_w6_s3 model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.375
+[12:56:04] A_window_w6_s3 model=rbf_svm dim=arousal subject=7 split 2/2
+[12:56:19] A_window_w6_s3 model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[12:56:19] A_window_w6_s3 model=rbf_svm dim=arousal subject=8 split 1/2
+[12:56:34] A_window_w6_s3 model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.250
+[12:56:34] A_window_w6_s3 model=rbf_svm dim=arousal subject=8 split 2/2
+[12:56:50] A_window_w6_s3 model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.500
+[12:56:50] A_window_w6_s3 model=rbf_svm dim=arousal subject=9 split 1/2
+[12:57:05] A_window_w6_s3 model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.500
+[12:57:05] A_window_w6_s3 model=rbf_svm dim=arousal subject=9 split 2/2
+[12:57:20] A_window_w6_s3 model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.500
+[12:57:20] A_window_w6_s3 model=rbf_svm dim=arousal subject=10 split 1/2
+[12:57:34] A_window_w6_s3 model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.625
+[12:57:34] A_window_w6_s3 model=rbf_svm dim=arousal subject=10 split 2/2
+[12:57:49] A_window_w6_s3 model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750
+[12:57:49] Finished A_window_w6_s3 in 10.3 min
+[12:57:49] Wrote reports\roadmap_focus\phase1\summary_step_A.txt
+[12:57:49] Starting B_features_de_only
+[12:57:53] B_features_de_only model=rbf_svm dim=valence subject=1 split 1/2
+[12:58:00] B_features_de_only model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.375
+[12:58:00] B_features_de_only model=rbf_svm dim=valence subject=1 split 2/2
+[12:58:08] B_features_de_only model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.625
+[12:58:08] B_features_de_only model=rbf_svm dim=valence subject=2 split 1/2
+[12:58:16] B_features_de_only model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.625
+[12:58:16] B_features_de_only model=rbf_svm dim=valence subject=2 split 2/2
+[12:58:23] B_features_de_only model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.625
+[12:58:23] B_features_de_only model=rbf_svm dim=valence subject=3 split 1/2
+[12:58:30] B_features_de_only model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[12:58:30] B_features_de_only model=rbf_svm dim=valence subject=3 split 2/2
+[12:58:37] B_features_de_only model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.750
+[12:58:38] B_features_de_only model=rbf_svm dim=valence subject=4 split 1/2
+[12:58:45] B_features_de_only model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.750
+[12:58:45] B_features_de_only model=rbf_svm dim=valence subject=4 split 2/2
+[12:58:53] B_features_de_only model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.500
+[12:58:53] B_features_de_only model=rbf_svm dim=valence subject=5 split 1/2
+[12:59:01] B_features_de_only model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.500
+[12:59:01] B_features_de_only model=rbf_svm dim=valence subject=5 split 2/2
+[12:59:09] B_features_de_only model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.500
+[12:59:09] B_features_de_only model=rbf_svm dim=valence subject=6 split 1/2
+[12:59:16] B_features_de_only model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[12:59:16] B_features_de_only model=rbf_svm dim=valence subject=6 split 2/2
+[12:59:24] B_features_de_only model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.625
+[12:59:24] B_features_de_only model=rbf_svm dim=valence subject=7 split 1/2
+[12:59:31] B_features_de_only model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[12:59:31] B_features_de_only model=rbf_svm dim=valence subject=7 split 2/2
+[12:59:39] B_features_de_only model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.375
+[12:59:39] B_features_de_only model=rbf_svm dim=valence subject=8 split 1/2
+[12:59:47] B_features_de_only model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[12:59:47] B_features_de_only model=rbf_svm dim=valence subject=8 split 2/2
+[12:59:54] B_features_de_only model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.500
+[12:59:55] B_features_de_only model=rbf_svm dim=valence subject=9 split 1/2
+[13:00:02] B_features_de_only model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.500
+[13:00:02] B_features_de_only model=rbf_svm dim=valence subject=9 split 2/2
+[13:00:09] B_features_de_only model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.750
+[13:00:09] B_features_de_only model=rbf_svm dim=valence subject=10 split 1/2
+[13:00:16] B_features_de_only model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[13:00:16] B_features_de_only model=rbf_svm dim=valence subject=10 split 2/2
+[13:00:23] B_features_de_only model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=1.000
+[13:00:23] B_features_de_only model=rbf_svm dim=arousal subject=1 split 1/2
+[13:00:31] B_features_de_only model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.750
+[13:00:31] B_features_de_only model=rbf_svm dim=arousal subject=1 split 2/2
+[13:00:38] B_features_de_only model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.500
+[13:00:38] B_features_de_only model=rbf_svm dim=arousal subject=2 split 1/2
+[13:00:45] B_features_de_only model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.625
+[13:00:45] B_features_de_only model=rbf_svm dim=arousal subject=2 split 2/2
+[13:00:53] B_features_de_only model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.750
+[13:00:53] B_features_de_only model=rbf_svm dim=arousal subject=3 split 1/2
+[13:01:00] B_features_de_only model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.750
+[13:01:00] B_features_de_only model=rbf_svm dim=arousal subject=3 split 2/2
+[13:01:07] B_features_de_only model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.750
+[13:01:07] B_features_de_only model=rbf_svm dim=arousal subject=4 split 1/2
+[13:01:15] B_features_de_only model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.625
+[13:01:15] B_features_de_only model=rbf_svm dim=arousal subject=4 split 2/2
+[13:01:23] B_features_de_only model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[13:01:23] B_features_de_only model=rbf_svm dim=arousal subject=5 split 1/2
+[13:01:30] B_features_de_only model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.375
+[13:01:30] B_features_de_only model=rbf_svm dim=arousal subject=5 split 2/2
+[13:01:37] B_features_de_only model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.750
+[13:01:37] B_features_de_only model=rbf_svm dim=arousal subject=6 split 1/2
+[13:01:45] B_features_de_only model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.625
+[13:01:45] B_features_de_only model=rbf_svm dim=arousal subject=6 split 2/2
+[13:01:52] B_features_de_only model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[13:01:52] B_features_de_only model=rbf_svm dim=arousal subject=7 split 1/2
+[13:02:00] B_features_de_only model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.375
+[13:02:00] B_features_de_only model=rbf_svm dim=arousal subject=7 split 2/2
+[13:02:07] B_features_de_only model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[13:02:07] B_features_de_only model=rbf_svm dim=arousal subject=8 split 1/2
+[13:02:14] B_features_de_only model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.250
+[13:02:14] B_features_de_only model=rbf_svm dim=arousal subject=8 split 2/2
+[13:02:22] B_features_de_only model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.375
+[13:02:22] B_features_de_only model=rbf_svm dim=arousal subject=9 split 1/2
+[13:02:29] B_features_de_only model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.500
+[13:02:29] B_features_de_only model=rbf_svm dim=arousal subject=9 split 2/2
+[13:02:36] B_features_de_only model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.625
+[13:02:36] B_features_de_only model=rbf_svm dim=arousal subject=10 split 1/2
+[13:02:43] B_features_de_only model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.500
+[13:02:43] B_features_de_only model=rbf_svm dim=arousal subject=10 split 2/2
+[13:02:51] B_features_de_only model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750
+[13:02:51] Finished B_features_de_only in 5.0 min
+[13:02:51] Starting B_features_de_asym
+[13:02:54] B_features_de_asym model=rbf_svm dim=valence subject=1 split 1/2
+[13:03:04] B_features_de_asym model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.375
+[13:03:04] B_features_de_asym model=rbf_svm dim=valence subject=1 split 2/2
+[13:03:13] B_features_de_asym model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.625
+[13:03:14] B_features_de_asym model=rbf_svm dim=valence subject=2 split 1/2
+[13:03:23] B_features_de_asym model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.625
+[13:03:23] B_features_de_asym model=rbf_svm dim=valence subject=2 split 2/2
+[13:03:32] B_features_de_asym model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.500
+[13:03:32] B_features_de_asym model=rbf_svm dim=valence subject=3 split 1/2
+[13:03:41] B_features_de_asym model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[13:03:41] B_features_de_asym model=rbf_svm dim=valence subject=3 split 2/2
+[13:03:51] B_features_de_asym model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.875
+[13:03:51] B_features_de_asym model=rbf_svm dim=valence subject=4 split 1/2
+[13:04:01] B_features_de_asym model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.375
+[13:04:01] B_features_de_asym model=rbf_svm dim=valence subject=4 split 2/2
+[13:04:11] B_features_de_asym model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.500
+[13:04:11] B_features_de_asym model=rbf_svm dim=valence subject=5 split 1/2
+[13:04:22] B_features_de_asym model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.375
+[13:04:22] B_features_de_asym model=rbf_svm dim=valence subject=5 split 2/2
+[13:04:31] B_features_de_asym model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.500
+[13:04:31] B_features_de_asym model=rbf_svm dim=valence subject=6 split 1/2
+[13:04:41] B_features_de_asym model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[13:04:41] B_features_de_asym model=rbf_svm dim=valence subject=6 split 2/2
+[13:04:50] B_features_de_asym model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.625
+[13:04:50] B_features_de_asym model=rbf_svm dim=valence subject=7 split 1/2
+[13:05:00] B_features_de_asym model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[13:05:00] B_features_de_asym model=rbf_svm dim=valence subject=7 split 2/2
+[13:05:09] B_features_de_asym model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.625
+[13:05:10] B_features_de_asym model=rbf_svm dim=valence subject=8 split 1/2
+[13:05:19] B_features_de_asym model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[13:05:19] B_features_de_asym model=rbf_svm dim=valence subject=8 split 2/2
+[13:05:28] B_features_de_asym model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.500
+[13:05:28] B_features_de_asym model=rbf_svm dim=valence subject=9 split 1/2
+[13:05:37] B_features_de_asym model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.500
+[13:05:37] B_features_de_asym model=rbf_svm dim=valence subject=9 split 2/2
+[13:05:46] B_features_de_asym model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.750
+[13:05:46] B_features_de_asym model=rbf_svm dim=valence subject=10 split 1/2
+[13:05:56] B_features_de_asym model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=0.875
+[13:05:56] B_features_de_asym model=rbf_svm dim=valence subject=10 split 2/2
+[13:06:05] B_features_de_asym model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=1.000
+[13:06:05] B_features_de_asym model=rbf_svm dim=arousal subject=1 split 1/2
+[13:06:14] B_features_de_asym model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.750
+[13:06:14] B_features_de_asym model=rbf_svm dim=arousal subject=1 split 2/2
+[13:06:23] B_features_de_asym model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.500
+[13:06:23] B_features_de_asym model=rbf_svm dim=arousal subject=2 split 1/2
+[13:06:32] B_features_de_asym model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.625
+[13:06:32] B_features_de_asym model=rbf_svm dim=arousal subject=2 split 2/2
+[13:06:41] B_features_de_asym model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.750
+[13:06:42] B_features_de_asym model=rbf_svm dim=arousal subject=3 split 1/2
+[13:06:51] B_features_de_asym model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.625
+[13:06:51] B_features_de_asym model=rbf_svm dim=arousal subject=3 split 2/2
+[13:07:00] B_features_de_asym model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.750
+[13:07:00] B_features_de_asym model=rbf_svm dim=arousal subject=4 split 1/2
+[13:07:10] B_features_de_asym model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.625
+[13:07:10] B_features_de_asym model=rbf_svm dim=arousal subject=4 split 2/2
+[13:07:20] B_features_de_asym model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[13:07:20] B_features_de_asym model=rbf_svm dim=arousal subject=5 split 1/2
+[13:07:29] B_features_de_asym model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.250
+[13:07:29] B_features_de_asym model=rbf_svm dim=arousal subject=5 split 2/2
+[13:07:38] B_features_de_asym model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.750
+[13:07:38] B_features_de_asym model=rbf_svm dim=arousal subject=6 split 1/2
+[13:07:48] B_features_de_asym model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.625
+[13:07:48] B_features_de_asym model=rbf_svm dim=arousal subject=6 split 2/2
+[13:07:58] B_features_de_asym model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[13:07:58] B_features_de_asym model=rbf_svm dim=arousal subject=7 split 1/2
+[13:08:07] B_features_de_asym model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.625
+[13:08:07] B_features_de_asym model=rbf_svm dim=arousal subject=7 split 2/2
+[13:08:16] B_features_de_asym model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[13:08:16] B_features_de_asym model=rbf_svm dim=arousal subject=8 split 1/2
+[13:08:26] B_features_de_asym model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.250
+[13:08:26] B_features_de_asym model=rbf_svm dim=arousal subject=8 split 2/2
+[13:08:35] B_features_de_asym model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.375
+[13:08:35] B_features_de_asym model=rbf_svm dim=arousal subject=9 split 1/2
+[13:08:44] B_features_de_asym model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.625
+[13:08:44] B_features_de_asym model=rbf_svm dim=arousal subject=9 split 2/2
+[13:08:53] B_features_de_asym model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.625
+[13:08:53] B_features_de_asym model=rbf_svm dim=arousal subject=10 split 1/2
+[13:09:02] B_features_de_asym model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.500
+[13:09:02] B_features_de_asym model=rbf_svm dim=arousal subject=10 split 2/2
+[13:09:11] B_features_de_asym model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.875
+[13:09:11] Finished B_features_de_asym in 6.3 min
+[13:09:11] Starting B_features_de_bandpower
+[13:09:15] B_features_de_bandpower model=rbf_svm dim=valence subject=1 split 1/2
+[13:09:29] B_features_de_bandpower model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.250
+[13:09:29] B_features_de_bandpower model=rbf_svm dim=valence subject=1 split 2/2
+[13:09:43] B_features_de_bandpower model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.625
+[13:09:43] B_features_de_bandpower model=rbf_svm dim=valence subject=2 split 1/2
+[13:09:56] B_features_de_bandpower model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.250
+[13:09:56] B_features_de_bandpower model=rbf_svm dim=valence subject=2 split 2/2
+[13:10:10] B_features_de_bandpower model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.625
+[13:10:10] B_features_de_bandpower model=rbf_svm dim=valence subject=3 split 1/2
+[13:10:23] B_features_de_bandpower model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[13:10:23] B_features_de_bandpower model=rbf_svm dim=valence subject=3 split 2/2
+[13:10:37] B_features_de_bandpower model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.750
+[13:10:37] B_features_de_bandpower model=rbf_svm dim=valence subject=4 split 1/2
+[13:10:51] B_features_de_bandpower model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.375
+[13:10:51] B_features_de_bandpower model=rbf_svm dim=valence subject=4 split 2/2
+[13:11:06] B_features_de_bandpower model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.500
+[13:11:06] B_features_de_bandpower model=rbf_svm dim=valence subject=5 split 1/2
+[13:11:20] B_features_de_bandpower model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.500
+[13:11:20] B_features_de_bandpower model=rbf_svm dim=valence subject=5 split 2/2
+[13:11:34] B_features_de_bandpower model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.500
+[13:11:35] B_features_de_bandpower model=rbf_svm dim=valence subject=6 split 1/2
+[13:11:49] B_features_de_bandpower model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[13:11:49] B_features_de_bandpower model=rbf_svm dim=valence subject=6 split 2/2
+[13:12:02] B_features_de_bandpower model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.500
+[13:12:02] B_features_de_bandpower model=rbf_svm dim=valence subject=7 split 1/2
+[13:12:16] B_features_de_bandpower model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[13:12:16] B_features_de_bandpower model=rbf_svm dim=valence subject=7 split 2/2
+[13:12:30] B_features_de_bandpower model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.375
+[13:12:31] B_features_de_bandpower model=rbf_svm dim=valence subject=8 split 1/2
+[13:12:44] B_features_de_bandpower model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[13:12:44] B_features_de_bandpower model=rbf_svm dim=valence subject=8 split 2/2
+[13:12:58] B_features_de_bandpower model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.500
+[13:12:58] B_features_de_bandpower model=rbf_svm dim=valence subject=9 split 1/2
+[13:13:11] B_features_de_bandpower model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.500
+[13:13:11] B_features_de_bandpower model=rbf_svm dim=valence subject=9 split 2/2
+[13:13:24] B_features_de_bandpower model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.750
+[13:13:25] B_features_de_bandpower model=rbf_svm dim=valence subject=10 split 1/2
+[13:13:38] B_features_de_bandpower model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[13:13:38] B_features_de_bandpower model=rbf_svm dim=valence subject=10 split 2/2
+[13:13:52] B_features_de_bandpower model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=0.875
+[13:13:52] B_features_de_bandpower model=rbf_svm dim=arousal subject=1 split 1/2
+[13:14:05] B_features_de_bandpower model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.625
+[13:14:05] B_features_de_bandpower model=rbf_svm dim=arousal subject=1 split 2/2
+[13:14:19] B_features_de_bandpower model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.625
+[13:14:19] B_features_de_bandpower model=rbf_svm dim=arousal subject=2 split 1/2
+[13:14:33] B_features_de_bandpower model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.625
+[13:14:33] B_features_de_bandpower model=rbf_svm dim=arousal subject=2 split 2/2
+[13:14:46] B_features_de_bandpower model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.750
+[13:14:46] B_features_de_bandpower model=rbf_svm dim=arousal subject=3 split 1/2
+[13:15:00] B_features_de_bandpower model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.500
+[13:15:00] B_features_de_bandpower model=rbf_svm dim=arousal subject=3 split 2/2
+[13:15:13] B_features_de_bandpower model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.375
+[13:15:13] B_features_de_bandpower model=rbf_svm dim=arousal subject=4 split 1/2
+[13:15:27] B_features_de_bandpower model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.750
+[13:15:27] B_features_de_bandpower model=rbf_svm dim=arousal subject=4 split 2/2
+[13:15:41] B_features_de_bandpower model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[13:15:41] B_features_de_bandpower model=rbf_svm dim=arousal subject=5 split 1/2
+[13:15:55] B_features_de_bandpower model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.375
+[13:15:55] B_features_de_bandpower model=rbf_svm dim=arousal subject=5 split 2/2
+[13:16:09] B_features_de_bandpower model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.625
+[13:16:09] B_features_de_bandpower model=rbf_svm dim=arousal subject=6 split 1/2
+[13:16:22] B_features_de_bandpower model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.375
+[13:16:22] B_features_de_bandpower model=rbf_svm dim=arousal subject=6 split 2/2
+[13:16:36] B_features_de_bandpower model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[13:16:36] B_features_de_bandpower model=rbf_svm dim=arousal subject=7 split 1/2
+[13:16:50] B_features_de_bandpower model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.375
+[13:16:50] B_features_de_bandpower model=rbf_svm dim=arousal subject=7 split 2/2
+[13:17:04] B_features_de_bandpower model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[13:17:04] B_features_de_bandpower model=rbf_svm dim=arousal subject=8 split 1/2
+[13:17:17] B_features_de_bandpower model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.250
+[13:17:17] B_features_de_bandpower model=rbf_svm dim=arousal subject=8 split 2/2
+[13:17:31] B_features_de_bandpower model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.375
+[13:17:31] B_features_de_bandpower model=rbf_svm dim=arousal subject=9 split 1/2
+[13:17:44] B_features_de_bandpower model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.500
+[13:17:44] B_features_de_bandpower model=rbf_svm dim=arousal subject=9 split 2/2
+[13:17:58] B_features_de_bandpower model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.625
+[13:17:58] B_features_de_bandpower model=rbf_svm dim=arousal subject=10 split 1/2
+[13:18:11] B_features_de_bandpower model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.625
+[13:18:11] B_features_de_bandpower model=rbf_svm dim=arousal subject=10 split 2/2
+[13:18:25] B_features_de_bandpower model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.875
+[13:18:25] Finished B_features_de_bandpower in 9.2 min
+[13:18:25] Wrote reports\roadmap_focus\phase1\summary_step_B.txt
+[13:18:25] Starting C_bands_no_delta
+[13:18:29] C_bands_no_delta model=rbf_svm dim=valence subject=1 split 1/2
+[13:18:36] C_bands_no_delta model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.375
+[13:18:36] C_bands_no_delta model=rbf_svm dim=valence subject=1 split 2/2
+[13:18:44] C_bands_no_delta model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.625
+[13:18:44] C_bands_no_delta model=rbf_svm dim=valence subject=2 split 1/2
+[13:18:51] C_bands_no_delta model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.625
+[13:18:51] C_bands_no_delta model=rbf_svm dim=valence subject=2 split 2/2
+[13:18:59] C_bands_no_delta model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.625
+[13:18:59] C_bands_no_delta model=rbf_svm dim=valence subject=3 split 1/2
+[13:19:06] C_bands_no_delta model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[13:19:06] C_bands_no_delta model=rbf_svm dim=valence subject=3 split 2/2
+[13:19:13] C_bands_no_delta model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.750
+[13:19:13] C_bands_no_delta model=rbf_svm dim=valence subject=4 split 1/2
+[13:19:21] C_bands_no_delta model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.750
+[13:19:21] C_bands_no_delta model=rbf_svm dim=valence subject=4 split 2/2
+[13:19:29] C_bands_no_delta model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.500
+[13:19:29] C_bands_no_delta model=rbf_svm dim=valence subject=5 split 1/2
+[13:19:37] C_bands_no_delta model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.500
+[13:19:37] C_bands_no_delta model=rbf_svm dim=valence subject=5 split 2/2
+[13:19:45] C_bands_no_delta model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.500
+[13:19:45] C_bands_no_delta model=rbf_svm dim=valence subject=6 split 1/2
+[13:19:52] C_bands_no_delta model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[13:19:52] C_bands_no_delta model=rbf_svm dim=valence subject=6 split 2/2
+[13:20:00] C_bands_no_delta model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.625
+[13:20:00] C_bands_no_delta model=rbf_svm dim=valence subject=7 split 1/2
+[13:20:08] C_bands_no_delta model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[13:20:08] C_bands_no_delta model=rbf_svm dim=valence subject=7 split 2/2
+[13:20:15] C_bands_no_delta model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.375
+[13:20:15] C_bands_no_delta model=rbf_svm dim=valence subject=8 split 1/2
+[13:20:23] C_bands_no_delta model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[13:20:23] C_bands_no_delta model=rbf_svm dim=valence subject=8 split 2/2
+[13:20:30] C_bands_no_delta model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.500
+[13:20:30] C_bands_no_delta model=rbf_svm dim=valence subject=9 split 1/2
+[13:20:37] C_bands_no_delta model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.500
+[13:20:37] C_bands_no_delta model=rbf_svm dim=valence subject=9 split 2/2
+[13:20:44] C_bands_no_delta model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.750
+[13:20:44] C_bands_no_delta model=rbf_svm dim=valence subject=10 split 1/2
+[13:20:52] C_bands_no_delta model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[13:20:52] C_bands_no_delta model=rbf_svm dim=valence subject=10 split 2/2
+[13:20:59] C_bands_no_delta model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=1.000
+[13:20:59] C_bands_no_delta model=rbf_svm dim=arousal subject=1 split 1/2
+[13:21:06] C_bands_no_delta model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.750
+[13:21:06] C_bands_no_delta model=rbf_svm dim=arousal subject=1 split 2/2
+[13:21:14] C_bands_no_delta model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.500
+[13:21:14] C_bands_no_delta model=rbf_svm dim=arousal subject=2 split 1/2
+[13:21:21] C_bands_no_delta model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.625
+[13:21:21] C_bands_no_delta model=rbf_svm dim=arousal subject=2 split 2/2
+[13:21:29] C_bands_no_delta model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.750
+[13:21:29] C_bands_no_delta model=rbf_svm dim=arousal subject=3 split 1/2
+[13:21:36] C_bands_no_delta model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.750
+[13:21:36] C_bands_no_delta model=rbf_svm dim=arousal subject=3 split 2/2
+[13:21:43] C_bands_no_delta model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.750
+[13:21:43] C_bands_no_delta model=rbf_svm dim=arousal subject=4 split 1/2
+[13:21:51] C_bands_no_delta model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.625
+[13:21:51] C_bands_no_delta model=rbf_svm dim=arousal subject=4 split 2/2
+[13:21:59] C_bands_no_delta model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[13:21:59] C_bands_no_delta model=rbf_svm dim=arousal subject=5 split 1/2
+[13:22:06] C_bands_no_delta model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.375
+[13:22:06] C_bands_no_delta model=rbf_svm dim=arousal subject=5 split 2/2
+[13:22:13] C_bands_no_delta model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.750
+[13:22:13] C_bands_no_delta model=rbf_svm dim=arousal subject=6 split 1/2
+[13:22:21] C_bands_no_delta model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.625
+[13:22:21] C_bands_no_delta model=rbf_svm dim=arousal subject=6 split 2/2
+[13:22:28] C_bands_no_delta model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[13:22:28] C_bands_no_delta model=rbf_svm dim=arousal subject=7 split 1/2
+[13:22:36] C_bands_no_delta model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.375
+[13:22:36] C_bands_no_delta model=rbf_svm dim=arousal subject=7 split 2/2
+[13:22:43] C_bands_no_delta model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[13:22:43] C_bands_no_delta model=rbf_svm dim=arousal subject=8 split 1/2
+[13:22:50] C_bands_no_delta model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.250
+[13:22:50] C_bands_no_delta model=rbf_svm dim=arousal subject=8 split 2/2
+[13:22:58] C_bands_no_delta model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.375
+[13:22:58] C_bands_no_delta model=rbf_svm dim=arousal subject=9 split 1/2
+[13:23:05] C_bands_no_delta model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.500
+[13:23:05] C_bands_no_delta model=rbf_svm dim=arousal subject=9 split 2/2
+[13:23:12] C_bands_no_delta model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.625
+[13:23:12] C_bands_no_delta model=rbf_svm dim=arousal subject=10 split 1/2
+[13:23:19] C_bands_no_delta model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.500
+[13:23:19] C_bands_no_delta model=rbf_svm dim=arousal subject=10 split 2/2
+[13:23:27] C_bands_no_delta model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750
+[13:23:27] Finished C_bands_no_delta in 5.0 min
+[13:23:27] Wrote reports\roadmap_focus\phase1\summary_step_C.txt
+[13:23:27] Starting D_select_none
+[13:23:30] D_select_none model=rbf_svm dim=valence subject=1 split 1/2
+[13:23:37] D_select_none model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.375
+[13:23:37] D_select_none model=rbf_svm dim=valence subject=1 split 2/2
+[13:23:45] D_select_none model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.625
+[13:23:45] D_select_none model=rbf_svm dim=valence subject=2 split 1/2
+[13:23:52] D_select_none model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.625
+[13:23:52] D_select_none model=rbf_svm dim=valence subject=2 split 2/2
+[13:24:00] D_select_none model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.625
+[13:24:00] D_select_none model=rbf_svm dim=valence subject=3 split 1/2
+[13:24:07] D_select_none model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[13:24:07] D_select_none model=rbf_svm dim=valence subject=3 split 2/2
+[13:24:14] D_select_none model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.750
+[13:24:14] D_select_none model=rbf_svm dim=valence subject=4 split 1/2
+[13:24:22] D_select_none model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.750
+[13:24:22] D_select_none model=rbf_svm dim=valence subject=4 split 2/2
+[13:24:30] D_select_none model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.500
+[13:24:30] D_select_none model=rbf_svm dim=valence subject=5 split 1/2
+[13:24:37] D_select_none model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.500
+[13:24:37] D_select_none model=rbf_svm dim=valence subject=5 split 2/2
+[13:24:45] D_select_none model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.500
+[13:24:45] D_select_none model=rbf_svm dim=valence subject=6 split 1/2
+[13:24:53] D_select_none model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[13:24:53] D_select_none model=rbf_svm dim=valence subject=6 split 2/2
+[13:25:01] D_select_none model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.625
+[13:25:01] D_select_none model=rbf_svm dim=valence subject=7 split 1/2
+[13:25:08] D_select_none model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[13:25:08] D_select_none model=rbf_svm dim=valence subject=7 split 2/2
+[13:25:16] D_select_none model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.375
+[13:25:16] D_select_none model=rbf_svm dim=valence subject=8 split 1/2
+[13:25:24] D_select_none model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[13:25:24] D_select_none model=rbf_svm dim=valence subject=8 split 2/2
+[13:25:31] D_select_none model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.500
+[13:25:31] D_select_none model=rbf_svm dim=valence subject=9 split 1/2
+[13:25:38] D_select_none model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.500
+[13:25:38] D_select_none model=rbf_svm dim=valence subject=9 split 2/2
+[13:25:46] D_select_none model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.750
+[13:25:46] D_select_none model=rbf_svm dim=valence subject=10 split 1/2
+[13:25:53] D_select_none model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[13:25:53] D_select_none model=rbf_svm dim=valence subject=10 split 2/2
+[13:26:01] D_select_none model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=1.000
+[13:26:01] D_select_none model=rbf_svm dim=arousal subject=1 split 1/2
+[13:26:08] D_select_none model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.750
+[13:26:08] D_select_none model=rbf_svm dim=arousal subject=1 split 2/2
+[13:26:15] D_select_none model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.500
+[13:26:15] D_select_none model=rbf_svm dim=arousal subject=2 split 1/2
+[13:26:23] D_select_none model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.625
+[13:26:23] D_select_none model=rbf_svm dim=arousal subject=2 split 2/2
+[13:26:30] D_select_none model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.750
+[13:26:30] D_select_none model=rbf_svm dim=arousal subject=3 split 1/2
+[13:26:37] D_select_none model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.750
+[13:26:37] D_select_none model=rbf_svm dim=arousal subject=3 split 2/2
+[13:26:45] D_select_none model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.750
+[13:26:45] D_select_none model=rbf_svm dim=arousal subject=4 split 1/2
+[13:26:53] D_select_none model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.625
+[13:26:53] D_select_none model=rbf_svm dim=arousal subject=4 split 2/2
+[13:27:01] D_select_none model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[13:27:01] D_select_none model=rbf_svm dim=arousal subject=5 split 1/2
+[13:27:08] D_select_none model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.375
+[13:27:08] D_select_none model=rbf_svm dim=arousal subject=5 split 2/2
+[13:27:15] D_select_none model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.750
+[13:27:15] D_select_none model=rbf_svm dim=arousal subject=6 split 1/2
+[13:27:23] D_select_none model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.625
+[13:27:23] D_select_none model=rbf_svm dim=arousal subject=6 split 2/2
+[13:27:30] D_select_none model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[13:27:30] D_select_none model=rbf_svm dim=arousal subject=7 split 1/2
+[13:27:37] D_select_none model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.375
+[13:27:38] D_select_none model=rbf_svm dim=arousal subject=7 split 2/2
+[13:27:45] D_select_none model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[13:27:45] D_select_none model=rbf_svm dim=arousal subject=8 split 1/2
+[13:27:52] D_select_none model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.250
+[13:27:52] D_select_none model=rbf_svm dim=arousal subject=8 split 2/2
+[13:28:00] D_select_none model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.375
+[13:28:00] D_select_none model=rbf_svm dim=arousal subject=9 split 1/2
+[13:28:07] D_select_none model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.500
+[13:28:07] D_select_none model=rbf_svm dim=arousal subject=9 split 2/2
+[13:28:14] D_select_none model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.625
+[13:28:14] D_select_none model=rbf_svm dim=arousal subject=10 split 1/2
+[13:28:21] D_select_none model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.500
+[13:28:21] D_select_none model=rbf_svm dim=arousal subject=10 split 2/2
+[13:28:28] D_select_none model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750
+[13:28:28] Finished D_select_none in 5.0 min
+[13:28:28] Starting D_select_mi_k200
+[13:28:32] D_select_mi_k200 model=rbf_svm dim=valence subject=1 split 1/2
+[13:29:01] D_select_mi_k200 model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.375
+[13:29:01] D_select_mi_k200 model=rbf_svm dim=valence subject=1 split 2/2
+[13:29:30] D_select_mi_k200 model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.625
+[13:29:31] D_select_mi_k200 model=rbf_svm dim=valence subject=2 split 1/2
+[13:30:00] D_select_mi_k200 model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.625
+[13:30:00] D_select_mi_k200 model=rbf_svm dim=valence subject=2 split 2/2
+[13:30:29] D_select_mi_k200 model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.625
+[13:30:29] D_select_mi_k200 model=rbf_svm dim=valence subject=3 split 1/2
+[13:30:57] D_select_mi_k200 model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[13:30:57] D_select_mi_k200 model=rbf_svm dim=valence subject=3 split 2/2
+[13:31:26] D_select_mi_k200 model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.750
+[13:31:26] D_select_mi_k200 model=rbf_svm dim=valence subject=4 split 1/2
+[13:31:56] D_select_mi_k200 model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.750
+[13:31:56] D_select_mi_k200 model=rbf_svm dim=valence subject=4 split 2/2
+[13:32:26] D_select_mi_k200 model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.500
+[13:32:26] D_select_mi_k200 model=rbf_svm dim=valence subject=5 split 1/2
+[13:32:55] D_select_mi_k200 model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.500
+[13:32:55] D_select_mi_k200 model=rbf_svm dim=valence subject=5 split 2/2
+[13:33:24] D_select_mi_k200 model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.500
+[13:33:25] D_select_mi_k200 model=rbf_svm dim=valence subject=6 split 1/2
+[13:33:53] D_select_mi_k200 model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[13:33:53] D_select_mi_k200 model=rbf_svm dim=valence subject=6 split 2/2
+[13:34:23] D_select_mi_k200 model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.625
+[13:34:23] D_select_mi_k200 model=rbf_svm dim=valence subject=7 split 1/2
+[13:34:52] D_select_mi_k200 model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[13:34:52] D_select_mi_k200 model=rbf_svm dim=valence subject=7 split 2/2
+[13:35:21] D_select_mi_k200 model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.375
+[13:35:22] D_select_mi_k200 model=rbf_svm dim=valence subject=8 split 1/2
+[13:35:51] D_select_mi_k200 model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[13:35:51] D_select_mi_k200 model=rbf_svm dim=valence subject=8 split 2/2
+[13:36:19] D_select_mi_k200 model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.500
+[13:36:19] D_select_mi_k200 model=rbf_svm dim=valence subject=9 split 1/2
+[13:36:48] D_select_mi_k200 model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.500
+[13:36:48] D_select_mi_k200 model=rbf_svm dim=valence subject=9 split 2/2
+[13:37:17] D_select_mi_k200 model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.750
+[13:37:17] D_select_mi_k200 model=rbf_svm dim=valence subject=10 split 1/2
+[13:37:46] D_select_mi_k200 model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[13:37:46] D_select_mi_k200 model=rbf_svm dim=valence subject=10 split 2/2
+[13:38:15] D_select_mi_k200 model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=1.000
+[13:38:15] D_select_mi_k200 model=rbf_svm dim=arousal subject=1 split 1/2
+[13:38:44] D_select_mi_k200 model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.750
+[13:38:44] D_select_mi_k200 model=rbf_svm dim=arousal subject=1 split 2/2
+[13:39:13] D_select_mi_k200 model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.500
+[13:39:13] D_select_mi_k200 model=rbf_svm dim=arousal subject=2 split 1/2
+[13:39:42] D_select_mi_k200 model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.625
+[13:39:42] D_select_mi_k200 model=rbf_svm dim=arousal subject=2 split 2/2
+[13:40:11] D_select_mi_k200 model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.750
+[13:40:11] D_select_mi_k200 model=rbf_svm dim=arousal subject=3 split 1/2
+[13:40:40] D_select_mi_k200 model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.750
+[13:40:40] D_select_mi_k200 model=rbf_svm dim=arousal subject=3 split 2/2
+[13:41:10] D_select_mi_k200 model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.750
+[13:41:10] D_select_mi_k200 model=rbf_svm dim=arousal subject=4 split 1/2
+[13:41:39] D_select_mi_k200 model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.625
+[13:41:39] D_select_mi_k200 model=rbf_svm dim=arousal subject=4 split 2/2
+[13:42:08] D_select_mi_k200 model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[13:42:08] D_select_mi_k200 model=rbf_svm dim=arousal subject=5 split 1/2
+[13:42:37] D_select_mi_k200 model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.375
+[13:42:37] D_select_mi_k200 model=rbf_svm dim=arousal subject=5 split 2/2
+[13:43:06] D_select_mi_k200 model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.750
+[13:43:06] D_select_mi_k200 model=rbf_svm dim=arousal subject=6 split 1/2
+[13:43:35] D_select_mi_k200 model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.625
+[13:43:35] D_select_mi_k200 model=rbf_svm dim=arousal subject=6 split 2/2
+[13:44:05] D_select_mi_k200 model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[13:44:05] D_select_mi_k200 model=rbf_svm dim=arousal subject=7 split 1/2
+[13:44:35] D_select_mi_k200 model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.375
+[13:44:35] D_select_mi_k200 model=rbf_svm dim=arousal subject=7 split 2/2
+[13:45:04] D_select_mi_k200 model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[13:45:04] D_select_mi_k200 model=rbf_svm dim=arousal subject=8 split 1/2
+[13:45:33] D_select_mi_k200 model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.250
+[13:45:33] D_select_mi_k200 model=rbf_svm dim=arousal subject=8 split 2/2
+[13:46:02] D_select_mi_k200 model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.375
+[13:46:02] D_select_mi_k200 model=rbf_svm dim=arousal subject=9 split 1/2
+[13:46:31] D_select_mi_k200 model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.500
+[13:46:31] D_select_mi_k200 model=rbf_svm dim=arousal subject=9 split 2/2
+[13:47:00] D_select_mi_k200 model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.625
+[13:47:00] D_select_mi_k200 model=rbf_svm dim=arousal subject=10 split 1/2
+[13:47:29] D_select_mi_k200 model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.500
+[13:47:29] D_select_mi_k200 model=rbf_svm dim=arousal subject=10 split 2/2
+[13:47:58] D_select_mi_k200 model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750
+[13:47:58] Finished D_select_mi_k200 in 19.5 min
+[13:47:58] Starting D_select_l1_c0p1
+[13:48:02] D_select_l1_c0p1 model=rbf_svm dim=valence subject=1 split 1/2
+[13:48:09] D_select_l1_c0p1 model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.500
+[13:48:09] D_select_l1_c0p1 model=rbf_svm dim=valence subject=1 split 2/2
+[13:48:15] D_select_l1_c0p1 model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.500
+[13:48:15] D_select_l1_c0p1 model=rbf_svm dim=valence subject=2 split 1/2
+[13:48:22] D_select_l1_c0p1 model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.750
+[13:48:22] D_select_l1_c0p1 model=rbf_svm dim=valence subject=2 split 2/2
+[13:48:28] D_select_l1_c0p1 model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.750
+[13:48:29] D_select_l1_c0p1 model=rbf_svm dim=valence subject=3 split 1/2
+[13:48:35] D_select_l1_c0p1 model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[13:48:35] D_select_l1_c0p1 model=rbf_svm dim=valence subject=3 split 2/2
+[13:48:41] D_select_l1_c0p1 model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.875
+[13:48:41] D_select_l1_c0p1 model=rbf_svm dim=valence subject=4 split 1/2
+[13:48:48] D_select_l1_c0p1 model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.375
+[13:48:48] D_select_l1_c0p1 model=rbf_svm dim=valence subject=4 split 2/2
+[13:48:56] D_select_l1_c0p1 model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.375
+[13:48:56] D_select_l1_c0p1 model=rbf_svm dim=valence subject=5 split 1/2
+[13:49:03] D_select_l1_c0p1 model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.500
+[13:49:03] D_select_l1_c0p1 model=rbf_svm dim=valence subject=5 split 2/2
+[13:49:10] D_select_l1_c0p1 model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.625
+[13:49:10] D_select_l1_c0p1 model=rbf_svm dim=valence subject=6 split 1/2
+[13:49:16] D_select_l1_c0p1 model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[13:49:16] D_select_l1_c0p1 model=rbf_svm dim=valence subject=6 split 2/2
+[13:49:23] D_select_l1_c0p1 model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.625
+[13:49:24] D_select_l1_c0p1 model=rbf_svm dim=valence subject=7 split 1/2
+[13:49:30] D_select_l1_c0p1 model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.625
+[13:49:30] D_select_l1_c0p1 model=rbf_svm dim=valence subject=7 split 2/2
+[13:49:36] D_select_l1_c0p1 model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.625
+[13:49:36] D_select_l1_c0p1 model=rbf_svm dim=valence subject=8 split 1/2
+[13:49:43] D_select_l1_c0p1 model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[13:49:43] D_select_l1_c0p1 model=rbf_svm dim=valence subject=8 split 2/2
+[13:49:50] D_select_l1_c0p1 model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.375
+[13:49:50] D_select_l1_c0p1 model=rbf_svm dim=valence subject=9 split 1/2
+[13:49:56] D_select_l1_c0p1 model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.500
+[13:49:56] D_select_l1_c0p1 model=rbf_svm dim=valence subject=9 split 2/2
+[13:50:02] D_select_l1_c0p1 model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.625
+[13:50:02] D_select_l1_c0p1 model=rbf_svm dim=valence subject=10 split 1/2
+[13:50:09] D_select_l1_c0p1 model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[13:50:09] D_select_l1_c0p1 model=rbf_svm dim=valence subject=10 split 2/2
+[13:50:15] D_select_l1_c0p1 model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=0.875
+[13:50:15] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=1 split 1/2
+[13:50:21] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.625
+[13:50:21] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=1 split 2/2
+[13:50:27] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.625
+[13:50:27] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=2 split 1/2
+[13:50:34] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.625
+[13:50:34] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=2 split 2/2
+[13:50:41] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.625
+[13:50:41] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=3 split 1/2
+[13:50:47] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.625
+[13:50:47] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=3 split 2/2
+[13:50:54] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.375
+[13:50:54] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=4 split 1/2
+[13:51:01] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.500
+[13:51:01] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=4 split 2/2
+[13:51:08] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.500
+[13:51:08] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=5 split 1/2
+[13:51:14] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.375
+[13:51:14] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=5 split 2/2
+[13:51:21] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.625
+[13:51:21] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=6 split 1/2
+[13:51:28] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.125
+[13:51:28] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=6 split 2/2
+[13:51:35] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[13:51:35] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=7 split 1/2
+[13:51:41] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.625
+[13:51:41] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=7 split 2/2
+[13:51:48] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[13:51:48] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=8 split 1/2
+[13:51:54] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.125
+[13:51:54] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=8 split 2/2
+[13:52:01] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.250
+[13:52:01] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=9 split 1/2
+[13:52:07] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.500
+[13:52:07] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=9 split 2/2
+[13:52:13] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.750
+[13:52:13] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=10 split 1/2
+[13:52:20] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.625
+[13:52:20] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=10 split 2/2
+[13:52:26] D_select_l1_c0p1 model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750
+[13:52:26] Finished D_select_l1_c0p1 in 4.5 min
+[13:52:26] Starting D_select_l1_c0p5
+[13:52:30] D_select_l1_c0p5 model=rbf_svm dim=valence subject=1 split 1/2
+[13:52:37] D_select_l1_c0p5 model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.375
+[13:52:37] D_select_l1_c0p5 model=rbf_svm dim=valence subject=1 split 2/2
+[13:52:46] D_select_l1_c0p5 model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.500
+[13:52:46] D_select_l1_c0p5 model=rbf_svm dim=valence subject=2 split 1/2
+[13:52:53] D_select_l1_c0p5 model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.625
+[13:52:53] D_select_l1_c0p5 model=rbf_svm dim=valence subject=2 split 2/2
+[13:53:01] D_select_l1_c0p5 model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.500
+[13:53:02] D_select_l1_c0p5 model=rbf_svm dim=valence subject=3 split 1/2
+[13:53:08] D_select_l1_c0p5 model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[13:53:08] D_select_l1_c0p5 model=rbf_svm dim=valence subject=3 split 2/2
+[13:53:16] D_select_l1_c0p5 model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.750
+[13:53:16] D_select_l1_c0p5 model=rbf_svm dim=valence subject=4 split 1/2
+[13:53:24] D_select_l1_c0p5 model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.500
+[13:53:24] D_select_l1_c0p5 model=rbf_svm dim=valence subject=4 split 2/2
+[13:53:32] D_select_l1_c0p5 model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.500
+[13:53:32] D_select_l1_c0p5 model=rbf_svm dim=valence subject=5 split 1/2
+[13:53:40] D_select_l1_c0p5 model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.500
+[13:53:40] D_select_l1_c0p5 model=rbf_svm dim=valence subject=5 split 2/2
+[13:53:48] D_select_l1_c0p5 model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.500
+[13:53:48] D_select_l1_c0p5 model=rbf_svm dim=valence subject=6 split 1/2
+[13:53:56] D_select_l1_c0p5 model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[13:53:56] D_select_l1_c0p5 model=rbf_svm dim=valence subject=6 split 2/2
+[13:54:04] D_select_l1_c0p5 model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.875
+[13:54:04] D_select_l1_c0p5 model=rbf_svm dim=valence subject=7 split 1/2
+[13:54:12] D_select_l1_c0p5 model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[13:54:12] D_select_l1_c0p5 model=rbf_svm dim=valence subject=7 split 2/2
+[13:54:20] D_select_l1_c0p5 model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.500
+[13:54:20] D_select_l1_c0p5 model=rbf_svm dim=valence subject=8 split 1/2
+[13:54:28] D_select_l1_c0p5 model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[13:54:28] D_select_l1_c0p5 model=rbf_svm dim=valence subject=8 split 2/2
+[13:54:36] D_select_l1_c0p5 model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.500
+[13:54:36] D_select_l1_c0p5 model=rbf_svm dim=valence subject=9 split 1/2
+[13:54:43] D_select_l1_c0p5 model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.625
+[13:54:43] D_select_l1_c0p5 model=rbf_svm dim=valence subject=9 split 2/2
+[13:54:50] D_select_l1_c0p5 model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.750
+[13:54:50] D_select_l1_c0p5 model=rbf_svm dim=valence subject=10 split 1/2
+[13:54:58] D_select_l1_c0p5 model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[13:54:58] D_select_l1_c0p5 model=rbf_svm dim=valence subject=10 split 2/2
+[13:55:05] D_select_l1_c0p5 model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=1.000
+[13:55:05] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=1 split 1/2
+[13:55:12] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.750
+[13:55:12] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=1 split 2/2
+[13:55:19] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.500
+[13:55:19] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=2 split 1/2
+[13:55:27] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.750
+[13:55:27] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=2 split 2/2
+[13:55:35] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.625
+[13:55:35] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=3 split 1/2
+[13:55:43] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.625
+[13:55:43] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=3 split 2/2
+[13:55:51] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.375
+[13:55:51] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=4 split 1/2
+[13:55:59] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.625
+[13:55:59] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=4 split 2/2
+[13:56:07] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[13:56:07] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=5 split 1/2
+[13:56:15] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.375
+[13:56:15] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=5 split 2/2
+[13:56:22] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.625
+[13:56:22] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=6 split 1/2
+[13:56:30] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.375
+[13:56:30] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=6 split 2/2
+[13:56:38] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[13:56:38] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=7 split 1/2
+[13:56:46] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.500
+[13:56:46] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=7 split 2/2
+[13:56:53] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.375
+[13:56:53] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=8 split 1/2
+[13:57:01] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.125
+[13:57:01] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=8 split 2/2
+[13:57:10] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.500
+[13:57:10] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=9 split 1/2
+[13:57:17] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.375
+[13:57:17] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=9 split 2/2
+[13:57:25] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.500
+[13:57:25] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=10 split 1/2
+[13:57:32] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.375
+[13:57:32] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=10 split 2/2
+[13:57:40] D_select_l1_c0p5 model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.750
+[13:57:40] Finished D_select_l1_c0p5 in 5.2 min
+[13:57:40] Starting D_select_l1_c1
+[13:57:43] D_select_l1_c1 model=rbf_svm dim=valence subject=1 split 1/2
+[13:57:52] D_select_l1_c1 model=rbf_svm dim=valence subject=1 split 1/2 trial_acc=0.375
+[13:57:52] D_select_l1_c1 model=rbf_svm dim=valence subject=1 split 2/2
+[13:58:01] D_select_l1_c1 model=rbf_svm dim=valence subject=1 split 2/2 trial_acc=0.750
+[13:58:01] D_select_l1_c1 model=rbf_svm dim=valence subject=2 split 1/2
+[13:58:10] D_select_l1_c1 model=rbf_svm dim=valence subject=2 split 1/2 trial_acc=0.625
+[13:58:10] D_select_l1_c1 model=rbf_svm dim=valence subject=2 split 2/2
+[13:58:18] D_select_l1_c1 model=rbf_svm dim=valence subject=2 split 2/2 trial_acc=0.625
+[13:58:18] D_select_l1_c1 model=rbf_svm dim=valence subject=3 split 1/2
+[13:58:26] D_select_l1_c1 model=rbf_svm dim=valence subject=3 split 1/2 trial_acc=0.625
+[13:58:26] D_select_l1_c1 model=rbf_svm dim=valence subject=3 split 2/2
+[13:58:34] D_select_l1_c1 model=rbf_svm dim=valence subject=3 split 2/2 trial_acc=0.750
+[13:58:34] D_select_l1_c1 model=rbf_svm dim=valence subject=4 split 1/2
+[13:58:44] D_select_l1_c1 model=rbf_svm dim=valence subject=4 split 1/2 trial_acc=0.375
+[13:58:44] D_select_l1_c1 model=rbf_svm dim=valence subject=4 split 2/2
+[13:58:53] D_select_l1_c1 model=rbf_svm dim=valence subject=4 split 2/2 trial_acc=0.500
+[13:58:53] D_select_l1_c1 model=rbf_svm dim=valence subject=5 split 1/2
+[13:59:02] D_select_l1_c1 model=rbf_svm dim=valence subject=5 split 1/2 trial_acc=0.375
+[13:59:02] D_select_l1_c1 model=rbf_svm dim=valence subject=5 split 2/2
+[13:59:11] D_select_l1_c1 model=rbf_svm dim=valence subject=5 split 2/2 trial_acc=0.500
+[13:59:11] D_select_l1_c1 model=rbf_svm dim=valence subject=6 split 1/2
+[13:59:19] D_select_l1_c1 model=rbf_svm dim=valence subject=6 split 1/2 trial_acc=0.250
+[13:59:19] D_select_l1_c1 model=rbf_svm dim=valence subject=6 split 2/2
+[13:59:27] D_select_l1_c1 model=rbf_svm dim=valence subject=6 split 2/2 trial_acc=0.875
+[13:59:28] D_select_l1_c1 model=rbf_svm dim=valence subject=7 split 1/2
+[13:59:37] D_select_l1_c1 model=rbf_svm dim=valence subject=7 split 1/2 trial_acc=0.750
+[13:59:37] D_select_l1_c1 model=rbf_svm dim=valence subject=7 split 2/2
+[13:59:47] D_select_l1_c1 model=rbf_svm dim=valence subject=7 split 2/2 trial_acc=0.750
+[13:59:47] D_select_l1_c1 model=rbf_svm dim=valence subject=8 split 1/2
+[13:59:56] D_select_l1_c1 model=rbf_svm dim=valence subject=8 split 1/2 trial_acc=0.750
+[13:59:56] D_select_l1_c1 model=rbf_svm dim=valence subject=8 split 2/2
+[14:00:04] D_select_l1_c1 model=rbf_svm dim=valence subject=8 split 2/2 trial_acc=0.500
+[14:00:05] D_select_l1_c1 model=rbf_svm dim=valence subject=9 split 1/2
+[14:00:12] D_select_l1_c1 model=rbf_svm dim=valence subject=9 split 1/2 trial_acc=0.625
+[14:00:12] D_select_l1_c1 model=rbf_svm dim=valence subject=9 split 2/2
+[14:00:20] D_select_l1_c1 model=rbf_svm dim=valence subject=9 split 2/2 trial_acc=0.375
+[14:00:20] D_select_l1_c1 model=rbf_svm dim=valence subject=10 split 1/2
+[14:00:29] D_select_l1_c1 model=rbf_svm dim=valence subject=10 split 1/2 trial_acc=1.000
+[14:00:29] D_select_l1_c1 model=rbf_svm dim=valence subject=10 split 2/2
+[14:00:37] D_select_l1_c1 model=rbf_svm dim=valence subject=10 split 2/2 trial_acc=1.000
+[14:00:37] D_select_l1_c1 model=rbf_svm dim=arousal subject=1 split 1/2
+[14:00:45] D_select_l1_c1 model=rbf_svm dim=arousal subject=1 split 1/2 trial_acc=0.750
+[14:00:45] D_select_l1_c1 model=rbf_svm dim=arousal subject=1 split 2/2
+[14:00:53] D_select_l1_c1 model=rbf_svm dim=arousal subject=1 split 2/2 trial_acc=0.500
+[14:00:53] D_select_l1_c1 model=rbf_svm dim=arousal subject=2 split 1/2
+[14:01:01] D_select_l1_c1 model=rbf_svm dim=arousal subject=2 split 1/2 trial_acc=0.750
+[14:01:01] D_select_l1_c1 model=rbf_svm dim=arousal subject=2 split 2/2
+[14:01:10] D_select_l1_c1 model=rbf_svm dim=arousal subject=2 split 2/2 trial_acc=0.625
+[14:01:10] D_select_l1_c1 model=rbf_svm dim=arousal subject=3 split 1/2
+[14:01:18] D_select_l1_c1 model=rbf_svm dim=arousal subject=3 split 1/2 trial_acc=0.625
+[14:01:18] D_select_l1_c1 model=rbf_svm dim=arousal subject=3 split 2/2
+[14:01:27] D_select_l1_c1 model=rbf_svm dim=arousal subject=3 split 2/2 trial_acc=0.375
+[14:01:27] D_select_l1_c1 model=rbf_svm dim=arousal subject=4 split 1/2
+[14:01:37] D_select_l1_c1 model=rbf_svm dim=arousal subject=4 split 1/2 trial_acc=0.625
+[14:01:37] D_select_l1_c1 model=rbf_svm dim=arousal subject=4 split 2/2
+[14:01:46] D_select_l1_c1 model=rbf_svm dim=arousal subject=4 split 2/2 trial_acc=0.375
+[14:01:46] D_select_l1_c1 model=rbf_svm dim=arousal subject=5 split 1/2
+[14:01:54] D_select_l1_c1 model=rbf_svm dim=arousal subject=5 split 1/2 trial_acc=0.500
+[14:01:54] D_select_l1_c1 model=rbf_svm dim=arousal subject=5 split 2/2
+[14:02:03] D_select_l1_c1 model=rbf_svm dim=arousal subject=5 split 2/2 trial_acc=0.625
+[14:02:03] D_select_l1_c1 model=rbf_svm dim=arousal subject=6 split 1/2
+[14:02:11] D_select_l1_c1 model=rbf_svm dim=arousal subject=6 split 1/2 trial_acc=0.625
+[14:02:11] D_select_l1_c1 model=rbf_svm dim=arousal subject=6 split 2/2
+[14:02:20] D_select_l1_c1 model=rbf_svm dim=arousal subject=6 split 2/2 trial_acc=0.750
+[14:02:20] D_select_l1_c1 model=rbf_svm dim=arousal subject=7 split 1/2
+[14:02:29] D_select_l1_c1 model=rbf_svm dim=arousal subject=7 split 1/2 trial_acc=0.500
+[14:02:29] D_select_l1_c1 model=rbf_svm dim=arousal subject=7 split 2/2
+[14:02:38] D_select_l1_c1 model=rbf_svm dim=arousal subject=7 split 2/2 trial_acc=0.500
+[14:02:38] D_select_l1_c1 model=rbf_svm dim=arousal subject=8 split 1/2
+[14:02:46] D_select_l1_c1 model=rbf_svm dim=arousal subject=8 split 1/2 trial_acc=0.125
+[14:02:46] D_select_l1_c1 model=rbf_svm dim=arousal subject=8 split 2/2
+[14:02:55] D_select_l1_c1 model=rbf_svm dim=arousal subject=8 split 2/2 trial_acc=0.375
+[14:02:55] D_select_l1_c1 model=rbf_svm dim=arousal subject=9 split 1/2
+[14:03:04] D_select_l1_c1 model=rbf_svm dim=arousal subject=9 split 1/2 trial_acc=0.625
+[14:03:04] D_select_l1_c1 model=rbf_svm dim=arousal subject=9 split 2/2
+[14:03:14] D_select_l1_c1 model=rbf_svm dim=arousal subject=9 split 2/2 trial_acc=0.500
+[14:03:14] D_select_l1_c1 model=rbf_svm dim=arousal subject=10 split 1/2
+[14:03:21] D_select_l1_c1 model=rbf_svm dim=arousal subject=10 split 1/2 trial_acc=0.625
+[14:03:21] D_select_l1_c1 model=rbf_svm dim=arousal subject=10 split 2/2
+[14:03:30] D_select_l1_c1 model=rbf_svm dim=arousal subject=10 split 2/2 trial_acc=0.625
+[14:03:30] Finished D_select_l1_c1 in 5.8 min
+[14:03:30] Wrote reports\roadmap_focus\phase1\summary_step_D.txt
+[14:03:30] Wrote reports\roadmap_focus\phase1\roadmap_summary.txt
+[14:03:30] Starting phase2_final
+[19:01:24] Finished phase2_final in 297.9 min
+[19:01:24] Wrote reports\roadmap_focus\roadmap_summary.txt
+Wrote reports\roadmap_focus\roadmap_summary.txt

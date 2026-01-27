@@ -1,0 +1,89 @@
+DEAP Experiment Summary
+
+Config
+  data_dir: archive_gedai
+  eeg_channels: 32
+  bands: [['theta', 4.0, 8.0], ['alpha', 8.0, 13.0], ['beta', 13.0, 30.0], ['gamma', 30.0, 45.0]]
+  window_seconds: 8.0
+  step_seconds: 4.0
+  feature_mode: bandpower_log
+  feature_set: ['de']
+  feature_selection: none
+  mi_k: 200
+  l1_c: 0.5
+  l1_alpha: 0.001
+  scaler: robust
+  trial_aggregation: mean_prob
+  riemann_epsilon: 1e-06
+  pca_variance: None
+  label_mode: subject_mean
+  label_threshold: 5.0
+  label_bins: [3.0, 6.0]
+
+Splits
+  outer_repeats: 2
+  train_ratio: 0.8
+  inner_folds: 3
+  scoring: f1_macro
+  search_strategy: random
+  search_trials: 40
+
+Model: rbf_svm
+  Dimension: valence
+    overall_mean_trial_accuracy: 0.5573
+    overall_std_trial_accuracy: 0.1408
+    overall_mean_trial_balanced_accuracy: 0.5616
+    overall_std_trial_balanced_accuracy: 0.1529
+    overall_mean_trial_f1_macro: 0.4865
+    overall_std_trial_f1_macro: 0.1554
+    overall_mean_trial_roc_auc: 0.6081
+    overall_std_trial_roc_auc: 0.1693
+    folds: 24
+    top_best_params:
+      {"clf__C": 13.411788774467905, "clf__class_weight": "balanced", "clf__gamma": 0.00026210878782654407} (n=4)
+      {"clf__C": 0.40069130793659025, "clf__class_weight": "balanced", "clf__gamma": 0.0014899847475658245} (n=3)
+      {"clf__C": 235.1599274057192, "clf__class_weight": "balanced", "clf__gamma": 0.021154290797261225} (n=2)
+      {"clf__C": 0.4342298948286134, "clf__class_weight": "balanced", "clf__gamma": 0.0008179499475211679} (n=2)
+      {"clf__C": 1.351144633701368, "clf__class_weight": "balanced", "clf__gamma": 0.015446089075047083} (n=2)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.5625 (splits=2)
+      subject 2: 0.5000 (splits=2)
+      subject 3: 0.6875 (splits=2)
+      subject 4: 0.5625 (splits=2)
+      subject 5: 0.4375 (splits=2)
+      subject 6: 0.5000 (splits=2)
+      subject 7: 0.5000 (splits=2)
+      subject 8: 0.6250 (splits=2)
+      subject 9: 0.4375 (splits=2)
+      subject 10: 0.9375 (splits=2)
+      subject 11: 0.5625 (splits=2)
+      subject 12: 0.3750 (splits=2)
+  Dimension: arousal
+    overall_mean_trial_accuracy: 0.5365
+    overall_std_trial_accuracy: 0.1209
+    overall_mean_trial_balanced_accuracy: 0.5559
+    overall_std_trial_balanced_accuracy: 0.1197
+    overall_mean_trial_f1_macro: 0.4999
+    overall_std_trial_f1_macro: 0.1328
+    overall_mean_trial_roc_auc: 0.6109
+    overall_std_trial_roc_auc: 0.1281
+    folds: 24
+    top_best_params:
+      {"clf__C": 13.411788774467905, "clf__class_weight": "balanced", "clf__gamma": 0.00026210878782654407} (n=5)
+      {"clf__C": 1.351144633701368, "clf__class_weight": "balanced", "clf__gamma": 0.015446089075047083} (n=3)
+      {"clf__C": 243.14537412227003, "clf__class_weight": "balanced", "clf__gamma": 0.0004992453416923984} (n=3)
+      {"clf__C": 183.42628625395747, "clf__class_weight": "balanced", "clf__gamma": 0.0001005394019469303} (n=2)
+      {"clf__C": 262.30889101079146, "clf__class_weight": null, "clf__gamma": 0.0025135566617708314} (n=2)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.5625 (splits=2)
+      subject 2: 0.6250 (splits=2)
+      subject 3: 0.6875 (splits=2)
+      subject 4: 0.4375 (splits=2)
+      subject 5: 0.4375 (splits=2)
+      subject 6: 0.5000 (splits=2)
+      subject 7: 0.4375 (splits=2)
+      subject 8: 0.3125 (splits=2)
+      subject 9: 0.6250 (splits=2)
+      subject 10: 0.6875 (splits=2)
+      subject 11: 0.4375 (splits=2)
+      subject 12: 0.6875 (splits=2)

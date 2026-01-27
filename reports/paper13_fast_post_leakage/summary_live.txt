@@ -1,0 +1,7 @@
+Paper 13 FAST - FINAL RESULTS (Grouped CV)
+========================================
+XGBoost with DEFAULT parameters
+5-fold GROUPED CV by video (within-subject, no leakage)
+
+valence: 61.4% +/- 7.0%
+arousal: 62.9% +/- 11.5%

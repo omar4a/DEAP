@@ -1,0 +1,71 @@
+DEAP Experiment Summary
+
+Config
+  data_dir: archive_gedai
+  eeg_channels: 32
+  bands: [['theta', 4.0, 8.0], ['alpha', 8.0, 13.0], ['beta', 13.0, 30.0], ['gamma', 30.0, 45.0]]
+  window_seconds: 6.0
+  step_seconds: 3.0
+  feature_mode: bandpower_log
+  feature_set: ['de']
+  feature_selection: none
+  mi_k: None
+  l1_c: 0.5
+  l1_alpha: 0.001
+  scaler: robust
+  pca_variance: None
+  label_mode: subject_mean
+  label_threshold: 5.0
+  label_bins: [3.0, 6.0]
+
+Splits
+  outer_repeats: 2
+  train_ratio: 0.8
+  inner_folds: 3
+  scoring: f1_macro
+  search_strategy: random
+  search_trials: 40
+
+Model: rbf_svm
+  Dimension: valence
+    overall_mean_trial_accuracy: 0.6188
+    overall_std_trial_accuracy: 0.1464
+    folds: 20
+    top_best_params:
+      {"clf__C": 10.0, "clf__class_weight": "balanced", "clf__gamma": 0.0001} (n=4)
+      {"clf__C": 0.1, "clf__class_weight": "balanced", "clf__gamma": 0.01} (n=4)
+      {"clf__C": 1.0, "clf__class_weight": null, "clf__gamma": 0.001} (n=3)
+      {"clf__C": 1.0, "clf__class_weight": "balanced", "clf__gamma": 0.001} (n=3)
+      {"clf__C": 10.0, "clf__class_weight": null, "clf__gamma": 0.01} (n=2)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.5000 (splits=2)
+      subject 2: 0.6250 (splits=2)
+      subject 3: 0.6875 (splits=2)
+      subject 4: 0.6250 (splits=2)
+      subject 5: 0.5000 (splits=2)
+      subject 6: 0.4375 (splits=2)
+      subject 7: 0.5625 (splits=2)
+      subject 8: 0.6250 (splits=2)
+      subject 9: 0.6250 (splits=2)
+      subject 10: 1.0000 (splits=2)
+  Dimension: arousal
+    overall_mean_trial_accuracy: 0.5750
+    overall_std_trial_accuracy: 0.1244
+    folds: 20
+    top_best_params:
+      {"clf__C": 10.0, "clf__class_weight": "balanced", "clf__gamma": 0.0001} (n=3)
+      {"clf__C": 1.0, "clf__class_weight": "balanced", "clf__gamma": 0.001} (n=3)
+      {"clf__C": 10.0, "clf__class_weight": null, "clf__gamma": 0.01} (n=2)
+      {"clf__C": 1.0, "clf__class_weight": "balanced", "clf__gamma": 0.01} (n=2)
+      {"clf__C": 100.0, "clf__class_weight": null, "clf__gamma": 0.001} (n=2)
+    per_subject_mean_trial_accuracy:
+      subject 1: 0.6250 (splits=2)
+      subject 2: 0.6875 (splits=2)
+      subject 3: 0.7500 (splits=2)
+      subject 4: 0.5000 (splits=2)
+      subject 5: 0.5625 (splits=2)
+      subject 6: 0.6875 (splits=2)
+      subject 7: 0.4375 (splits=2)
+      subject 8: 0.3125 (splits=2)
+      subject 9: 0.5625 (splits=2)
+      subject 10: 0.6250 (splits=2)

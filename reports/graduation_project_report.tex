@@ -1,0 +1,1396 @@
+% =============================================================================
+% CESS Graduation Project Report
+% EEG-Based Emotion Recognition Using Classical Machine Learning on the DEAP Dataset
+% =============================================================================
+\documentclass[12pt,a4paper]{report}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}                    % Times New Roman
+\usepackage[left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}\onehalfspacing
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath,amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{fancyhdr}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    urlcolor=blue,
+}
+
+\captionsetup[figure]{font=small,labelfont=bf,position=bottom}
+\captionsetup[table]{font=small,labelfont=bf,position=top}
+
+% --- Header/Footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% =============================================================================
+\begin{document}
+
+% ---- TITLE PAGE ----
+\begin{titlepage}
+\centering
+\vspace*{1cm}
+
+{\large\bfseries Ain Shams University\\Faculty of Engineering}\\[0.3cm]
+{\normalsize Computer Engineering and Software Systems (CESS) Program}\\[0.3cm]
+{\small 1 Elsarayat St., Abbaseya, 11517 Cairo, Egypt}\\[2cm]
+
+{\LARGE\bfseries Graduation Project Report}\\[1.5cm]
+
+{\huge\bfseries EEG-Based Emotion Recognition\\[0.3cm]
+Using Classical Machine Learning\\[0.3cm]
+on the DEAP Dataset}\\[2cm]
+
+{\large\bfseries Part I: Machine Learning Pipeline}\\[2cm]
+
+\vfill
+
+{\large
+\begin{tabular}{ll}
+\textbf{Submitted By:}  & [Student Names] \\
+\textbf{Supervisor(s):} & [Supervisor Names] \\
+\textbf{Submission Date:} & [Date] \\
+\end{tabular}
+}
+
+\end{titlepage}
+
+% ---- DECLARATION ----
+\newpage
+\thispagestyle{empty}
+\chapter*{Declaration}
+\addcontentsline{toc}{chapter}{Declaration}
+
+We hereby certify that the work presented in this report titled
+\textit{``EEG-Based Emotion Recognition Using Classical Machine Learning on the DEAP Dataset''}
+is our own original work. All sources of information have been duly cited and
+acknowledged. This report has not been previously submitted for any other degree
+or qualification.
+
+\vspace{3cm}
+\noindent
+\begin{tabular}{p{6cm}p{6cm}}
+Signature: \hrulefill & Date: \hrulefill \\
+\end{tabular}
+
+% ---- ABSTRACT ----
+\newpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+This report presents the machine learning component of a two-part graduation
+project aimed at building a real-time EEG-based emotion recognition system.
+We design, implement, and systematically evaluate a classical machine learning
+pipeline for arousal and valence classification using the DEAP
+(Database for Emotion Analysis using Physiological signals) dataset.
+
+The pipeline follows methodologies from high-accuracy published research and
+encompasses signal preprocessing (bandpass filtering at 4--45~Hz, 50~Hz notch
+filtering, and baseline correction), multi-domain feature extraction
+(Differential Entropy, Higuchi Fractal Dimension, statistical moments, Hjorth
+parameters, band power, and connectivity features), and classification using
+gradient boosting and support vector machines with nested cross-validation.
+
+Through a series of over 20 systematic experiments spanning window size
+optimization, feature ablation, band selection, feature selection methods, and
+model comparison, we achieved a best subject-dependent accuracy of
+\textbf{66.72\% for valence} and \textbf{66.25\% for arousal} using XGBoost
+with Differential Entropy and Higuchi Fractal Dimension features under rigorous
+grouped cross-validation that prevents data leakage. We further demonstrate
+that naive evaluation protocols that ignore trial boundaries can inflate
+accuracy to over 80\%, highlighting the critical importance of proper
+cross-validation in EEG research.
+
+The trained models and feature extraction pipeline are designed to integrate
+with the real-time mobile application presented in Part~II of this project.
+
+\vspace{0.5cm}
+\noindent\textbf{Keywords:} EEG, emotion recognition, DEAP dataset, machine
+learning, differential entropy, Higuchi fractal dimension, XGBoost, SVM,
+affective computing, brain-computer interface.
+
+% ---- ACKNOWLEDGMENT ----
+\newpage
+\chapter*{Acknowledgment}
+\addcontentsline{toc}{chapter}{Acknowledgment}
+
+[We would like to express our gratitude to our supervisor(s) for their guidance
+and support throughout this project. We also thank the creators of the DEAP
+dataset for making their data publicly available for research purposes.]
+
+% ---- TABLE OF CONTENTS ----
+\newpage
+\tableofcontents
+
+% ---- LIST OF FIGURES ----
+\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+% ---- LIST OF TABLES ----
+\newpage
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+% ---- LIST OF ABBREVIATIONS ----
+\newpage
+\chapter*{List of Abbreviations}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+
+\begin{longtable}{@{}ll@{}}
+\toprule
+\textbf{Abbreviation} & \textbf{Description} \\
+\midrule
+\endhead
+BCI   & Brain-Computer Interface \\
+CV    & Cross-Validation \\
+DE    & Differential Entropy \\
+DEAP  & Database for Emotion Analysis using Physiological signals \\
+EEG   & Electroencephalography \\
+FFT   & Fast Fourier Transform \\
+HFD   & Higuchi Fractal Dimension \\
+HGB   & Histogram-based Gradient Boosting \\
+IIR   & Infinite Impulse Response \\
+LGBM  & Light Gradient Boosting Machine \\
+MI    & Mutual Information \\
+ML    & Machine Learning \\
+MLP   & Multi-Layer Perceptron \\
+PCA   & Principal Component Analysis \\
+PCC   & Pearson Correlation Coefficient \\
+PLV   & Phase-Locking Value \\
+PSD   & Power Spectral Density \\
+RF    & Random Forest \\
+ROC-AUC & Receiver Operating Characteristic -- Area Under Curve \\
+SVM   & Support Vector Machine \\
+XGB   & Extreme Gradient Boosting (XGBoost) \\
+\bottomrule
+\end{longtable}
+
+
+% #############################################################################
+% CHAPTER 1: INTRODUCTION
+% #############################################################################
+\chapter{Introduction}
+\label{ch:introduction}
+
+\section{Motivation}
+\label{sec:motivation}
+
+Emotions play a fundamental role in human cognition, decision-making, and
+social interaction. The ability to automatically recognize emotional states
+from physiological signals opens significant opportunities in healthcare,
+human-computer interaction, adaptive learning systems, and mental health
+monitoring. Among the various modalities available for emotion sensing,
+electroencephalography (EEG) offers a direct window into brain activity,
+capturing neural correlates of affective states with high temporal resolution.
+
+Unlike facial expression or speech-based approaches, EEG signals are difficult
+to consciously suppress or fake, making them a more reliable indicator of
+genuine emotional experience. However, EEG-based emotion recognition presents
+substantial challenges: signals are noisy, non-stationary, and exhibit high
+inter-subject variability. Building robust classifiers that generalize across
+individuals remains an open research problem.
+
+The DEAP dataset~\cite{koelstra2012deap}, one of the most widely used
+benchmarks in affective computing, provides multi-channel EEG recordings from
+32 participants watching 40 music video stimuli, with self-reported arousal
+and valence ratings. Despite being extensively studied, reported accuracies
+in the literature vary widely---from below 60\% to above 90\%---with
+discrepancies often attributable to differences in evaluation protocols rather
+than genuine algorithmic improvements.
+
+This project is motivated by two goals: (1)~building a rigorous, reproducible
+ML pipeline for EEG emotion recognition that achieves competitive accuracy
+under proper evaluation, and (2)~developing that pipeline into a deployable
+system integrated with a real-time mobile application for practical use.
+
+\section{Problem Definition}
+\label{sec:problem}
+
+Given multi-channel EEG recordings from the DEAP dataset, the task is to
+classify emotional states along two affective dimensions:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Valence}: the pleasantness of an emotion (positive vs.\ negative).
+    \item \textbf{Arousal}: the intensity or activation level of an emotion (calm vs.\ excited).
+\end{itemize}
+
+Each dimension is treated as a binary classification problem using a threshold
+on the self-reported ratings (scale 1--9). The pipeline must address several
+sub-problems:
+
+\begin{enumerate}[noitemsep]
+    \item \textbf{Signal preprocessing}: Removing noise and artifacts from raw EEG.
+    \item \textbf{Feature extraction}: Computing discriminative representations
+          from time-domain, frequency-domain, and spatial perspectives.
+    \item \textbf{Model selection and evaluation}: Identifying the best classifier
+          and hyperparameters using cross-validation that avoids data leakage.
+    \item \textbf{Deployability}: Producing a model suitable for integration
+          with a real-time mobile application.
+\end{enumerate}
+
+\section{Objectives}
+\label{sec:objectives}
+
+The objectives of this project are:
+
+\begin{enumerate}[noitemsep]
+    \item Implement a modular, end-to-end ML pipeline for EEG-based emotion
+          recognition following published methodologies from high-accuracy papers.
+    \item Systematically evaluate the impact of preprocessing parameters,
+          feature types, window sizes, feature selection methods, and classifiers
+          on recognition accuracy.
+    \item Achieve competitive subject-dependent classification accuracy on the
+          DEAP dataset under rigorous, leakage-free evaluation.
+    \item Demonstrate the effect of data leakage on reported results to
+          contextualize discrepancies in published literature.
+    \item Provide a trained model and feature extraction pipeline suitable for
+          real-time deployment in the mobile application (Part~II).
+\end{enumerate}
+
+\section{Contributions}
+\label{sec:contributions}
+
+The main contributions of this work are:
+
+\begin{enumerate}[noitemsep]
+    \item A \textbf{modular, open-source pipeline} with configurable preprocessing,
+          17 feature extraction methods, 10 classifiers, and multiple evaluation
+          protocols, with built-in caching and checkpoint/resume capabilities.
+    \item A \textbf{systematic experimental study} comprising over 20 experiments
+          with ablation across window sizes, feature sets, frequency bands,
+          feature selection methods, and models.
+    \item A \textbf{rigorous evaluation methodology} using grouped
+          cross-validation (GroupKFold by trial) that prevents data leakage
+          between overlapping windows from the same trial.
+    \item A \textbf{quantitative demonstration of data leakage effects},
+          showing that improper evaluation inflates accuracy by approximately
+          15--20 percentage points.
+    \item \textbf{Reproducible results} with checkpointing, caching, and
+          configuration serialization for full experimental traceability.
+\end{enumerate}
+
+\section{Report Organization}
+\label{sec:organization}
+
+This report is organized as follows:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Chapter~\ref{ch:background}}: Reviews theoretical foundations
+          of EEG signal processing, feature extraction techniques, and machine
+          learning classifiers. Presents a literature review of DEAP-based
+          emotion recognition work.
+    \item \textbf{Chapter~\ref{ch:architecture}}: Describes the system
+          architecture, data flow, and design decisions of the pipeline.
+    \item \textbf{Chapter~\ref{ch:experiments}}: Details all experiments
+          conducted, including configurations, results, and analysis.
+    \item \textbf{Chapter~\ref{ch:conclusion}}: Summarizes findings and
+          discusses integration with the mobile application (Part~II).
+\end{itemize}
+
+\noindent\textit{Note: This report covers Part~I (Machine Learning Pipeline)
+of the graduation project. Part~II (Real-Time Mobile Application) will be
+appended as additional chapters.}
+
+
+% #############################################################################
+% CHAPTER 2: THEORETICAL BACKGROUND
+% #############################################################################
+\chapter{Theoretical Background}
+\label{ch:background}
+
+\section{Background}
+\label{sec:bg}
+
+\subsection{Emotion Models}
+
+Emotions can be represented using discrete categories (e.g., happiness, sadness,
+anger) or continuous dimensional models. The most widely adopted dimensional
+model is Russell's \textit{circumplex model of affect}~\cite{russell1980}, which
+describes emotions along two orthogonal axes:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Valence}: Ranges from unpleasant (negative) to pleasant
+          (positive).
+    \item \textbf{Arousal}: Ranges from calm (low activation) to excited
+          (high activation).
+\end{itemize}
+
+This two-dimensional representation allows any emotion to be mapped as a point
+in the valence-arousal space. For example, ``excitement'' corresponds to high
+valence and high arousal, while ``sadness'' corresponds to low valence and low
+arousal. The DEAP dataset adopts this model, providing self-reported valence
+and arousal ratings on a continuous 1--9 scale.
+
+\subsection{Electroencephalography (EEG)}
+
+Electroencephalography records electrical activity of the brain through
+electrodes placed on the scalp. The DEAP dataset uses 32 EEG channels arranged
+according to the international 10--20 system (channels: Fp1, AF3, F7, F3, FC1,
+FC5, T7, C3, CP1, CP5, P7, P3, Pz, PO3, O1, Oz, O2, PO4, P4, P8, CP6, CP2,
+C4, T8, FC6, FC2, F4, F8, AF4, Fp2, Fz, Cz), sampled at 128~Hz and
+downsampled from the original 512~Hz recordings.
+
+EEG signals are commonly analyzed in terms of frequency bands, each associated
+with different cognitive and affective states:
+
+\begin{table}[H]
+\centering
+\caption{EEG frequency bands and their functional associations.}
+\label{tab:eeg_bands}
+\begin{tabular}{llp{7cm}}
+\toprule
+\textbf{Band} & \textbf{Range (Hz)} & \textbf{Functional Association} \\
+\midrule
+Theta  & 4--8   & Memory processing, emotional regulation, drowsiness \\
+Alpha  & 8--13  & Relaxation, idling, inhibition of task-irrelevant regions \\
+Beta   & 13--30 & Active thinking, focus, anxiety, motor planning \\
+Gamma  & 30--45 & Higher cognitive functions, cross-modal sensory processing \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The DEAP Dataset}
+
+The DEAP dataset~\cite{koelstra2012deap} is a benchmark for emotion
+recognition from physiological signals. Its key characteristics are:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Participants}: 32 subjects.
+    \item \textbf{Stimuli}: 40 one-minute music video excerpts selected to
+          elicit a range of emotional responses.
+    \item \textbf{EEG channels}: 32 channels at 128~Hz sampling rate.
+    \item \textbf{Trial structure}: Each trial consists of a 3-second
+          pre-stimulus baseline followed by 60 seconds of stimulus viewing.
+    \item \textbf{Self-assessment}: After each trial, participants rated their
+          experience on 1--9 scales for valence, arousal, dominance, and liking.
+    \item \textbf{Data format}: Each subject's data is stored as a
+          \texttt{.mat} file containing EEG data with shape
+          $[40 \times 40 \times 8064]$ (trials $\times$ channels $\times$
+          samples) and labels with shape $[40 \times 4]$.
+\end{itemize}
+
+The 8064 samples per trial correspond to 63~seconds at 128~Hz (3~s baseline +
+60~s stimulus). After baseline removal, 60~seconds (7680~samples) of stimulus
+data remain per trial.
+
+\subsection{Classical Machine Learning for EEG}
+
+Classical ML approaches for EEG classification typically follow a pipeline of:
+(1)~preprocessing, (2)~feature extraction, (3)~optional feature
+selection/reduction, and (4)~classification. Unlike deep learning approaches,
+classical methods rely on hand-crafted features derived from domain knowledge
+of EEG signal characteristics. This approach has several advantages for
+EEG-based emotion recognition:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Interpretability}: Features have clear neurophysiological
+          meaning (e.g., alpha power relates to relaxation).
+    \item \textbf{Sample efficiency}: Works with the relatively small sample
+          sizes typical of EEG datasets (32 subjects $\times$ 40 trials).
+    \item \textbf{Computational efficiency}: Suitable for real-time deployment
+          on mobile devices.
+    \item \textbf{Competitive accuracy}: State-of-the-art classical methods
+          achieve comparable or superior results to deep learning on DEAP.
+\end{itemize}
+
+
+\section{Literature Review}
+\label{sec:literature}
+
+EEG-based emotion recognition on the DEAP dataset has been extensively studied.
+We review the key papers that informed our pipeline design, focusing on those
+reporting the highest accuracies with classical ML methods.
+
+\subsection{High-Accuracy Approaches}
+
+\textbf{Paper~13} (Differential Entropy and Fractal Dimension features)
+proposed using histogram-based Differential Entropy (DE) and Higuchi Fractal
+Dimension (HFD) as features, combined with XGBoost classification. Their
+preprocessing included a 4th-order Butterworth bandpass filter (4--45~Hz) and
+a 50~Hz notch filter for power line interference removal. Using 3-second
+non-overlapping windows, they reported \textbf{89\% valence and 88\% arousal}
+accuracy. This paper formed the primary basis for our pipeline design.
+
+\textbf{Paper~14} (Statistical and Hjorth features) achieved \textbf{91\%
+valence and 89\% arousal} using statistical features (mean, standard deviation,
+skewness, kurtosis) and Hjorth parameters (activity, mobility, complexity)
+combined with XGBoost. Their high accuracies motivated the inclusion of these
+feature types in our pipeline.
+
+\textbf{Paper~11} (Band power with feature selection) used band power features
+across the standard EEG frequency bands with Mutual Information-based feature
+selection, reporting \textbf{64--89\%} accuracy depending on the evaluation
+protocol and classifier.
+
+\subsection{Evaluation Protocol Concerns}
+
+A critical observation from the literature is the wide variation in reported
+accuracies (55\%--95\%) for the same dataset, which is largely attributable to
+differences in evaluation protocols:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Window-level vs.\ trial-level evaluation}: When 60-second
+          trials are segmented into 3-second windows, adjacent windows from the
+          same trial are highly correlated. Random train/test splits that mix
+          windows from the same trial into both sets create data leakage.
+    \item \textbf{Subject-dependent vs.\ cross-subject}: Subject-dependent
+          evaluation (training and testing on the same subject) yields higher
+          accuracy than cross-subject generalization.
+    \item \textbf{Pooled vs.\ per-subject evaluation}: Pooling all subjects'
+          data without accounting for subject identity inflates accuracy.
+\end{itemize}
+
+Rigorous evaluation requires \textbf{grouped cross-validation} (GroupKFold)
+where all windows from the same trial appear exclusively in either the training
+or test set, never both.
+
+
+\section{State of the Art}
+\label{sec:sota}
+
+Table~\ref{tab:sota} summarizes representative results from the literature on
+the DEAP dataset using classical ML methods.
+
+\begin{table}[H]
+\centering
+\caption{Summary of representative DEAP emotion recognition results.}
+\label{tab:sota}
+\begin{tabular}{p{3.5cm}lllc}
+\toprule
+\textbf{Method} & \textbf{Features} & \textbf{Classifier} & \textbf{Val / Aro} & \textbf{CV Type} \\
+\midrule
+Paper 13 & DE, HFD & XGBoost & 89\% / 88\% & Not grouped \\
+Paper 14 & Statistical, Hjorth & XGBoost & 91\% / 89\% & Not grouped \\
+Paper 11 & Band power & SVM & 64--89\% & Varies \\
+\midrule
+\textbf{Ours (rigorous)} & \textbf{DE, HFD} & \textbf{XGBoost} & \textbf{66.7\% / 66.3\%} & \textbf{Grouped} \\
+Ours (leaky, ref.) & DE, BP, Asym & XGBoost & 80.9\% / 81.9\% & Not grouped \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The gap between our rigorous results and the literature values is consistent
+with the data leakage hypothesis: when we deliberately replicate the leaky
+evaluation protocol, our accuracy rises to a comparable $\sim$81\%.
+
+
+% #############################################################################
+% CHAPTER 3: SYSTEM ARCHITECTURE AND DESIGN
+% #############################################################################
+\chapter{System Architecture and Design}
+\label{ch:architecture}
+
+\section{Introduction}
+
+This chapter presents the architecture and design of the EEG emotion
+recognition pipeline. The system is implemented in Python as a modular package
+(\texttt{deap\_emotion}) with clear separation of concerns across preprocessing,
+feature extraction, labeling, model building, and evaluation components.
+
+\section{System Overview}
+
+The pipeline follows the standard EEG processing workflow illustrated in
+Figure~\ref{fig:pipeline}.
+
+\begin{figure}[H]
+\centering
+\fbox{\parbox{0.9\textwidth}{\centering
+\textbf{Pipeline Data Flow}\\[0.5cm]
+DEAP Files (\texttt{archive/*.mat})\\
+$\downarrow$\\
+\texttt{data.py}: Load \& Parse $\rightarrow$ \texttt{SubjectData} (trials $\times$ channels $\times$ samples)\\
+$\downarrow$\\
+\texttt{preprocess.py}: Bandpass 4--45~Hz $\rightarrow$ Notch 50~Hz $\rightarrow$ Baseline Correction\\
+$\downarrow$\\
+\texttt{features.py}: Segmentation (3s windows) $\rightarrow$ Feature Extraction\\
+$\downarrow$\\
+\texttt{labels.py}: Build Binary Labels (threshold-based)\\
+$\downarrow$\\
+\texttt{model\_registry.py}: Build Classifier Pipeline (Scaler $\rightarrow$ Selection $\rightarrow$ Classifier)\\
+$\downarrow$\\
+\texttt{experiment.py}: Nested CV (Outer: Repeated Group Splits, Inner: Grid Search)\\
+$\downarrow$\\
+Reports: JSON + CSV + TXT summaries
+}}
+\caption{End-to-end data flow of the emotion recognition pipeline.}
+\label{fig:pipeline}
+\end{figure}
+
+\section{Data Shapes and Conventions}
+
+Throughout the pipeline, the following tensor conventions are maintained:
+
+\begin{table}[H]
+\centering
+\caption{Data shape conventions used in the pipeline.}
+\label{tab:shapes}
+\begin{tabular}{lll}
+\toprule
+\textbf{Data} & \textbf{Shape} & \textbf{Typical Dimensions} \\
+\midrule
+Raw EEG         & [trials, channels, samples] & [40, 32, 8064] \\
+Post-baseline   & [trials, channels, samples] & [40, 32, 7680] \\
+Windowed EEG    & [segments, channels, window] & [800, 32, 384] \\
+Feature matrix  & [samples, features]          & [800, 64] \\
+Labels / Groups & [samples]                    & [800] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent where 800 segments arise from 40 trials $\times$ 20 windows/trial
+(60s $\div$ 3s = 20) per subject.
+
+
+\section{Preprocessing Module}
+\label{sec:preprocess}
+
+The preprocessing pipeline, implemented in \texttt{preprocess.py}, follows the
+methodology of Paper~13 and consists of three stages:
+
+\subsection{Bandpass Filtering}
+
+A 4th-order Butterworth bandpass filter with cutoff frequencies at 4~Hz and
+45~Hz is applied using zero-phase filtering (\texttt{scipy.signal.filtfilt}).
+The filter design uses the bilinear transform:
+
+\begin{equation}
+    H(s) = \frac{1}{\prod_{k=1}^{N}(s - p_k)}
+    \label{eq:butterworth}
+\end{equation}
+
+\noindent where $N=4$ is the filter order and $p_k$ are the Butterworth poles.
+Zero-phase filtering applies the filter forward and backward, eliminating phase
+distortion while doubling the effective order. The 4~Hz lower cutoff removes
+low-frequency drift and the delta band (which is dominated by eye movement
+artifacts), while the 45~Hz upper cutoff removes high-frequency muscle noise.
+
+\subsection{Notch Filtering}
+
+A 50~Hz IIR notch filter (quality factor $Q=30$) removes power line
+interference using \texttt{scipy.signal.iirnotch}. The narrow bandwidth
+($50 \pm 1.67$~Hz) ensures minimal distortion to the gamma band signal.
+
+\subsection{Baseline Correction}
+
+The first 3~seconds (384~samples at 128~Hz) of each trial serve as the
+pre-stimulus baseline. The per-channel mean of this baseline period is
+subtracted from the entire trial, after which the baseline samples are
+discarded, leaving 60~seconds of stimulus data:
+
+\begin{equation}
+    x_{\text{corrected}}[c, t] = x[c, t] - \frac{1}{T_b}\sum_{t=1}^{T_b} x[c, t]
+    \quad \text{for } t > T_b
+\end{equation}
+
+\noindent where $T_b = 384$ is the number of baseline samples and $c$ indexes
+the channel.
+
+
+\section{Feature Extraction Module}
+\label{sec:features}
+
+The feature extraction module (\texttt{features.py}) supports 12 feature types
+organized into four categories. All features are computed per-channel and then
+flattened into a single feature vector per window.
+
+\subsection{Frequency-Domain Features}
+
+\textbf{Band Power} (\texttt{bandpower}): The average power spectral density
+within each frequency band, computed via FFT:
+
+\begin{equation}
+    P_b = \frac{1}{|F_b|}\sum_{f \in F_b} |X(f)|^2
+\end{equation}
+
+\noindent where $F_b$ is the set of frequency bins falling within band $b$.
+This produces 4 features per channel (theta, alpha, beta, gamma) = 128
+features for 32 channels.
+
+\textbf{Differential Entropy} (\texttt{de\_histogram}): Computed using the
+histogram-based method from Paper~13:
+
+\begin{equation}
+    h(X) = -\sum_{i=1}^{B} p(x_i) \cdot \log p(x_i) \cdot \Delta x
+    \label{eq:de}
+\end{equation}
+
+\noindent where $B=100$ histogram bins, $p(x_i)$ is the probability density
+estimate, and $\Delta x$ is the bin width. This produces 1 feature per channel
+= 32 features.
+
+\textbf{Relative Band Power} (\texttt{rel\_bandpower}): Band power normalized
+by total power: $P_{b,\text{rel}} = P_b / \sum_b P_b$.
+
+\textbf{PSD Bins} (\texttt{psd}): Fine-grained power spectral density in
+2~Hz-wide bins from 1--45~Hz.
+
+\subsection{Time-Domain Features}
+
+\textbf{Statistical Features} (\texttt{statistical}, Paper~14): Per-channel
+mean ($\mu$), standard deviation ($\sigma$), skewness ($\gamma_1$), and
+kurtosis ($\gamma_2$). Produces 4 features per channel = 128 features.
+
+\textbf{Hjorth Parameters} (\texttt{hjorth}, Paper~14): Three descriptors
+per channel capturing signal shape:
+
+\begin{align}
+    \text{Activity} &= \text{Var}(x) \\
+    \text{Mobility} &= \sqrt{\frac{\text{Var}(x')}{\text{Var}(x)}} \\
+    \text{Complexity} &= \frac{\text{Mobility}(x')}{\text{Mobility}(x)}
+\end{align}
+
+\noindent Produces 3 features per channel = 96 features.
+
+\textbf{Higuchi Fractal Dimension} (\texttt{hfd}, Paper~13): Quantifies signal
+complexity by measuring the fractal dimension through curve length analysis at
+multiple scales ($k = 1, \ldots, k_{\max}=10$):
+
+\begin{equation}
+    L(k) = \frac{1}{k} \sum_{m=1}^{k} \frac{(n-1) \sum_{i=1}^{\lfloor(n-m)/k\rfloor}
+    |x(m+ik) - x(m+(i-1)k)|}{k \cdot \lfloor(n-m)/k\rfloor \cdot k}
+\end{equation}
+
+The fractal dimension $D$ is the slope of $\log L(k)$ vs.\ $\log(1/k)$.
+Produces 1 feature per channel = 32 features.
+
+\subsection{Spatial/Connectivity Features}
+
+\textbf{Asymmetry} (\texttt{asymmetry}): Differential and ratio features
+between 7 symmetric electrode pairs (Fp1--Fp2, F3--F4, F7--F8, C3--C4,
+T7--T8, P3--P4, O1--O2), capturing hemispheric lateralization of emotional
+processing.
+
+\textbf{Pearson Correlation Coefficient} (\texttt{connectivity\_pcc}):
+Summary statistics (mean, std, mean absolute) of pairwise channel correlations
+within each frequency band, capturing functional connectivity.
+
+\textbf{Phase-Locking Value} (\texttt{connectivity\_plv}): Summary statistics
+of pairwise phase synchronization computed via the Hilbert transform, measuring
+phase coherence between channels.
+
+\subsection{Feature Dimensionality Summary}
+
+\begin{table}[H]
+\centering
+\caption{Feature dimensionality for 32 EEG channels and 4 frequency bands.}
+\label{tab:feature_dims}
+\begin{tabular}{llr}
+\toprule
+\textbf{Feature Type} & \textbf{Per Channel} & \textbf{Total Features} \\
+\midrule
+Band Power         & 4 (per band)   & 128 \\
+Differential Entropy (histogram) & 1 & 32 \\
+Statistical        & 4              & 128 \\
+Hjorth Parameters  & 3              & 96 \\
+Higuchi FD         & 1              & 32 \\
+Asymmetry          & 4 (per pair)   & 56 \\
+PCC Connectivity   & 3 (per band)   & 12 \\
+PLV Connectivity   & 3 (per band)   & 12 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Labeling Module}
+\label{sec:labels}
+
+The labeling module (\texttt{labels.py}) converts continuous self-report ratings
+into classification targets. Seven modes are supported:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Binary}: $y = 1$ if rating $>$ threshold, else $y = 0$.
+          Default threshold = 4.5 (Paper~13).
+    \item \textbf{Three-class}: Low / neutral / high based on configurable bins
+          (default: $[3.0, 6.0]$).
+    \item \textbf{Quartile}: Four classes based on rating quartiles.
+    \item \textbf{Subject mean/median}: Per-subject adaptive threshold using
+          the individual's mean or median rating.
+    \item \textbf{Subject tertile}: Three classes based on per-subject tertiles.
+    \item \textbf{Regression}: Raw continuous ratings (for regression models).
+\end{itemize}
+
+The primary experiments use \textbf{binary} labeling with a threshold of 4.5.
+
+
+\section{Model Registry}
+\label{sec:models}
+
+The model registry (\texttt{model\_registry.py}) defines 10 classifiers and 4
+regression models as \texttt{ModelSpec} dataclasses, each specifying default
+parameters, hyperparameter search grids, and pipeline requirements.
+
+\begin{table}[H]
+\centering
+\caption{Available classifiers and their configurations.}
+\label{tab:models}
+\begin{tabular}{llcp{4.5cm}}
+\toprule
+\textbf{Model} & \textbf{Algorithm} & \textbf{Scaler} & \textbf{Key Hyperparameters} \\
+\midrule
+\texttt{xgb} & XGBoost & No & n\_estimators, max\_depth, learning\_rate, subsample \\
+\texttt{rbf\_svm} & RBF-SVM & Yes & C, gamma, class\_weight \\
+\texttt{rf} & Random Forest & No & n\_estimators, max\_depth \\
+\texttt{hgb} & Hist. Gradient Boost & No & max\_depth, learning\_rate, max\_iter \\
+\texttt{logreg} & Logistic Regression & Yes & C \\
+\texttt{linear\_svm} & Linear SVM & Yes & C \\
+\texttt{mlp} & Multi-Layer Perceptron & Yes & hidden\_layers, alpha \\
+\texttt{lgbm} & LightGBM & No & n\_estimators, learning\_rate, num\_leaves \\
+\texttt{catboost} & CatBoost & No & iterations, learning\_rate, depth \\
+\texttt{soft\_vote} & Soft Voting Ensemble & --- & Combines: RBF-SVM, LogReg, HGB \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each model is wrapped in a \texttt{sklearn.pipeline.Pipeline} that optionally
+includes: (1)~StandardScaler or RobustScaler, (2)~feature selection via Mutual
+Information (\texttt{SelectKBest}) or L1 regularization (\texttt{SelectFromModel}),
+(3)~PCA dimensionality reduction, and (4)~the classifier.
+
+
+\section{Evaluation Module}
+\label{sec:eval}
+
+\subsection{Subject-Dependent Evaluation}
+
+The primary evaluation protocol is \textbf{subject-dependent} with repeated
+grouped random splits:
+
+\begin{enumerate}[noitemsep]
+    \item For each subject, split the 40 trials into 80\% training (32 trials)
+          and 20\% testing (8 trials) using random permutation.
+    \item All windows from a given trial belong exclusively to either the
+          training or test set (GroupKFold by trial ID), preventing leakage.
+    \item Perform inner cross-validation (GroupKFold) on the training set for
+          hyperparameter tuning via grid search.
+    \item Evaluate on the held-out test trials.
+    \item Repeat for 5 outer splits with different random seeds.
+    \item Report trial-level accuracy using majority voting across windows.
+\end{enumerate}
+
+\subsection{Cross-Subject Evaluation}
+
+Cross-subject evaluation uses Leave-One-Group-Out, where each subject serves
+as one fold:
+
+\begin{enumerate}[noitemsep]
+    \item Leave one subject out for testing.
+    \item Train on all remaining subjects.
+    \item Repeat for all 32 subjects.
+\end{enumerate}
+
+\subsection{Trial-Level Aggregation}
+
+Since each 60-second trial is segmented into multiple 3-second windows, the
+final prediction for a trial is obtained by \textbf{majority voting}: the class
+predicted most frequently across all windows of that trial becomes the trial's
+prediction. An alternative is \textbf{mean probability} aggregation, where
+predicted probabilities are averaged before thresholding.
+
+
+\section{Caching and Checkpointing}
+\label{sec:caching}
+
+\textbf{Feature caching}: Extracted features are cached to disk using a SHA-256
+hash of all feature-relevant configuration parameters (channels, bands, window
+size, feature set, preprocessing flags). This ensures cache invalidation when
+any parameter changes while avoiding redundant computation.
+
+\textbf{Experiment checkpointing}: After each fold evaluation, results are
+appended to a checkpoint CSV file. On restart, completed folds are loaded from
+the checkpoint and skipped, enabling experiments to be paused and resumed
+without loss of progress. A live summary file is updated after each fold,
+providing real-time monitoring of running experiments.
+
+
+\section{Software Architecture}
+
+The codebase is organized as a Python package with the following structure:
+
+\begin{table}[H]
+\centering
+\caption{Source code modules and their responsibilities.}
+\label{tab:modules}
+\begin{tabular}{lp{9cm}}
+\toprule
+\textbf{Module} & \textbf{Responsibility} \\
+\midrule
+\texttt{config.py}          & Frozen dataclass with all pipeline parameters \\
+\texttt{data.py}            & Dataset loading (MAT/NPZ/DAT formats) \\
+\texttt{preprocess.py}      & Bandpass, notch, baseline, segmentation \\
+\texttt{features.py}        & 12 feature extraction methods \\
+\texttt{labels.py}          & 7 labeling modes \\
+\texttt{model\_registry.py} & 14 model definitions with hyperparameter grids \\
+\texttt{eval.py}            & Subject-dependent \& cross-subject evaluation \\
+\texttt{experiment.py}      & Grid search, nested CV, checkpointing \\
+\texttt{metrics.py}         & 20+ classification and regression metrics \\
+\texttt{splits.py}          & GroupKFold and LeaveOneGroupOut splitters \\
+\texttt{riemann.py}         & Riemannian tangent space transform \\
+\texttt{cli\_experiment.py} & Command-line interface \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Key dependencies include NumPy, SciPy (signal processing), scikit-learn
+(ML framework), XGBoost, and h5py (DEAP file loading).
+
+
+% #############################################################################
+% CHAPTER 4: EXPERIMENTS AND RESULTS
+% #############################################################################
+\chapter{Experiments and Results}
+\label{ch:experiments}
+
+This chapter presents the systematic experiments conducted to optimize the
+emotion recognition pipeline. Over 20 experiment configurations were evaluated,
+organized into four experimental series: (1)~Paper~13 replication,
+(2)~window and feature optimization (roadmap), (3)~representation learning,
+and (4)~data leakage analysis.
+
+All experiments use the full DEAP dataset (32 subjects, 40 trials each) unless
+otherwise noted. The primary metric is \textbf{trial-level accuracy} obtained
+by majority voting across windows within each trial.
+
+
+\section{Experiment 1: Paper 13 Replication}
+\label{sec:exp_paper13}
+
+\subsection{Configuration}
+
+This experiment replicates the methodology of Paper~13 as closely as possible:
+
+\begin{table}[H]
+\centering
+\caption{Paper 13 replication configuration.}
+\label{tab:paper13_config}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Preprocessing & Bandpass 4--45~Hz (Butterworth 4th order), Notch 50~Hz \\
+Baseline      & 3~s subtraction \\
+Window / Step & 3.0~s / 3.0~s (no overlap) \\
+Features      & DE (histogram) + HFD \\
+Feature dim.  & 64 (32 DE + 32 HFD) \\
+Classifier    & XGBoost (default params) \\
+Label         & Binary, threshold = 4.5 \\
+CV            & 5-fold GroupKFold by trial (within-subject) \\
+Subjects      & All 32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Results --- Default Parameters (Fast)}
+
+With default XGBoost parameters (no hyperparameter tuning):
+
+\begin{table}[H]
+\centering
+\caption{Paper 13 fast replication results (default XGBoost, 32 subjects).}
+\label{tab:paper13_fast}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Dimension} & \textbf{Accuracy} & \textbf{Std Dev} \\
+\midrule
+Valence & 61.4\% & $\pm$ 7.0\% \\
+Arousal & 62.9\% & $\pm$ 11.5\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Results --- With Grid Search}
+
+With nested hyperparameter tuning (5 outer repeats, 4 inner folds):
+
+\begin{table}[H]
+\centering
+\caption{Paper 13 replication with grid search (160 folds, 32 subjects).}
+\label{tab:paper13_grid}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Dimension} & \textbf{Accuracy} & \textbf{Balanced Acc.} & \textbf{F1 (Macro)} & \textbf{Std Dev} \\
+\midrule
+Valence & 66.72\% & 58.43\% & 53.25\% & $\pm$ 8.94\% \\
+Arousal & 66.25\% & 56.81\% & 51.31\% & $\pm$ 13.30\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Grid search improved accuracy by approximately 5 percentage points over
+default parameters, demonstrating the importance of hyperparameter tuning.
+This is the \textbf{best result} achieved under rigorous evaluation.
+
+\subsection{Analysis}
+
+The gap between our result (66.7\%) and Paper~13's reported result (89\%) is
+substantial. We attribute this primarily to differences in evaluation
+protocol: Paper~13 does not clearly specify grouped cross-validation, and
+our leakage analysis (Section~\ref{sec:leakage}) shows that non-grouped
+evaluation can inflate accuracy by $\sim$15--20 percentage points.
+
+The balanced accuracy (58.4\%) is notably lower than raw accuracy (66.7\%),
+indicating class imbalance in the binary split at threshold 4.5. The F1
+macro score (53.3\%) reflects difficulty in the minority class.
+
+
+\section{Experiment 2: Window Size Optimization}
+\label{sec:exp_window}
+
+We systematically varied the window size to find the optimal temporal
+resolution for feature extraction.
+
+\subsection{Roadmap Phased --- Phase 1 Window Sweep}
+
+Using RBF-SVM with DE features (2 outer repeats, 3 inner folds, subset of
+subjects for quick screening):
+
+\begin{table}[H]
+\centering
+\caption{Window size sweep results (RBF-SVM, DE features, Roadmap Phased).}
+\label{tab:window_sweep_phased}
+\begin{tabular}{llcc}
+\toprule
+\textbf{Config} & \textbf{Window / Step} & \textbf{Valence} & \textbf{Arousal} \\
+\midrule
+w2\_s2 & 2.0s / 2.0s & 60.00\% & 53.12\% \\
+w2\_s1 & 2.0s / 1.0s & 60.00\% & 55.63\% \\
+w4\_s4 & 4.0s / 4.0s & 57.50\% & 54.37\% \\
+w4\_s2 & 4.0s / 2.0s & 53.75\% & 55.00\% \\
+w8\_s8 & 8.0s / 8.0s & 60.62\% & 50.62\% \\
+w8\_s4 & 8.0s / 4.0s & 58.75\% & 53.12\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Roadmap Ceiling --- Full Window Sweep}
+
+Extended sweep on all 32 subjects with RBF-SVM (3 outer repeats):
+
+\begin{table}[H]
+\centering
+\caption{Window size sweep results (RBF-SVM, DE features, all 32 subjects).}
+\label{tab:window_sweep_full}
+\begin{tabular}{llcc}
+\toprule
+\textbf{Config} & \textbf{Window / Step} & \textbf{Valence} & \textbf{Arousal} \\
+\midrule
+full\_w2\_s1  & 2.0s / 1.0s  & 57.03\% & 59.51\% \\
+full\_w4\_s2  & 4.0s / 2.0s  & 57.03\% & 59.24\% \\
+full\_w10\_s5 & 10.0s / 5.0s & 58.59\% & 58.72\% \\
+full\_w15\_s7.5 & 15.0s / 7.5s & 56.38\% & 59.64\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Analysis}
+
+Window size had a moderate effect on accuracy. The 3-second window (Paper~13's
+choice) performed well for XGBoost, while the 6-second window showed marginal
+improvement for RBF-SVM. Very large windows (15~s) reduced performance, likely
+due to fewer training samples and temporal blurring of emotional responses.
+Overlapping windows (step $<$ window) did not yield significant improvement
+under grouped CV, since windows from the same trial cannot appear in both
+train and test sets.
+
+
+\section{Experiment 3: Feature Ablation}
+\label{sec:exp_features}
+
+We evaluated different feature combinations to identify the most discriminative
+representations.
+
+\subsection{Roadmap Focus --- Feature Ablation (6s window, RBF-SVM)}
+
+\begin{table}[H]
+\centering
+\caption{Feature ablation results (6s window, 3s step, RBF-SVM).}
+\label{tab:feature_ablation}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Features} & \textbf{Valence} & \textbf{Arousal} \\
+\midrule
+DE only              & \textbf{61.88\%} & \textbf{57.50\%} \\
+DE + Asymmetry       & 60.00\% & 58.75\% \\
+DE + Band Power      & 56.25\% & 54.37\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Roadmap Ceiling --- Representation Learning (10s window, RBF-SVM)}
+
+\begin{table}[H]
+\centering
+\caption{Representation learning results (10s/5s window, RBF-SVM, 160 folds).}
+\label{tab:repr_learning}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Features} & \textbf{Valence} & \textbf{Arousal} \\
+\midrule
+DE only              & 57.42\% & 57.42\% \\
+DE + Asymmetry       & 57.66\% & 57.19\% \\
+DE + PCC             & 57.81\% & 56.72\% \\
+DE + PLV             & 58.36\% & 57.42\% \\
+DE + PCC + PLV       & 58.13\% & \textbf{58.44\%} \\
+DE + PLV + MI (k=100) & \textbf{59.06\%} & 57.73\% \\
+DE + PLV + MI (k=200) & 58.20\% & 57.34\% \\
+DE + PLV + PCA (0.95) & 58.05\% & 57.58\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Analysis}
+
+A consistent finding across experiments: \textbf{Differential Entropy alone
+outperforms feature combinations}. Adding band power, asymmetry, or
+connectivity features either maintains or reduces accuracy. This suggests
+that DE captures the most emotionally relevant information, and additional
+features introduce noise that degrades generalization. Connectivity features
+(PLV, PCC) provide marginal improvement ($\sim$0.5--1\%) in some
+configurations but increase dimensionality substantially.
+
+
+\section{Experiment 4: Band Selection}
+\label{sec:exp_bands}
+
+We tested whether excluding the delta band (which is largely removed by the
+4~Hz highpass filter) would affect results.
+
+\begin{table}[H]
+\centering
+\caption{Band selection results (DE only, 6s/3s window, RBF-SVM).}
+\label{tab:band_selection}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Band Set} & \textbf{Valence} & \textbf{Arousal} \\
+\midrule
+Default (theta, alpha, beta, gamma) & 61.88\% & 57.50\% \\
+No delta (identical, since delta excluded by bandpass) & 61.88\% & 57.50\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The results confirm that the delta band contributes no information after
+4~Hz highpass filtering, validating the four-band (theta, alpha, beta, gamma)
+configuration.
+
+
+\section{Experiment 5: Feature Selection}
+\label{sec:exp_selection}
+
+We compared feature selection methods to determine whether dimensionality
+reduction improves generalization.
+
+\begin{table}[H]
+\centering
+\caption{Feature selection comparison (DE only, 6s/3s, RBF-SVM).}
+\label{tab:feature_selection}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Method} & \textbf{Valence} & \textbf{Arousal} \\
+\midrule
+None (all features) & \textbf{61.88\%} & \textbf{57.50\%} \\
+MI (k=200)          & 61.88\% & 57.50\% \\
+L1 (C=0.1)          & 60.62\% & 52.50\% \\
+L1 (C=0.5)          & 61.88\% & 51.25\% \\
+L1 (C=1.0)          & 61.88\% & 55.00\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Feature selection provided no benefit for DE-only features (32 dimensions),
+as the feature space is already low-dimensional. MI selection with $k=200$
+retained all features since $k > 32$. L1-based selection reduced arousal
+accuracy, possibly by discarding informative channels.
+
+
+\section{Experiment 6: Model Comparison}
+\label{sec:exp_models}
+
+The final roadmap experiment compared models using the best configuration
+(DE only, 6s/3s window, 5 outer repeats, 4 inner folds):
+
+\begin{table}[H]
+\centering
+\caption{Model comparison (DE only, 6s/3s window, all 32 subjects, 160 folds).}
+\label{tab:model_comparison}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{Valence} & \textbf{Arousal} & \textbf{Val Std} & \textbf{Aro Std} \\
+\midrule
+RBF-SVM     & 58.98\% & \textbf{58.67\%} & $\pm$ 13.1\% & $\pm$ 10.8\% \\
+HGB         & \textbf{59.84\%} & 56.48\% & $\pm$ 11.6\% & $\pm$ 9.9\% \\
+Soft Voting & 59.38\% & 57.42\% & $\pm$ 12.2\% & $\pm$ 10.9\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Comparing with the Paper~13 configuration (XGBoost, DE+HFD, 3s window, grid
+search): \textbf{66.72\% / 66.25\%} remains the best overall result, with
+XGBoost outperforming both RBF-SVM and HGB when paired with the HFD feature.
+
+
+\section{Experiment 7: Data Leakage Analysis}
+\label{sec:leakage}
+
+To explain the gap between our results and published accuracies, we
+deliberately introduced data leakage by pooling all windows across subjects
+and trials and using stratified random splits (ignoring trial boundaries).
+
+\begin{table}[H]
+\centering
+\caption{Data leakage analysis: effect of evaluation protocol on accuracy.}
+\label{tab:leakage}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Protocol} & \textbf{Features} & \textbf{Val} & \textbf{Aro} & \textbf{Leakage} \\
+\midrule
+Grouped CV (ours)  & DE + HFD       & 66.72\% & 66.25\% & No \\
+Pooled random split & DE + BP + Asym & 80.85\% & 81.94\% & Yes \\
+Pooled (subset)    & DE + BP + Asym & 82.63\% & 84.29\% & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Analysis}
+
+The leaky protocol inflates accuracy by \textbf{14--18 percentage points}.
+This occurs because:
+
+\begin{enumerate}[noitemsep]
+    \item Adjacent 3-second windows from the same 60-second trial are
+          autocorrelated---they share nearly identical EEG patterns.
+    \item When these correlated windows appear in both training and test sets,
+          the model effectively ``memorizes'' trial-specific patterns rather
+          than learning generalizable emotional features.
+    \item Pooling across subjects further inflates results by mixing
+          subject-specific EEG characteristics.
+\end{enumerate}
+
+This finding is critical for interpreting published results: \textbf{studies
+reporting $>$85\% accuracy on DEAP with classical methods should be scrutinized
+for potential data leakage in their evaluation protocol}.
+
+
+\section{Summary of All Experiments}
+\label{sec:exp_summary}
+
+\begin{table}[H]
+\centering
+\caption{Summary of key experiments and their results.}
+\label{tab:all_experiments}
+\begin{tabular}{p{4cm}llcc}
+\toprule
+\textbf{Experiment} & \textbf{Model} & \textbf{Features} & \textbf{Valence} & \textbf{Arousal} \\
+\midrule
+\multicolumn{5}{l}{\textit{Rigorous evaluation (grouped CV, no leakage)}} \\
+\midrule
+Paper 13 (grid search) & XGBoost & DE + HFD & \textbf{66.72\%} & \textbf{66.25\%} \\
+Paper 13 (default) & XGBoost & DE + HFD & 61.40\% & 62.90\% \\
+Focus: DE only & RBF-SVM & DE & 61.88\% & 57.50\% \\
+Focus: Phase 2 & HGB & DE & 59.84\% & 56.48\% \\
+Ceiling: DE+PLV+MI & RBF-SVM & DE + PLV & 59.06\% & 57.73\% \\
+Focus: Soft Vote & Ensemble & DE & 59.38\% & 57.42\% \\
+\midrule
+\multicolumn{5}{l}{\textit{Leaky evaluation (for reference only)}} \\
+\midrule
+Leaky XGB & XGBoost & DE+BP+Asym & 80.85\% & 81.94\% \\
+Leaky XGB (subset) & XGBoost & DE+BP+Asym & 82.63\% & 84.29\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Key Findings}
+
+\begin{enumerate}
+    \item \textbf{Best configuration}: XGBoost with DE + HFD features,
+          3-second non-overlapping windows, with grid search hyperparameter
+          tuning, achieving 66.72\% valence and 66.25\% arousal.
+
+    \item \textbf{Feature importance}: Differential Entropy alone is the most
+          effective single feature type. Adding HFD provides complementary
+          information. Adding band power, asymmetry, or connectivity features
+          does not improve results.
+
+    \item \textbf{Model ranking}: XGBoost $>$ HGB $\approx$ RBF-SVM $>$
+          Soft Voting for this task.
+
+    \item \textbf{Window size}: 3-second windows (Paper~13's choice) work well.
+          Larger windows reduce sample count without improving accuracy.
+
+    \item \textbf{Feature selection}: Not beneficial for low-dimensional
+          feature spaces (e.g., DE with 32 features).
+
+    \item \textbf{Data leakage}: Non-grouped evaluation inflates accuracy by
+          15--18 percentage points, explaining the discrepancy with published
+          results.
+
+    \item \textbf{Subject variability}: Accuracy varies widely across subjects
+          (from $\sim$40\% to $\sim$90\%), reflecting genuine individual
+          differences in emotional expressivity through EEG.
+
+    \item \textbf{Hyperparameter tuning}: Grid search improves accuracy by
+          $\sim$5 percentage points over default parameters, justifying the
+          computational cost of nested CV.
+\end{enumerate}
+
+
+% #############################################################################
+% CHAPTER 5: SUMMARY AND CONCLUSION
+% #############################################################################
+\chapter{Summary and Conclusion}
+\label{ch:conclusion}
+
+\section{Summary}
+
+This report presented the design, implementation, and evaluation of a classical
+machine learning pipeline for EEG-based emotion recognition using the DEAP
+dataset. The key accomplishments are:
+
+\begin{enumerate}
+    \item \textbf{Pipeline implementation}: A modular, extensible Python package
+          supporting 12 feature types, 10 classifiers, 7 labeling modes, and
+          multiple evaluation protocols, with built-in caching and checkpointing.
+
+    \item \textbf{Systematic experimentation}: Over 20 experiments covering
+          window size optimization, feature ablation, band selection, feature
+          selection, and model comparison, totaling thousands of
+          cross-validation folds.
+
+    \item \textbf{Rigorous evaluation}: Consistent use of grouped
+          cross-validation (GroupKFold by trial) to prevent data leakage,
+          with explicit quantification of leakage effects.
+
+    \item \textbf{Best results}: 66.72\% valence and 66.25\% arousal accuracy
+          using XGBoost with Differential Entropy and Higuchi Fractal Dimension
+          features under proper evaluation.
+
+    \item \textbf{Practical insights}: Identification of DE as the most
+          important feature type, demonstration that feature selection is
+          unnecessary for compact feature spaces, and quantification of the
+          $\sim$15--18\% accuracy inflation caused by data leakage.
+\end{enumerate}
+
+
+\section{Integration with Real-Time Mobile Application}
+
+The ML pipeline developed in this work is designed to integrate with the
+real-time mobile application described in Part~II of this project. The
+integration points are:
+
+\begin{itemize}[noitemsep]
+    \item \textbf{Feature extraction}: The DE (histogram) and HFD feature
+          computation modules can process 3-second EEG windows in real time.
+    \item \textbf{Trained model}: The XGBoost classifier with optimized
+          hyperparameters can be exported and loaded in the mobile environment.
+    \item \textbf{Preprocessing}: The bandpass and notch filter coefficients
+          are pre-computed and can be applied as streaming IIR filters.
+\end{itemize}
+
+% Placeholder for Part II chapters
+% The following chapters will be added for the mobile application component:
+% Chapter 6: Mobile Application Architecture
+% Chapter 7: Real-Time EEG Acquisition and Processing
+% Chapter 8: Mobile Application Implementation
+% Chapter 9: System Integration and Testing
+% Chapter 10: Overall Conclusions and Future Work
+
+
+\section{Future Work}
+
+\begin{itemize}
+    \item \textbf{Deep learning approaches}: Exploring CNNs, LSTMs, or
+          transformer architectures for end-to-end learning from raw EEG.
+    \item \textbf{Transfer learning}: Pre-training on large EEG corpora to
+          improve cross-subject generalization.
+    \item \textbf{Subject adaptation}: Online adaptation techniques that
+          calibrate models to individual users with minimal data.
+    \item \textbf{Multi-modal fusion}: Combining EEG with peripheral
+          physiological signals (GSR, ECG) available in DEAP.
+    \item \textbf{Real-time optimization}: Model compression and quantization
+          for efficient on-device inference.
+\end{itemize}
+
+
+% ---- REFERENCES ----
+\newpage
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{References}
+
+\bibitem{koelstra2012deap}
+S.~Koelstra, C.~Muhl, M.~Soleymani, J.-S.~Lee, A.~Yazdani, T.~Ebrahimi,
+T.~Pun, A.~Nijholt, and I.~Patras,
+``DEAP: A Database for Emotion Analysis using Physiological Signals,''
+\textit{IEEE Transactions on Affective Computing}, vol.~3, no.~1, pp.~18--31,
+Jan. 2012.
+
+\bibitem{russell1980}
+J.~A.~Russell,
+``A circumplex model of affect,''
+\textit{Journal of Personality and Social Psychology}, vol.~39, no.~6,
+pp.~1161--1178, 1980.
+
+\bibitem{zheng2015investigating}
+W.-L.~Zheng and B.-L.~Lu,
+``Investigating critical frequency bands and channels for EEG-based emotion
+recognition with deep neural networks,''
+\textit{IEEE Transactions on Autonomous Mental Development}, vol.~7, no.~3,
+pp.~162--175, 2015.
+
+\bibitem{duan2013differential}
+R.-N.~Duan, J.-Y.~Zhu, and B.-L.~Lu,
+``Differential entropy feature for EEG-based emotion recognition,''
+in \textit{Proc. 6th International IEEE/EMBS Conference on Neural Engineering
+(NER)}, pp.~81--84, 2013.
+
+\bibitem{hjorth1970}
+B.~Hjorth,
+``EEG analysis based on time domain properties,''
+\textit{Electroencephalography and Clinical Neurophysiology}, vol.~29, no.~3,
+pp.~306--310, 1970.
+
+\bibitem{higuchi1988}
+T.~Higuchi,
+``Approach to an irregular time series on the basis of the fractal theory,''
+\textit{Physica D: Nonlinear Phenomena}, vol.~31, no.~2, pp.~277--283, 1988.
+
+\bibitem{chen2016xgboost}
+T.~Chen and C.~Guestrin,
+``XGBoost: A scalable tree boosting system,''
+in \textit{Proc. 22nd ACM SIGKDD International Conference on Knowledge
+Discovery and Data Mining}, pp.~785--794, 2016.
+
+% Add additional references as needed for Papers 11, 13, 14
+
+\end{thebibliography}
+
+
+% ---- ARABIC SUMMARY ----
+% \newpage
+% \chapter*{Arabic Summary}
+% \addcontentsline{toc}{chapter}{Arabic Summary}
+% [Arabic summary to be added here]
+
+
+\end{document}

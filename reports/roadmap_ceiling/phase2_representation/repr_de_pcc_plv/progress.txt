@@ -1,0 +1,1 @@
+[21:11:56] repr_de_pcc_plv model=rbf_svm dim=arousal subject=32 split 5/5 trial_acc=0.500

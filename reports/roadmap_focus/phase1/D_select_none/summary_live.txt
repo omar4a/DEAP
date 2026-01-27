@@ -1,0 +1,22 @@
+Live Checkpoint Summary
+feature_tag: D_select_none
+model: rbf_svm
+dimension: arousal
+completed_splits: 20 / 20
+last_update: subject 10, split 2/2
+last_trial_accuracy: 0.7500
+last_window_accuracy: 0.6687
+overall_mean_trial_accuracy: 0.5750
+overall_std_trial_accuracy: 0.1244
+
+Per-subject mean trial accuracy (so far):
+  subject 1: trial=0.6250 window=0.5906 splits=2
+  subject 2: trial=0.6875 window=0.6500 splits=2
+  subject 3: trial=0.7500 window=0.6156 splits=2
+  subject 4: trial=0.5000 window=0.5312 splits=2
+  subject 5: trial=0.5625 window=0.5000 splits=2
+  subject 6: trial=0.6875 window=0.5719 splits=2
+  subject 7: trial=0.4375 window=0.4031 splits=2
+  subject 8: trial=0.3125 window=0.3281 splits=2
+  subject 9: trial=0.5625 window=0.5625 splits=2
+  subject 10: trial=0.6250 window=0.5656 splits=2

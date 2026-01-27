@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "n_samples": 49920,
+    "n_features": 312,
+    "n_subjects": 32,
+    "config": {
+      "window_seconds": 3.0,
+      "step_seconds": 1.5,
+      "label_threshold": 5.0,
+      "bands": [
+        [
+          "theta",
+          4.0,
+          8.0
+        ],
+        [
+          "alpha",
+          8.0,
+          13.0
+        ],
+        [
+          "beta",
+          13.0,
+          30.0
+        ],
+        [
+          "gamma",
+          30.0,
+          45.0
+        ]
+      ],
+      "feature_set": [
+        "de",
+        "log_bandpower",
+        "asym_de",
+        "asym_logpower"
+      ],
+      "asym_pairs": [
+        [
+          "Fp1",
+          "Fp2"
+        ],
+        [
+          "F3",
+          "F4"
+        ],
+        [
+          "F7",
+          "F8"
+        ],
+        [
+          "C3",
+          "C4"
+        ],
+        [
+          "T7",
+          "T8"
+        ],
+        [
+          "P3",
+          "P4"
+        ],
+        [
+          "O1",
+          "O2"
+        ]
+      ]
+    }
+  },
+  "results": {
+    "valence": {
+      "best_score_cv": 0.8084935897435898,
+      "best_params": {
+        "clf__colsample_bytree": 0.7471132530877013,
+        "clf__learning_rate": 0.04288504109627157,
+        "clf__max_depth": 8,
+        "clf__n_estimators": 1481,
+        "clf__reg_lambda": 3.433797531418576,
+        "clf__subsample": 0.7270869310163225
+      },
+      "fold_accs": [
+        0.8141025641025641,
+        0.8060897435897436,
+        0.8042868589743589,
+        0.8031850961538461,
+        0.8148036858974359
+      ],
+      "mean_acc": 0.8084935897435898,
+      "std_acc": 0.004958489106954233
+    },
+    "arousal": {
+      "best_score_cv": 0.8194110576923077,
+      "best_params": {
+        "clf__colsample_bytree": 0.7471132530877013,
+        "clf__learning_rate": 0.04288504109627157,
+        "clf__max_depth": 8,
+        "clf__n_estimators": 1481,
+        "clf__reg_lambda": 3.433797531418576,
+        "clf__subsample": 0.7270869310163225
+      },
+      "fold_accs": [
+        0.8231169871794872,
+        0.825020032051282,
+        0.8184094551282052,
+        0.8102964743589743,
+        0.8202123397435898
+      ],
+      "mean_acc": 0.8194110576923077,
+      "std_acc": 0.0050973600360574925
+    }
+  }
+}

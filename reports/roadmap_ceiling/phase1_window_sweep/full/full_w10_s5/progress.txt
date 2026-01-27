@@ -1,0 +1,1 @@
+[23:05:03] full_w10_s5 model=rbf_svm dim=arousal subject=32 split 3/3 trial_acc=0.500

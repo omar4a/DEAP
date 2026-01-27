@@ -1,0 +1,31 @@
+!!! WARNING: DATA LEAKAGE EXPERIMENT !!!
+!!! DO NOT USE FOR SCIENTIFIC CLAIMS !!!
+
+Paper 13 Pooled CV Replication
+==================================================
+
+Purpose: Verify that pooled CV explains Paper 13's 88-89% accuracy
+
+Configuration:
+  Features: ('de_histogram', 'hfd')
+  Window: 3.0s
+  Threshold: 4.5
+  CV: 5-fold on pooled data
+
+Results:
+
+valence:
+  Accuracy: 68.3% ± 0.3%
+  Fold accuracies: ['68.0%', '68.6%', '68.6%', '68.0%', '68.3%']
+  Avg leakage: 100% of test subjects in train
+
+arousal:
+  Accuracy: 70.0% ± 0.4%
+  Fold accuracies: ['70.0%', '70.1%', '69.3%', '70.1%', '70.6%']
+  Avg leakage: 100% of test subjects in train
+
+
+Comparison:
+  Paper 13 reported: 89% valence, 88% arousal
+  Our proper CV:     69.6% valence, 71.8% arousal
+  This leaky CV:     See results above

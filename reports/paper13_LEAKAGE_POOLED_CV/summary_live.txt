@@ -1,0 +1,12 @@
+!!! WARNING: DATA LEAKAGE EXPERIMENT !!!
+!!! DO NOT USE FOR SCIENTIFIC CLAIMS !!!
+==================================================
+
+Paper 13 POOLED CV Replication
+Purpose: Verify that pooled CV explains inflated accuracy
+
+Results:
+  valence: 68.3% ± 0.3%
+    (avg 100% of test subjects leaked into train)
+  arousal: 70.0% ± 0.4%
+    (avg 100% of test subjects leaked into train)

@@ -1,0 +1,14 @@
+Live Checkpoint Summary
+feature_tag: B_features_de_bandpower
+model: rbf_svm
+dimension: valence
+completed_splits: 4 / 20
+last_update: subject 2, split 2/2
+last_trial_accuracy: 0.5000
+last_window_accuracy: 0.5282
+overall_mean_trial_accuracy: 0.4062
+overall_std_trial_accuracy: 0.0312
+
+Per-subject mean trial accuracy (so far):
+  subject 1: trial=0.3750 window=0.4950 splits=2
+  subject 2: trial=0.4375 window=0.4940 splits=2

@@ -1,0 +1,47 @@
+Live Checkpoint Summary
+feature_tag: full_w15_s7.5
+model: rbf_svm
+dimension: arousal
+completed_splits: 96 / 96
+last_update: subject 32, split 3/3
+last_trial_accuracy: 0.5000
+last_trial_balanced_accuracy: 0.5333
+last_trial_f1_macro: 0.5000
+last_trial_roc_auc: 0.7333
+last_window_accuracy: 0.6429
+overall_mean_trial_accuracy: 0.5964
+overall_std_trial_accuracy: 0.1332
+
+Per-subject mean trial accuracy (so far):
+  subject 1: trial=0.6667 window=0.6786 splits=3
+  subject 2: trial=0.6667 window=0.5774 splits=3
+  subject 3: trial=0.7500 window=0.6607 splits=3
+  subject 4: trial=0.6250 window=0.5179 splits=3
+  subject 5: trial=0.5417 window=0.5000 splits=3
+  subject 6: trial=0.5000 window=0.6190 splits=3
+  subject 7: trial=0.3750 window=0.4167 splits=3
+  subject 8: trial=0.4583 window=0.3869 splits=3
+  subject 9: trial=0.5833 window=0.5952 splits=3
+  subject 10: trial=0.5417 window=0.5536 splits=3
+  subject 11: trial=0.3333 window=0.3274 splits=3
+  subject 12: trial=0.7500 window=0.6667 splits=3
+  subject 13: trial=0.5000 window=0.5298 splits=3
+  subject 14: trial=0.6250 window=0.6190 splits=3
+  subject 15: trial=0.5000 window=0.5417 splits=3
+  subject 16: trial=0.7083 window=0.6905 splits=3
+  subject 17: trial=0.7500 window=0.6964 splits=3
+  subject 18: trial=0.5833 window=0.4524 splits=3
+  subject 19: trial=0.4583 window=0.4405 splits=3
+  subject 20: trial=0.5833 window=0.5714 splits=3
+  subject 21: trial=0.7083 window=0.5179 splits=3
+  subject 22: trial=0.5000 window=0.4762 splits=3
+  subject 23: trial=0.4583 window=0.4345 splits=3
+  subject 24: trial=0.8333 window=0.6369 splits=3
+  subject 25: trial=0.7500 window=0.7917 splits=3
+  subject 26: trial=0.5833 window=0.5298 splits=3
+  subject 27: trial=0.8333 window=0.7143 splits=3
+  subject 28: trial=0.4167 window=0.4762 splits=3
+  subject 29: trial=0.7083 window=0.6964 splits=3
+  subject 30: trial=0.5417 window=0.5179 splits=3
+  subject 31: trial=0.7917 window=0.7440 splits=3
+  subject 32: trial=0.4583 window=0.4762 splits=3
