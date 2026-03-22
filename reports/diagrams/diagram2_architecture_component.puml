@@ -1,0 +1,143 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FEFEFE
+skinparam ComponentBackgroundColor #E8F4FD
+skinparam ComponentBorderColor #2980B9
+skinparam PackageBackgroundColor #F8F9FA
+skinparam PackageBorderColor #6C757D
+skinparam InterfaceBackgroundColor #E8F5E9
+skinparam InterfaceBorderColor #388E3C
+skinparam DatabaseBackgroundColor #FFF3E0
+skinparam DatabaseBorderColor #EF6C00
+skinparam ArrowColor #2C3E50
+skinparam NoteBackgroundColor #FFFDE7
+skinparam NoteBorderColor #F9A825
+skinparam defaultFontName "Segoe UI"
+skinparam ClassFontSize 11
+skinparam PackageFontSize 13
+skinparam PackageFontStyle bold
+
+title **deap_emotion Package Architecture**
+
+' ============================================================
+' Entry points
+' ============================================================
+package "Entry Points" as entry <<Rectangle>> #EFEBE9 {
+  component "**run_experiments.py**\n//Main CLI runner//" as run_exp
+  component "**run_paper13_fast.py**\n//Paper 13 replication//" as run_p13
+  component "**run_leaky_xgb_maxacc.py**\n//Leakage upper-bound//" as run_leak
+}
+
+' ============================================================
+' Core package
+' ============================================================
+package "src/deap_emotion" as pkg #F3E5F5 {
+
+  ' --- Configuration ---
+  component "**config.py**" as config {
+    card "<<frozen dataclass>>\n**Config**" as cfg_dc #E8EAF6
+    note bottom of cfg_dc
+      Preprocessing params
+      Feature params
+      Label params
+      CV params
+      Cache / IO params
+    end note
+  }
+
+  ' --- CLI ---
+  component "**cli_experiment.py**" as cli {
+    card "main()\nparse_args()" as cli_fn #E0F2F1
+  }
+
+  ' --- Data ---
+  component "**data.py**" as data {
+    card "load_dataset()\n**SubjectData**\n(id, eeg, labels)" as data_fn #E8F5E9
+  }
+
+  ' --- Preprocessing ---
+  component "**preprocess.py**" as preproc {
+    card "preprocess_eeg()\napply_bandpass()\napply_notch()\nbaseline_correct()\nsegment_trials()" as preproc_fn #E8F5E9
+  }
+
+  ' --- Features ---
+  component "**features.py**" as features {
+    card "extract_features()\n---\n_bandpower_fft()\n_differential_entropy_histogram()\n_higuchi_fd()\n_statistical_features()\n_hjorth_parameters()\n_asymmetry_features()\n_connectivity_pcc_summary()\n_connectivity_plv_summary()\n_psd_fft()" as feat_fn #E8F5E9
+  }
+
+  ' --- Labels ---
+  component "**labels.py**" as labels {
+    card "build_labels()\n---\nbinary | three_class\nquartile | subject_mean\nsubject_median | regression" as label_fn #E8F5E9
+  }
+
+  ' --- Model Registry ---
+  component "**model_registry.py**" as models {
+    card "<<frozen dataclass>>\n**ModelSpec**\n(name, estimator_cls,\ndefault_params, param_grid,\nneeds_scaler, task)\n---\nbuild_model() -> Pipeline\ndefault_grid()" as model_fn #E8EAF6
+  }
+
+  ' --- Experiment ---
+  component "**experiment.py**" as experiment {
+    card "**ExperimentSettings**\n(outer_repeats, inner_folds,\nscoring, search_strategy)\n---\nrun_experiments()\n_subject_dependent()\n_cross_subject()\n_grid_search()\n_evaluate_fold()\n_evaluate_soft_vote()\nwrite_report()\nwrite_summary_csv()\nwrite_summary_txt()" as exp_fn #FCE4EC
+  }
+
+  ' --- Metrics ---
+  component "**metrics.py**" as metrics {
+    card "classification_metrics()\nregression_metrics()\n---\nacc, bal_acc, f1, roc_auc,\nprecision, recall, MCC,\nCohen's kappa, confusion_matrix" as met_fn #E0F2F1
+  }
+
+  ' --- Splits ---
+  component "**splits.py**" as splits {
+    card "subject_dependent_split()\ncross_subject_split()\n---\nGroupKFold\nLeaveOneGroupOut" as split_fn #E0F2F1
+  }
+
+  ' --- Riemann ---
+  component "**riemann.py**" as riemann {
+    card "**RiemannianTangentSpace**\n(sklearn TransformerMixin)\nfit() / transform()" as riem_fn #E0F2F1
+  }
+}
+
+' ============================================================
+' External storage
+' ============================================================
+database "archive/\n*.mat files" as deap_data #FFF3E0
+database "cache/\n*.npz features" as cache #FFF3E0
+database "reports/\nJSON, CSV, TXT" as reports #FFF3E0
+
+' ============================================================
+' Dependencies (arrows)
+' ============================================================
+
+' Entry points -> CLI / Experiment
+run_exp --> cli : delegates
+run_p13 --> experiment : calls directly
+run_leak --> experiment : calls directly
+cli --> experiment : configures & runs
+
+' Experiment orchestrates everything
+experiment --> data : load_dataset()
+experiment --> preproc : preprocess_eeg()
+experiment --> features : extract_features()
+experiment --> labels : build_labels()
+experiment --> models : build_model()
+experiment --> metrics : classification_metrics()
+experiment --> splits : GroupKFold
+
+' Config feeds everything
+config ..> experiment : configures
+config ..> preproc : filter params
+config ..> features : feature_set, bands
+config ..> labels : label_mode, threshold
+config ..> models : classifier choice
+
+' Model registry uses riemann
+models --> riemann : optional transform
+
+' Data IO
+data --> deap_data : reads .mat
+experiment --> cache : reads/writes .npz
+experiment --> reports : writes results
+
+' Features uses scipy internals
+features --> preproc : segment_trials()
+
+@enduml

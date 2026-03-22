@@ -1,48 +1,46 @@
-# DEAP Emotion Pipeline (Approach 3)
+# DEAP Emotion Recognition Workspace
 
-Simple, fast EEG emotion recognition for DEAP using bandpower features and classical models.
+Research code for EEG-based emotion recognition on the DEAP dataset. The repository combines a configurable classical machine-learning pipeline with several deep-learning experiment branches, evaluation scripts, and report assets used in the graduation project.
 
-## Setup
+## What Is In The Repo
+
+- `src/deap_emotion/`: preprocessing, feature extraction, labeling, metrics, and experiment orchestration
+- `run_pipeline.py`: quick baseline evaluation for subject-dependent and cross-subject runs
+- `run_experiments.py`: configurable experiment runner with model search and report generation
+- `eeg_*`: model-specific deep-learning experiments such as EEGNet, EEGNet+Transformer, ConvNeXt-EEG, TSception, and DE-based variants
+- `reports/`: generated summaries, paper notes, and diagram sources
+- `tests/`: smoke and unit tests for the core pipeline
+
+## Quick Start
+
+Install the root dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run evaluation
+Place the DEAP subject `.dat` files in `archive/`.
+
+Run the baseline pipeline:
 
 ```bash
 python run_pipeline.py --mode both --output reports/metrics.json
 ```
 
-## Grid-search experiments
+Run a configurable experiment sweep:
 
 ```bash
-python run_experiments.py --models logreg rbf_svm --outer-folds 5 --inner-folds 3 --scoring f1_macro
+python run_experiments.py --models xgb rbf_svm --outer-repeats 5 --inner-folds 4 --scoring f1_macro
 ```
 
-Use a smaller run while iterating:
-
-```bash
-python run_experiments.py --models logreg --subjects 1 2 3 --trials 0 1 2 3 --outer-folds 2 --inner-folds 2
-```
-
-Outputs:
-
-- `reports/experiment/experiment_report.json`
-- `reports/experiment/summary.csv`
-
-## Configuration
-
-- Label modes: `--label-mode binary|three_class|quartile|regression|subject_median|subject_tertile`
-- Label bins (three_class/quartile): `--label-bins 3 6` or `--label-bins 3 5 7`
-- Windowed features: `--window-seconds 2 --step-seconds 1`
-- Feature sets: `--feature-set bandpower psd de asymmetry`
-- PSD bins: `--psd-min-hz 1 --psd-max-hz 45 --psd-bin-width 2`
-- PCA: `--pca-variance 0.95`
-- Per-subject normalization: `--per-subject-norm`
-
-## Tests
+Run the test suite:
 
 ```bash
 pytest -q
 ```
+
+## Notes
+
+- The main pipeline supports multiple label schemes, configurable feature sets, feature selection, and trial-level aggregation.
+- Deep-learning folders ship with their own training scripts and, in some cases, separate dependency files.
+- Large datasets, caches, and generated training outputs are intentionally kept out of version control.

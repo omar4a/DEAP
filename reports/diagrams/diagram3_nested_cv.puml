@@ -1,0 +1,171 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FEFEFE
+skinparam ActivityBackgroundColor #E8F4FD
+skinparam ActivityBorderColor #2980B9
+skinparam ActivityDiamondBackgroundColor #FFF3CD
+skinparam ActivityDiamondBorderColor #F0AD4E
+skinparam ArrowColor #2C3E50
+skinparam NoteBackgroundColor #FFFDE7
+skinparam NoteBorderColor #F9A825
+skinparam defaultFontName "Segoe UI"
+
+title **Nested Cross-Validation & Evaluation Protocol**\n(Subject-Dependent, Grouped by Trial)
+
+start
+
+:Load **checkpoint.csv** (if exists)
+to recover completed folds;
+
+#E8EAF6:=== Per-Subject Loop ===;
+
+while (For each **subject** s = 1..32?) is (next subject)
+
+  #E8EAF6:Load & preprocess EEG for subject **s**
+  Extract features -> **X** [800 x F]
+  Compute trial group IDs -> **groups** [800]
+  Build labels for dimension (val/aro) -> **y** [800];
+
+  note right
+    Check **feature cache** first
+    (SHA-256 hash of config)
+    If cache hit: load .npz
+    If cache miss: compute & save
+  end note
+
+  #E8F5E9:=== Outer Splits ===;
+
+  while (For each outer repeat **r** = 1..5?) is (next repeat)
+
+    if (Checkpoint has\n(subject=s, split=r)?) then (yes)
+      #E0F2F1:Load metrics from checkpoint
+      **Skip** this fold;
+      note right #E8F5E9
+        Enables pause/resume
+        without recomputation
+      end note
+    else (no)
+
+      #E8F5E9:Randomly split 40 trials into
+      **32 train trials** (80%)
+      **8 test trials** (20%)
+      (seeded by random_state + subject_id);
+
+      note right
+        **Grouped split**: all windows from
+        a trial go to the same set.
+        Train: ~640 windows
+        Test: ~160 windows
+        **No leakage across trials**
+      end note
+
+      #E8F5E9:Partition X, y by trial groups
+      X_train, y_train (32 trials)
+      X_test, y_test (8 trials);
+
+      #FFF3E0:=== Inner Grid Search ===;
+
+      #FFF3E0:Define hyperparameter grid
+      for selected model;
+      note right
+        Example (XGBoost):
+        n_estimators: [200, 400]
+        max_depth: [3, 5]
+        learning_rate: [0.05, 0.1]
+        subsample: [0.8, 1.0]
+        colsample_bytree: [0.8, 1.0]
+        = 32 combinations
+      end note
+
+      while (For each **param set** in grid?) is (next params)
+
+        #FFF3E0:Inner **GroupKFold** (4 folds)
+        on X_train, grouped by trial;
+
+        while (For each inner fold **k** = 1..4?) is (next inner fold)
+          #FFF3E0:Train model on inner-train
+          Evaluate on inner-val
+          Record scoring metric (F1 macro);
+        endwhile (done)
+
+        #FFF3E0:Compute mean inner score
+        for this param set;
+
+      endwhile (all param sets evaluated)
+
+      #FFF3E0:Select **best_params** =
+      param set with highest
+      mean inner score;
+
+      #FCE4EC:=== Final Evaluation ===;
+
+      #FCE4EC:Build model with **best_params**
+      Train on full X_train (32 trials)
+      Predict on X_test (8 trials);
+
+      #FCE4EC:Compute **window-level** metrics
+      (accuracy, F1, ROC-AUC, ...);
+
+      #F3E5F5:=== Trial Aggregation ===;
+
+      #F3E5F5:For each of the 8 test **trials**:
+      Collect all window predictions
+      Apply **majority vote** ->
+      one prediction per trial;
+
+      #F3E5F5:Compute **trial-level** metrics
+      (trial_accuracy, trial_f1_macro,
+      trial_balanced_accuracy);
+
+      #E0F2F1:=== Checkpoint ===;
+
+      #E0F2F1:Append fold result to
+      **checkpoint.csv**
+      (feature_tag, model, dim,
+      subject, split, metrics,
+      best_params, train/test trials);
+
+      #E0F2F1:Update **summary_live.txt**
+      with running mean accuracy;
+
+    endif
+
+  endwhile (all 5 repeats done)
+
+  #E8EAF6:Compute **per-subject** mean accuracy
+  across 5 repeats for subject **s**;
+
+endwhile (all 32 subjects done)
+
+#EFEBE9:=== Final Aggregation ===;
+
+#EFEBE9:Compute **overall** statistics:
+mean(per_subject_means) +/- std
+for each metric;
+
+note right
+  **Reported result** =
+  mean of 32 subject means
+  e.g. Valence: 66.72% +/- 8.94%
+  Total folds: 32 x 5 = **160**
+end note
+
+#EFEBE9:Write final outputs:
+**experiment_report.json**
+**summary.csv**
+**summary.txt**;
+
+stop
+
+legend right
+  |= Color |= Stage |
+  | <#E8EAF6> | Data & subject loop |
+  | <#E8F5E9> | Outer CV splits |
+  | <#FFF3E0> | Inner grid search |
+  | <#FCE4EC> | Model evaluation |
+  | <#F3E5F5> | Trial aggregation |
+  | <#E0F2F1> | Checkpointing |
+  | <#EFEBE9> | Final output |
+endlegend
+
+@enduml

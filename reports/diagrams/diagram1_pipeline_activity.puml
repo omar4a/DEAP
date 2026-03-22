@@ -1,0 +1,134 @@
+@startuml
+!theme plain
+skinparam backgroundColor #FEFEFE
+skinparam ActivityBackgroundColor #E8F4FD
+skinparam ActivityBorderColor #2980B9
+skinparam ActivityDiamondBackgroundColor #FFF3CD
+skinparam ActivityDiamondBorderColor #F0AD4E
+skinparam ArrowColor #2C3E50
+skinparam NoteBackgroundColor #FFFDE7
+skinparam NoteBorderColor #F9A825
+skinparam PartitionBackgroundColor #F8F9FA
+skinparam PartitionBorderColor #6C757D
+skinparam defaultFontName "Segoe UI"
+
+title **End-to-End EEG Emotion Recognition Pipeline**
+
+|#E8EAF6| Data Loading |
+start
+:Load DEAP .mat files
+from **archive/** directory;
+note right
+  Per subject: **s01.mat** ... **s32.mat**
+  Raw shape: [40 trials x 40 channels x 8064 samples]
+  (32 EEG + 8 peripheral channels)
+end note
+:Select 32 EEG channels
+Create **SubjectData**(subject_id, eeg, labels);
+note right
+  EEG shape: **[40 x 32 x 8064]**
+  Labels shape: **[40 x 4]** (val, aro, dom, lik)
+end note
+
+|#E8F5E9| Preprocessing |
+:Apply **Bandpass Filter**
+4th-order Butterworth, 4-45 Hz
+(zero-phase via filtfilt);
+:Apply **Notch Filter**
+50 Hz, Q=30
+(power line removal);
+:Apply **Baseline Correction**
+Subtract mean of first 3s (384 samples)
+Discard baseline period;
+note right
+  Shape: **[40 x 32 x 7680]**
+  (60s stimulus @ 128 Hz)
+end note
+
+|#FFF3E0| Segmentation & Features |
+:Segment into **3-second windows**
+window=384 samples, step=384 (no overlap);
+note right
+  40 trials x 20 windows/trial
+  Shape: **[800 x 32 x 384]**
+  Trial IDs tracked for GroupKFold
+end note
+
+:Extract **Feature Set** per window;
+note right
+  DE (histogram): 32 features (1/channel)
+  HFD (Higuchi): 32 features (1/channel)
+  Statistical: 128 features (4/channel)
+  Hjorth: 96 features (3/channel)
+  Band Power: 128 features (4 bands x 32 ch)
+  Connectivity: 12-24 features
+end note
+
+:Flatten to feature matrix **X**;
+note right
+  Example (DE + HFD):
+  Shape: **[800 x 64]**
+end note
+
+|#FCE4EC| Labeling |
+:Build binary labels from
+self-report ratings;
+
+if (Label mode?) then (binary)
+  :y = 1 if rating > 4.5, else 0;
+else (other modes)
+  :three_class / quartile /
+  subject_mean / regression;
+endif
+
+note right
+  Labels shape: **[800]**
+  Groups shape: **[800]** (trial IDs)
+  One set per dimension (valence / arousal)
+end note
+
+|#F3E5F5| Model Pipeline |
+:Build **sklearn Pipeline**;
+
+if (Model needs scaler?) then (yes: SVM, LogReg, MLP)
+  :StandardScaler or RobustScaler;
+else (no: XGBoost, RF, HGB)
+endif
+
+if (Feature selection?) then (MI)
+  :SelectKBest(mutual_info, k);
+elseif (Feature selection?) then (L1)
+  :SelectFromModel(LogReg L1);
+elseif (Feature selection?) then (PCA)
+  :PCA(variance=0.95);
+else (none)
+endif
+
+:Attach **Classifier**
+(XGBoost / RBF-SVM / RF / HGB / ...);
+
+|#E0F2F1| Evaluation |
+:Run **Subject-Dependent** nested CV
+(see Diagram 3 for detail);
+
+:Aggregate window predictions to
+**trial-level** via majority vote;
+
+:Compute metrics per fold:
+Accuracy, Balanced Acc, F1 macro,
+ROC-AUC, Confusion Matrix;
+
+:Average across subjects
+Report mean +/- std;
+
+|#EFEBE9| Output |
+:Write **experiment_report.json**
+(full fold-by-fold results);
+:Write **summary.csv**
+(per-fold metrics table);
+:Write **summary.txt**
+(human-readable overview);
+
+stop
+
+@enduml

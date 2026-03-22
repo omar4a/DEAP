@@ -4,3 +4,21 @@ cache/
 .pytest_cache/
 __pycache__/
 *.pyc
+
+# Local tooling and temp files
+.claude/settings.local.json
+.tmp.driveupload/
+nul
+
+# Generated experiment artifacts
+eeg_de_experiment/results/
+eeg_dl_experiment/data/
+eeg_dl_experiment/results/
+eeg_dl_experiment/splits/
+eeg_eegnet_grouped_experiment/logs/
+eeg_eegnet_grouped_experiment/results*/
+eeg_tsception_baseline/results_tsception_baseline/
+eeg_tsception_optuna/results_trial_*/
+eeg_tsception_optuna/*.db
+eegnet_optuna_aug/results_trial_*/
+eegnet_optuna_aug/*.db
