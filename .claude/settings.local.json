@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(wc:*)",
-      "Bash(pip install:*)",
-      "Bash(git add:*)"
-    ]
-  }
-}

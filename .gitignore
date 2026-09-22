@@ -22,3 +22,8 @@ eeg_tsception_optuna/results_trial_*/
 eeg_tsception_optuna/*.db
 eegnet_optuna_aug/results_trial_*/
 eegnet_optuna_aug/*.db
+
+.claude/
+CLAUDE.md
+*.pdf
+__pycache__/
